@@ -4,7 +4,8 @@
   "private": true,
  "exports": {
   "./CirculerBtn":"./src/CirculerBtn.tsx",
-  "./AppBar" : "./src/AppBar.tsx"
+  "./AppBar" : "./src/AppBar.tsx",
+  "./PunchLine":"./src/PunchLine.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

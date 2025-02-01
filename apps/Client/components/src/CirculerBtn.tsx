@@ -3,12 +3,13 @@ import { ReactNode } from "react";
 
 interface CirculerBtnProps {
     children: ReactNode;
+    className?: string;
   }
 
 
-export const CirculerBtn = ({children}:CirculerBtnProps)=>{
+export const CirculerBtn = ({children, className}:CirculerBtnProps)=>{
     return (
-        <button className="bg-[#D9D9D9] text-black font-semibold w-24 h-10 rounded-3xl  ">
+        <button className={className}>
                 {children}
         </button>
     );

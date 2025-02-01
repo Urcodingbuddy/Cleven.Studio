@@ -1,5 +1,5 @@
 {
-  "name": "clevem-temp",
+  "name": "clevenstudio",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -19,5 +19,8 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@repo/components": "file:apps/Client/components"
+  }
 }

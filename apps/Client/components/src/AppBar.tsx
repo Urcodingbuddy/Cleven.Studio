@@ -14,6 +14,7 @@ export const AppBar = () => {
                 <a href="#">Services</a>
                 <a href="#">Help</a>
                 <a href="#">Insight’s </a>
+                <p>this is new</p>
                 <CirculerBtn>Join Us</CirculerBtn>
              </ul>
          </div>

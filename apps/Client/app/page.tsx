@@ -1,5 +1,4 @@
-import  CirculerBtn  from "@repo/components/CirculerBtn.tsx";
-
+import  { CirculerBtn }  from "@repo/components/CirculerBtn";
 
 
 export default function Home() {

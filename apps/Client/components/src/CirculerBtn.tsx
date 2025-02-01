@@ -8,7 +8,7 @@ interface CirculerBtnProps {
 
 export const CirculerBtn = ({children}:CirculerBtnProps)=>{
     return (
-        <button className="bg-white text-black font-semibold w-24 h-10 rounded-3xl  ">
+        <button className="bg-[#D9D9D9] text-black font-semibold w-24 h-10 rounded-3xl  ">
                 {children}
         </button>
     );

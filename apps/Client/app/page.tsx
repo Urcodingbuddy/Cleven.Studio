@@ -1,8 +1,11 @@
+import  CirculerBtn  from "@repo/components/CirculerBtn.tsx";
+
+
 
 export default function Home() {
   return (
     <>
-    <h1 className="text-3xl font-bold underline">Hello bro</h1>
+    <CirculerBtn>Join Us</CirculerBtn>
     </>
   );
 }

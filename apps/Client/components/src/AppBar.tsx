@@ -14,7 +14,7 @@ export const AppBar = () => {
                 <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out active:scale-[1] " >Services</a>
                 <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out active:scale-[1] " >Help</a>
                 <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out active:scale-[1] " >Insight’s </a>
-                <CirculerBtn className="bg-[#D9D9D9] text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-200 ease-in hover:bg-black hover:text-white hover:border-1 active:scale-[0.95] border-white " >Join Us</CirculerBtn>
+                <CirculerBtn className="bg-[#D9D9D9] text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl  transition duration-200 ease-in hover:bg-black hover:text-white hover:border-1 active:scale-[0.95] border-white " >Join Us</CirculerBtn>
              </ul>
          </div>
      </nav>

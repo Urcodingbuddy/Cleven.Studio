@@ -2,7 +2,7 @@ const config = {
     plugins: {
       "@tailwindcss/postcss": {
         extends : {
-          transition: {
+          transitionProperty: {
             navBtn : "all 0.3s ease-in-out"
           }
         }

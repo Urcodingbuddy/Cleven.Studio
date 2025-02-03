@@ -5,7 +5,8 @@
  "exports": {
   "./CirculerBtn":"./src/CirculerBtn.tsx",
   "./AppBar" : "./src/AppBar.tsx",
-  "./PunchLine":"./src/PunchLine.tsx"
+  "./PunchLine":"./src/PunchLine.tsx",
+  "./HeroMessage" : "./src/HeroMessage.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

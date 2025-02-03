@@ -1,7 +1,4 @@
-"use client"
-
 import { CirculerBtn } from "./CirculerBtn";
-
 export const AppBar = () => {
     return (
      <nav>

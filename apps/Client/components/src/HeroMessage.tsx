@@ -4,7 +4,7 @@ export const HeroMessage = () => {
     return(
         <>
         <section id="heroMessage_head">
-            <div id="intoMssg" className="h-screen w-screen flex justify-center items-center p-32 ">
+            <div id="intoMssg" className="h-screen w-screen flex justify-center items-center px-32 ">
                 <div id="leftMssg" className="w-1/2 h-full  text-white flex items-center">
                 <h1 className="text-4xl font-bold" >Who said maintaining a <br/>
                 website has to be a hassle?</h1>

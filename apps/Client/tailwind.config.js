@@ -16,7 +16,17 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [addVariablesForColors],
+  plugins: [
+    // function ({ addUtilities }) {
+    //   addUtilities({
+    //     '.bg-clip-text': {
+    //       '-webkit-background-clip': 'text',
+    //     },
+    //   });
+    // },
+
+  
+  ],
 };
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).

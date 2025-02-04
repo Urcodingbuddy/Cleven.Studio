@@ -1,8 +1,13 @@
+"use client";
+
 import { AppBar } from "@repo/components/AppBar";
 import { HeroMessage } from "@repo/components/HeroMessage";
 import { ContainerScroll } from "../@/components/ui/container-scroll-animation";
+import useLenis  from "../lib/hooks/useLenis";
 
 export default function Home() {
+  useLenis(); // Activate smooth scrolling
+
   return (
     <>
     <AppBar/>

@@ -4,10 +4,10 @@ import Lenis from "@studio-freight/lenis";
 export default function useLenis() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2, // Adjust for smoother or faster scrolling
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Smooth easing
-      syncTouch: true, // Ensure touch devices work fine
-      lerp: 0.1, // Adjust for smoother scrolling
+      duration: 1.2, 
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      syncTouch: true,
+      lerp: 0.1, 
     });
 
     function raf(time: number) {

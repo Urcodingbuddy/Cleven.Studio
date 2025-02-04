@@ -7,8 +7,9 @@
   "./AppBar" : "./src/AppBar.tsx",
   "./PunchLine":"./src/PunchLine.tsx",
   "./HeroMessage" : "./src/HeroMessage.tsx",
-  "./SmoothScrollProvider":"./src/SmoothScrollProvider"
-  
+  "./SmoothScrollProvider":"./src/SmoothScrollProvider",  
+  "./EssentialSection" : "./src/EssentialSection.tsx",
+  "./useLenis" : "./hooks/useLenis"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

@@ -7,6 +7,8 @@
   "./AppBar" : "./src/AppBar.tsx",
   "./PunchLine":"./src/PunchLine.tsx",
   "./HeroMessage" : "./src/HeroMessage.tsx",
+  "./SmoothScrollProvider":"./src/SmoothScrollProvider"
+  
   "./EssentialSection" : "./src/EssentialSection.tsx",
   "./useLenis" : "./hooks/useLenis"
   },

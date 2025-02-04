@@ -1,0 +1,11 @@
+{
+    "extends": "@repo/typescript-config/react-library.json",
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths"  : {
+        "@/*":["../../lib/*"]
+      }
+    },
+    "include": ["hooks"],
+    "exclude": ["node_modules", "dist"]
+  }

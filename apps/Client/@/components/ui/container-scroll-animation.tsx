@@ -3,10 +3,8 @@ import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 
 export const ContainerScroll = ({
-  titleComponent,
   children,
 }: {
-  titleComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -30,7 +28,7 @@ export const ContainerScroll = ({
     return isMobile ? [0.7, 0.9] : [1.05, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [23, 0]);
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
@@ -45,7 +43,6 @@ export const ContainerScroll = ({
           perspective: "1000px",
         }}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
         <Card rotate={rotate} translate={translate} scale={scale}>
           {children}
         </Card>
@@ -54,18 +51,7 @@ export const ContainerScroll = ({
   );
 };
 
-export const Header = ({ translate, titleComponent }: any) => {
-  return (
-    <motion.div
-      style={{
-        translateY: translate,
-      }}
-      className="div max-w-5xl text-white text-6xl mb-1 font-bold mx-auto text-center"
-    >
-      {titleComponent}
-    </motion.div>
-  );
-};
+
 
 export const Card = ({
   rotate,

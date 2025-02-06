@@ -3,14 +3,15 @@ import { HeroMessage } from "@repo/components/HeroMessage";
 import { ContainerScroll } from "../@/components/ui/container-scroll-animation";
 import { EssentialSection } from "@repo/components/EssentialSection";
 import { SmoothScrollProvider } from "../components/src/SmoothScrollProvider";
-
+import { PunchLine } from "@repo/components/PunchLine";
 export default function Home() {
 
   return (
     <>
     <SmoothScrollProvider/>
     <AppBar/>
-    <ContainerScroll titleComponent={"Unleashing the Power of Performance to Make Your Website Invincible."} children={undefined}>
+    <PunchLine/>
+    <ContainerScroll children={undefined}>
     </ContainerScroll>
     <HeroMessage/>
     <EssentialSection/>

@@ -12,12 +12,6 @@ export const EssentialSection = () => {
             online presence.
             </p>
 
-            <div id="essential-container">
-               <div id="essential-imgs">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS13xDmLD7uEjCnSsD57_3ahgnLXk2ca1b5eg&s" alt="" />
-               </div>
-            </div>
-
          </div>
 
       </div>

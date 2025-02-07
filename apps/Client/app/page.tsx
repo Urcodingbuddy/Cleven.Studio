@@ -5,6 +5,7 @@ import { EssentialSection } from "@repo/components/EssentialSection";
 import { SmoothScrollProvider } from "../components/src/SmoothScrollProvider";
 import { PunchLine } from "@repo/components/PunchLine";
 import { FAQ } from "@repo/components/FAQ";
+import { Footer } from "@repo/components/Footer";
 export default function Home() {
 
   return (
@@ -17,6 +18,7 @@ export default function Home() {
     <HeroMessage/>
     <EssentialSection/>
     <FAQ/>
+    <Footer/>
     </>
   );
 }

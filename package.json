@@ -21,6 +21,7 @@
     "packages/*"
   ],
   "dependencies": {
-    "@repo/components": "file:apps/Client/components"
+    "@repo/components": "file:apps/Client/components",
+    "lucide-react": "^0.474.0"
   }
 }

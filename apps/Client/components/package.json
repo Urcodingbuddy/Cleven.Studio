@@ -10,6 +10,7 @@
   "./SmoothScrollProvider":"./src/SmoothScrollProvider",  
   "./EssentialSection" : "./src/EssentialSection.tsx",
   "./FAQ" : "./src/FAQ.tsx",
+  "./Footer" : "./src/Footer.tsx",
   "./useLenis" : "./hooks/useLenis"
   },
   "scripts": {

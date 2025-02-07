@@ -3,7 +3,7 @@ import { HeroMessage } from "@repo/components/HeroMessage";
 import { ContainerScroll } from "../@/components/ui/container-scroll-animation";
 import { EssentialSection } from "@repo/components/EssentialSection";
 import { SmoothScrollProvider } from "../components/src/SmoothScrollProvider";
-import { PunchLine } from "@repo/components/PunchLine";
+
 import { FAQ } from "@repo/components/FAQ";
 import { Footer } from "@repo/components/Footer";
 export default function Home() {
@@ -12,7 +12,6 @@ export default function Home() {
     <>
     <SmoothScrollProvider/>
     <AppBar/>
-    <PunchLine/>
     <ContainerScroll children={undefined}>
     </ContainerScroll>
     <HeroMessage/>

@@ -12,7 +12,8 @@ export default function Home() {
     <>
     <SmoothScrollProvider/>
     <AppBar/>
-    <ContainerScroll children={undefined}>
+    <ContainerScroll>
+    <img src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75" alt="" />
     </ContainerScroll>
     <HeroMessage/>
     <EssentialSection/>

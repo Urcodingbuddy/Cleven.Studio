@@ -12,7 +12,7 @@
   "./EssentialSection" : "./src/EssentialSection.tsx",
   "./FAQ" : "./src/FAQ.tsx",
   "./Footer" : "./src/Footer.tsx",
-  "./Glow-Cards":"./src/Glow-Cards.tsx"
+  "./GlowCards":"./src/GlowCards.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

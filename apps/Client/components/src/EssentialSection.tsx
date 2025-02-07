@@ -1,5 +1,5 @@
-import { GlowCards } from "./Glow-Cards.js"
-import React from "react";
+import { GlowCards } from "./GlowCards"
+
 export const EssentialSection = () => {
    return (
       <>

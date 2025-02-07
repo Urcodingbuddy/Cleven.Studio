@@ -2,7 +2,7 @@ export const EssentialSection = () => {
  return(
     <>
     <section>
-      <div id="Essential" className="text-white min-h-screen w-screen p-24" >
+      <div id="Essential" className="text-white h-min-screen w-screen p-24" >
          <div id="essential_text" className="" >
           <h1 className="text-5xl font-bold ">Everything you need.</h1>
           <h2 className="text-5xl font-bold">Nothing you don't</h2>

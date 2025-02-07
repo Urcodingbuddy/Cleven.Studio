@@ -4,6 +4,7 @@ import { ContainerScroll } from "../@/components/ui/container-scroll-animation";
 import { EssentialSection } from "@repo/components/EssentialSection";
 import { SmoothScrollProvider } from "../components/src/SmoothScrollProvider";
 import { PunchLine } from "@repo/components/PunchLine";
+import { FAQ } from "@repo/components/FAQ";
 export default function Home() {
 
   return (
@@ -15,6 +16,7 @@ export default function Home() {
     </ContainerScroll>
     <HeroMessage/>
     <EssentialSection/>
+    <FAQ/>
     </>
   );
 }

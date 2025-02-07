@@ -33,6 +33,8 @@ export const FAQ: React.FC = () => {
               id="FAQ_box"
               className="w-7xl rounded-xl border border-white p-4 cursor-pointer hover:border-yellow-400 transition duration-300 ease-in-out " //Div changes
               onMouseEnter={() => toggleFAQ(index)}
+              // onMouseLeave={() => toggleFAQ(index)}
+
             >
               <h2 className="text-2xl font-semibold">{item.question}</h2>
               {activeIndex === index && (

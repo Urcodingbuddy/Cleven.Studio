@@ -42,7 +42,7 @@ export const AppBar = () => {
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Insight’s</a>
-            <CirculerBtn className="bg-[#D9D9D9] mr-3 text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-400 ease-in hover:bg-black hover:text-white">
+            <CirculerBtn className="bg-[#D9D9D9] mr-3 text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-200 ease-in hover:bg-black hover:text-white">
               Join Us
             </CirculerBtn>
           </ul>

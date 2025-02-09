@@ -2,7 +2,6 @@
 
 
 
-
 body {
     overflow: hidden; /* Hide the scrollbar */
   }
@@ -11,6 +10,7 @@ body {
     display: none; /* Hide the scrollbar for WebKit browsers */
   }
 
+
   @layer base {
     :root {
       --background: 0 0% 0%;
@@ -18,6 +18,20 @@ body {
     }
   }
   
+  @keyframes shimmer {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -200% 0;
+    }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+  
+
   @keyframes scroll {
     from {
       transform: translateX(0);

@@ -23,7 +23,7 @@ export const Footer = () => {
 
         {/* Product Links */}
         <div className="space-y-6">
-          <h3 className="text-sm font-semibold tracking-wider">PRODUCT</h3>
+          <h3 className="text-sm font-semibold tracking-wider">SERVICES</h3>
           <ul className="space-y-4">
             {[
               "Website Maintenance & Support",
@@ -46,19 +46,14 @@ export const Footer = () => {
         </div>
 
         {/* Resources Links */}
-        <div className="space-y-6">
-          <h3 className="text-sm font-semibold tracking-wider">RESOURCES</h3>
+        <div className="space-y-4">
+          <h3 className="text-sm font-semibold tracking-wider">SUPPORT</h3>
           <ul className="space-y-4">
             {[
-              'Wix Studio Academy',
-              'Community',
-              'Forum',
-              'Inspiration',
-              'Blog',
-              'Partner Program',
-              'Help Center',
-              'Pricing',
-              'Brand Guidelines'
+              'Help',
+              'Live chat',
+              'Open-A-ticket',
+              'Discord',
             ].map((item) => (
               <li key={item}>
                 <Link 
@@ -74,11 +69,11 @@ export const Footer = () => {
 
         {/* More From Wix & Company Links */}
         <div className="grid grid-cols-1 gap-12">
-          <div className="space-y-6">
-            <h3 className="text-sm font-semibold tracking-wider">MORE FROM WIX</h3>
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold tracking-wider">MORE FROM CLEVEN.STUDIO</h3>
             <ul className="space-y-4">
               {[
-                'Website Builder',
+                'ABOUT US ',
                 'Website Design',
                 'Website Templates',
                 'eCommerce Website',
@@ -98,15 +93,13 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="space-y-6">
-            <h3 className="text-sm font-semibold tracking-wider">COMPANY</h3>
-            <ul className="space-y-4">
+            <h3 className="text-sm font-semibold tracking-wider">LEGAL</h3>
+            <ul className="space-y-2">
               {[
-                'About Wix',
-                'Contact Us',
-                'Press & Media',
-                'Accessibility Statement',
-                'Site Map',
-                'Careers'
+                'Terms & Condition',
+                'Privacy Policy',
+                'Refund Policy',
+                'support@cleven.studio',
               ].map((item) => (
                 <li key={item}>
                   <Link 

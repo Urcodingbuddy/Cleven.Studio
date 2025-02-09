@@ -62,7 +62,7 @@ export const Services = () => {
                 <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
                 <p className="text-gray-400 mb-6">{service.description}</p>
                 
-                <button className="flex items-center text-sm font-medium text-white/70 hover:text-white transition-colors duration-200">
+                <button className="flex items-center text-sm font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                   View  <ArrowRight className="ml-2 w-4 h-4" />
                 </button>
               </div>

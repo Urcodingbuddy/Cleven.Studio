@@ -35,16 +35,20 @@ export const AppBar = () => {
       >
         <div id="navBar" className="flex justify-between items-center px-4 pt-4">
           <div id="cleven_logo">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+           <a href="/">
+           <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+           </a>
           </div>
           <ul id="anchor_links" className="flex items-center gap-14 text-[#D9D9D9]">
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Home</a>
-            <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
+            <a href="" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Insight’s</a>
-            <CirculerBtn className="bg-[#D9D9D9] mr-3 text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-200 ease-in hover:bg-black hover:text-white">
+            <a href="/signup">
+            <CirculerBtn className="bg-[#D9D9D9] mr-3 text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-200 ease-in hover:border-2 border-white hover:text-white hover:bg-transparent " >
               Join Us
             </CirculerBtn>
+          </a>
           </ul>
         </div>
       </nav>

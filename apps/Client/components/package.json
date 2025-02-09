@@ -13,7 +13,9 @@
   "./FAQ" : "./src/FAQ.tsx",
   "./Footer" : "./src/Footer.tsx",
   "./GlowCards":"./src/GlowCards.tsx",
-  "./Services" : "./src/Services.tsx"
+  "./Services" : "./src/Services.tsx",
+  "./Testimonials":"./src/Testimonials.tsx",
+  "./HoverBtn":"./src/HoveBtn.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

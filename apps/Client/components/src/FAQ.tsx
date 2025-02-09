@@ -33,7 +33,7 @@ export function FAQ() {
     <main className="min-h-screen bg-[#0c0c0c] text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold mb-8 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+          <h1 className="text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             FAQ&apos;s
           </h1>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto">
@@ -48,26 +48,28 @@ export function FAQ() {
             return (
               <div
                 key={index}
-                className="group border border-white/10 rounded-2xl overflow-hidden transition-all duration-400 hover:border-white/30"
+                className="group border border-white/10 rounded-2xl overflow-hidden transition-colors duration-500 hover:border-white/30 hover:bg-white/5"
               >
+
+
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
                   <h3 className="text-xl font-semibold pr-8">{faq.question}</h3>
-                  <div className="flex-shrink-0">
+                  <div className="flex-shrink-0 p-2 rounded-full transition-colors duration-300 hover:bg-white/10">
                     {isOpen ? (
                       <ChevronUp className="w-6 h-6 text-white/70 transition-transform duration-300 transform rotate-0" />
                     ) : (
                       <ChevronDown className="w-6 h-6 text-white/70 transition-transform duration-300 transform rotate-0" />
                     )}
                   </div>
+
                 </button>
 
                 <div
-                  className={`overflow-hidden transition-all duration-00 ease-in ${
-                    isOpen ? "max-h-96" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-500 ease-in-out transform ${isOpen ? "max-h-96 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+                    }`}
                 >
                   <div className="p-6 pt-0">
                     <p className="text-gray-400">{faq.answer}</p>

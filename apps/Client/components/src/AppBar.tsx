@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import { CirculerBtn } from "./CirculerBtn";
+import { HoverBtn } from "./HoverBtn";
 export const AppBar = () => {
     const [isHidden, setIsHidden] = useState(false); // Track navbar visibility
     const [lastScrollY, setLastScrollY] = useState(0); // Store last scroll position
@@ -33,7 +34,7 @@ export const AppBar = () => {
             isHidden ? "-translate-y-full" : "translate-y-0"
           }`}
       >
-        <div id="navBar" className="flex justify-between items-center px-4 pt-4">
+        <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
            <a href="/">
            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
@@ -44,11 +45,9 @@ export const AppBar = () => {
             <a href="" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Insight’s</a>
-            <a href="/signup">
-            <CirculerBtn className="bg-[#D9D9D9] mr-3 text-black text-[1rem] cursor-pointer font-semibold w-20 h-8 rounded-3xl transition duration-200 ease-in hover:border-2 border-white hover:text-white hover:bg-transparent " >
-              Join Us
-            </CirculerBtn>
-          </a>
+
+            <HoverBtn/>
+
           </ul>
         </div>
       </nav>

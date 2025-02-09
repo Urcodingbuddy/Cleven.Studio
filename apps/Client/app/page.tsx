@@ -6,6 +6,7 @@ import { SmoothScrollProvider } from "../components/src/SmoothScrollProvider";
 import { FAQ } from "@repo/components/FAQ";
 import { Footer } from "@repo/components/Footer";
 import { Services } from "@repo/components/Services";
+import { Testimonials } from "@repo/components/Testimonials";
 export default function Home() {
 
   return (
@@ -18,6 +19,7 @@ export default function Home() {
     <HeroMessage/>
     <EssentialSection/>
     <Services/>
+    <Testimonials/>
     <FAQ/>
     <Footer/>
     </>

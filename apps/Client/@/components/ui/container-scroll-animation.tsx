@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import { PunchLine } from "@repo/components/PunchLine";
+import { BackgroundBeamsWithCollision } from "./background-beams-with-collision";
 
 export const ContainerScroll = ({
   children,
@@ -35,13 +36,13 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[60rem] md:h-[100rem] flex  justify-center items-start relative"
+      className="h-[60rem] md:h-[100rem] flex justify-center items-start relative"
       ref={containerRef}
     >
       <div
         className="w-full relative"
         style={{
-          perspective: "1000px",
+          perspective: "900px",
         }}
       >
         <PunchLine/>

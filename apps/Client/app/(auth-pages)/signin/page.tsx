@@ -54,7 +54,7 @@ export default function Home() {
               className="w-full bg-[#1c1c1c] hover:bg-[#2c2c2c] text-white font-medium py-3 rounded-xl cursor-pointer transition-colors flex items-center justify-center space-x-2 group"
             >
               Sign In
-              <ArrowRight className=" ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className=" ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform " />
             </button>
           </form>
 

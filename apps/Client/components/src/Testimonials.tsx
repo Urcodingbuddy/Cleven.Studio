@@ -5,7 +5,13 @@ import { InfiniteMovingCards } from "../../@/components/ui/infinite-moving-cards
 
 export function Testimonials() {
     return (
-        <div className="h-[40rem] rounded-md flex flex-col    items-center justify-center relative overflow-hidden">
+        <div className="h-[40rem] rounded-md w-full flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="max-w-7xl flex">
+                
+            <h1 className="text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+            Testimonial&apos;s
+          </h1>
+            </div>
             <div className="absolute pointer-events-none inset-0 items-center justify-center bg-[#0c0c0c] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
             <div className="absolute inset-0  pointer-events-none"></div>
             <InfiniteMovingCards

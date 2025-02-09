@@ -1,6 +1,7 @@
 import { Raleway } from "next/font/google"
 
 const ralewayRegular = Raleway({
+    subsets:["cyrillic"],
     weight:'500'
 })
 

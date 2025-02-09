@@ -36,14 +36,18 @@ export const AppBar = () => {
       >
         <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+           <a href="/">
+           <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+           </a>
           </div>
           <ul id="anchor_links" className="flex items-center gap-14 text-[#D9D9D9]">
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Home</a>
-            <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
+            <a href="" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Services</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-[1.1] transition duration-200 ease-in-out">Insight’s</a>
+
             <HoverBtn/>
+
           </ul>
         </div>
       </nav>

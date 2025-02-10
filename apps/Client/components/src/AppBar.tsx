@@ -30,7 +30,7 @@ export const AppBar = () => {
     
     return (
         <nav
-        className={`fixed top-0 left-0 w-full transition-transform duration-700 ease-in-out backdrop-blur-lg  bg-transparent  shadow-md z-10 ${
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg  bg-transparent  shadow-md ${
             isHidden ? "-translate-y-full" : "translate-y-0"
           }`}
       >

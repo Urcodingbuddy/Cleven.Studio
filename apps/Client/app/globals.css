@@ -4,7 +4,7 @@
 
 body {
     overflow: hidden; /* Hide the scrollbar */
-    user-select: none;
+    /* user-select: none; */
   }
   
   body::-webkit-scrollbar {

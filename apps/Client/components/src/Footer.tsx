@@ -4,21 +4,22 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="bg-[#1B1B1B] text-white py-20">
+    <footer className="bg-white/5 text-white py-20  ">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6">
           <div className="flex items-center space-x-2">
             <div className="w-14">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className=" h-16 object-cover cursor-pointer " />
+              <a href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></a>
             </div>
             <span className="text-xl font-bold">CLEVEN.STUDIO</span>
           </div>
-          <p className="text-gray-300 text-sm leading-relaxed font-medium ">
-          ClevenStudios is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With expert design, seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.
+          <p className="text-gray-300 text-sm leading-relaxed font-medium">
+            ClevenStudios is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With expert design, seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.
           </p>
-          <div className="flex items-center space-x-6 pt-2">
-          </div>
+          {/*add Social media handles here*/ }
+
+          <div className="flex items-center space-x-6 pt-2"></div>
         </div>
 
         {/* Product Links */}
@@ -26,19 +27,16 @@ export const Footer = () => {
           <h3 className="text-sm font-semibold tracking-wider">SERVICES</h3>
           <ul className="space-y-4">
             {[
-              "Website Maintenance & Support",
-              "Website Speed Optimization",
-              "Bug Fixing & Debugging",
-              "Content Update & managment",
-              "Social Media Integration",
-              "Minimum wival product(MVP)"
+              { name: "Website Maintenance & Support", link: "/services#maintenance" },
+              { name: "Website Speed Optimization", link: "/services#speed-optimization" },
+              { name: "Bug Fixing & Debugging", link: "/services#bug-fixing" },
+              { name: "Content Update & Management", link: "/services#content-update" },
+              { name: "Social Media Integration", link: "/services#social-media" },
+              { name: "Minimum Viable Product (MVP)", link: "/services#mvp" },
             ].map((item) => (
-              <li key={item}>
-                <Link 
-                  href="#" 
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  {item}
+              <li key={item.name}>
+                <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  {item.name}
                 </Link>
               </li>
             ))}
@@ -50,43 +48,37 @@ export const Footer = () => {
           <h3 className="text-sm font-semibold tracking-wider">SUPPORT</h3>
           <ul className="space-y-4">
             {[
-              'Help',
-              'Live chat',
-              'Open-A-ticket',
-              'Discord',
+              { name: 'Help', link: '/support#help' },
+              { name: 'Live Chat', link: '/support#live-chat' },
+              { name: 'Open a Ticket', link: '/support#ticket' },
+              { name: 'Discord', link: 'https://discord.gg/PsH86NfA' },
             ].map((item) => (
-              <li key={item}>
-                <Link 
-                  href="#" 
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
-                >
-                  {item}
+              <li key={item.name}>
+                <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  {item.name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* More From Wix & Company Links */}
+        {/* More From Cleven.Studio & Company Links */}
         <div className="grid grid-cols-1 gap-12">
           <div className="space-y-4">
             <h3 className="text-sm font-semibold tracking-wider">MORE FROM CLEVEN.STUDIO</h3>
             <ul className="space-y-4">
               {[
-                'ABOUT US ',
-                'Website Design',
-                'Website Templates',
-                'eCommerce Website',
-                'Appointment Scheduling',
-                'Portfolio Website',
-                'Blog Website'
+                { name: 'About Us', link: '/about' },
+                { name: 'Website Design', link: '/services#website-design' },
+                { name: 'Website Templates', link: '/services#templates' },
+                { name: 'eCommerce Website', link: '/services#ecommerce' },
+                { name: 'Appointment Scheduling', link: '/services#scheduling' },
+                { name: 'Portfolio Website', link: '/services#portfolio' },
+                { name: 'Blog Website', link: '/services#blog' },
               ].map((item) => (
-                <li key={item}>
-                  <Link 
-                    href="#" 
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {item}
+                <li key={item.name}>
+                  <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}
@@ -96,17 +88,14 @@ export const Footer = () => {
             <h3 className="text-sm font-semibold tracking-wider">LEGAL</h3>
             <ul className="space-y-2">
               {[
-                'Terms & Condition',
-                'Privacy Policy',
-                'Refund Policy',
-                'support@cleven.studio',
+                { name: 'Terms & Conditions', link: '/legal#terms' },
+                { name: 'Privacy Policy', link: '/legal#privacy' },
+                { name: 'Refund Policy', link: '/legal#refund' },
+                { name: 'support@cleven.studio', link: 'mailto:support@cleven.studio' },
               ].map((item) => (
-                <li key={item}>
-                  <Link 
-                    href="#" 
-                    className="text-sm text-gray-400 hover:text-white transition-colors"
-                  >
-                    {item}
+                <li key={item.name}>
+                  <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {item.name}
                   </Link>
                 </li>
               ))}

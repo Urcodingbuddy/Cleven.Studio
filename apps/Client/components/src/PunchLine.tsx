@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const PunchLine = () => {
     return (
-        <div className="pt-16 sm:pt-24 md:pt-32 lg:pt-40 flex flex-col items-center justify-center w-[90vw] mx-auto relative">
+        <div className="pt-32 sm:pt-24 md:pt-32 lg:pt-40 flex flex-col items-center justify-center w-[90vw] mx-auto relative">
             <h1 className="text-4xl sm:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8 mb-10 text-center max-w-6xl">
                 Unleashing the Power of Performance <br /> to Make Your Website Invincible.
             </h1>

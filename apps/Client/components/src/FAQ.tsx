@@ -32,7 +32,7 @@ export function FAQ() {
   return (
     <main className="min-h-screen bg-[#0c0c0c] text-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h1 className="text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
           Frequently Asked Questions&apos;s
           </h1>
@@ -54,7 +54,7 @@ export function FAQ() {
 
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between p-6 text-left"
+                  className="w-full flex items-center justify-between py-4 px-6 text-left"
                 >
                   <h3 className="text-xl font-semibold pr-8">{faq.question}</h3>
                   <div className="flex-shrink-0 p-2 rounded-full transition-colors duration-300 hover:bg-white/10">

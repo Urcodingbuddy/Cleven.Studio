@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="bg-white/5 text-white py-20  ">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-white/5 text-white py-20">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
-        <div className="space-y-6">
+        <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center space-x-2">
             <div className="w-14">
               <a href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></a>
@@ -18,12 +18,11 @@ export const Footer = () => {
             ClevenStudios is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With expert design, seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.
           </p>
           {/*add Social media handles here*/ }
-
           <div className="flex items-center space-x-6 pt-2"></div>
         </div>
 
         {/* Product Links */}
-        <div className="space-y-6">
+        <div className="space-y-6 mt-5">
           <h3 className="text-sm font-semibold tracking-wider">SERVICES</h3>
           <ul className="space-y-4">
             {[
@@ -44,7 +43,7 @@ export const Footer = () => {
         </div>
 
         {/* Resources Links */}
-        <div className="space-y-4">
+        <div className="space-y-4 mt-5">
           <h3 className="text-sm font-semibold tracking-wider">SUPPORT</h3>
           <ul className="space-y-4">
             {[
@@ -63,7 +62,7 @@ export const Footer = () => {
         </div>
 
         {/* More From Cleven.Studio & Company Links */}
-        <div className="grid grid-cols-1 gap-12">
+        <div className="space-y-8 sm:space-y-12 mt-5">
           <div className="space-y-4">
             <h3 className="text-sm font-semibold tracking-wider">MORE FROM CLEVEN.STUDIO</h3>
             <ul className="space-y-4">
@@ -84,9 +83,9 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4">
             <h3 className="text-sm font-semibold tracking-wider">LEGAL</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {[
                 { name: 'Terms & Conditions', link: '/legal#terms' },
                 { name: 'Privacy Policy', link: '/legal#privacy' },
@@ -106,3 +105,5 @@ export const Footer = () => {
     </footer>
   );
 };
+
+export default Footer;

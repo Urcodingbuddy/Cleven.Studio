@@ -8,7 +8,7 @@ export function Testimonials() {
         <div className="rounded-md w-full flex flex-col my-32  items-center justify-center relative overflow-hidden">
             <div className="max-w-7xl flex">
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl z-2 font-bold mb-26 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl  z-2 font-bold mb-26 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
                     Testimonial&apos;s
                 </h1>
             </div>

@@ -33,7 +33,7 @@ export function FAQ() {
     <main className="min-h-screen bg-[#0c0c0c] text-white">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-12 sm:py-24">
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             Frequently Asked Questions&apos;s
           </h1>
           <p className="text-gray-400 text-base sm:text-xl max-w-2xl mx-auto px-2 sm:px-0">

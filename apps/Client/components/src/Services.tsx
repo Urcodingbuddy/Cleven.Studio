@@ -35,10 +35,10 @@ const services = [
 
 export const Services = () => {
   return (
-    <main className="bg-[#0c0c0c] text-white mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div className="mb-20">
-          <h1 className="text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+    <main className="bg-[#0c0c0c] text-white mt-32">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto w-full">
+        <div className="mb-20 px-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             Services
           </h1>
           <p className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 text-[1.1rem]  mx-auto">

@@ -6,7 +6,7 @@ import type React from "react" // Import React
 
 export function GlowCards() {
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto py-4">
       <ul className="grid grid-cols-1 gap-4 md:grid-cols-12 md:grid-rows-[repeat(3,minmax(200px,1fr))] lg:gap-6">
         {/* Top row */}
         <GridItem
@@ -62,7 +62,7 @@ const GridItem = ({ icon, title, description, className }: GridItemProps) => {
         <GlowingEffect spread={60} glow={true} disabled={false} proximity={100} inactiveZone={0.01} />
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-2xl border-neutral-800 p-6 transition-all duration-300">
           <div className="relative flex flex-1 flex-col justify-between gap-4">
-            <div className="w-fit rounded-xl border border-neutral-800 bg-neutral-900/50 p-3">{icon}</div>
+            <div className="w-fit rounded-xl border border-neutral-800 text-white bg-neutral-900/50 p-3">{icon}</div>
             <div className="space-y-4">
               <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">{title}</h3>
               <p className="text-sm text-neutral-400 md:text-base">{description}</p>

@@ -2,18 +2,28 @@ import { BackgroundBeamsWithCollision } from "../../@/components/ui/background-b
 import { ArrowDown } from "lucide-react";
 import { SmoothScrollProvider } from "../../components/src/SmoothScrollProvider";
 import useLenis from "../../lib/hooks/useLenis";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 export const PunchLine = () => {
+  
+  //Lenis for getting scroll down
   const lenis = useLenis(); // ✅ Now it returns Lenis | null
-
   const handleScroll = () => {
     if (lenis) {
       lenis.scrollTo("#heroMessage_head", {
-        duration: 1.5,
+        duration: 2.5,
         easing: (t: number) => 1 - Math.pow(1 - t, 3),
       });
     }
   };
+
+  //Gsap for punchLine
+
+
+
 
   return (
     <>

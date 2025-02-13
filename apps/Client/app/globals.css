@@ -42,6 +42,10 @@ body {
       transform: translateX(-50%);
     }
   }
+
+  .hover\:\[animation-play-state\:paused\]:hover {
+    animation-play-state: paused;
+  }
   
   .animate-scroll {
     animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);

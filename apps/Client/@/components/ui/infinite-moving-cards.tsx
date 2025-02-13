@@ -3,7 +3,6 @@
 import { cn } from "../../lib/utils";
 import React, { useEffect, useState } from "react";
 
-
 export const InfiniteMovingCards = ({
   items,
   direction = "left",
@@ -27,7 +26,9 @@ export const InfiniteMovingCards = ({
   useEffect(() => {
     addAnimation();
   }, []);
+  
   const [start, setStart] = useState(false);
+  
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -44,6 +45,7 @@ export const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+  
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -59,17 +61,19 @@ export const InfiniteMovingCards = ({
       }
     }
   };
+  
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
-        containerRef.current.style.setProperty("--animation-duration", "20s");
+        containerRef.current.style.setProperty("--animation-duration", "10s");
       } else if (speed === "normal") {
-        containerRef.current.style.setProperty("--animation-duration", "40s");
+        containerRef.current.style.setProperty("--animation-duration", "20s");
       } else {
-        containerRef.current.style.setProperty("--animation-duration", "80s");
+        containerRef.current.style.setProperty("--animation-duration", "30s");
       }
     }
   };
+  
   return (
     <div
       ref={containerRef}
@@ -88,18 +92,18 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[280px] sm:w-[320px] md:w-[350px] flex-shrink-0 px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 backdrop-blur-xl bg-white/5 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 hover:border-white/30 transition-all duration-300"
+            className="w-[280px] sm:w-[320px] md:w-[350px] h-[200px] sm:h-[220px] md:h-[240px] flex-shrink-0 px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 backdrop-blur-xl bg-white/5 rounded-2xl sm:rounded-3xl shadow-2xl border border-white/10 hover:border-white/100 transition-all duration-300"
             key={item.name}
           >
-            <blockquote>
+            <blockquote className="h-full flex flex-col justify-between">
               <div
                 aria-hidden="true"
                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
               ></div>
-              <span className="relative z-20 text-sm sm:text-base leading-[1.6] text-white font-normal line-clamp-4 sm:line-clamp-none">
+              <span className="relative z-20 text-[0.8rem] leading-[1.6] text-white font-normal line-clamp-4">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-4 sm:mt-6 flex flex-row items-center">
+              <div className="relative z-20 mt-auto flex flex-row items-center">
                 <span className="flex flex-col gap-0.5 sm:gap-1">
                   <span className="text-sm sm:text-base leading-[1.6] text-gray-300 font-medium">
                     {item.name}
@@ -115,6 +119,4 @@ export const InfiniteMovingCards = ({
       </ul>
     </div>
   );
-};
-
-export default InfiniteMovingCards
+}

@@ -7,6 +7,7 @@ import { FAQ } from "@repo/components/FAQ";
 import { Footer } from "@repo/components/Footer";
 import { Services } from "@repo/components/Services";
 import { Testimonials } from "@repo/components/Testimonials";
+import { TextHoverEffect } from "../@/components/ui/text-hover-effect";
 export default function Home() {
 
   return (
@@ -21,6 +22,7 @@ export default function Home() {
     <Services/>
     <Testimonials/>
     <FAQ/>
+    <TextHoverEffect text="CLEVEN" />
     <Footer/>
     </>
   );

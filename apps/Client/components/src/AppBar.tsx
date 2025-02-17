@@ -59,7 +59,7 @@ export const AppBar = () => {
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Insight's</a>
 
             <a href="/signup">
-              <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+              <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
                 Join Us
               </CirculerBtn>
             </a>
@@ -98,7 +98,7 @@ export const AppBar = () => {
 
       {/* Sidebar - Hidden on md and larger screens */}
       <div
-        className={`md:hidden fixed top-[80px] right-0 left-auto h-[calc(100vh-80px)] border-t w-full backdrop-blur-3xl text-white transition-transform ${
+        className={`md:hidden fixed  top-[80px] right-0 left-auto h-[calc(100vh-80px)] border-t w-full backdrop-blur-3xl text-white transition-transform ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } duration-300 z-50 shadow-lg`}
       >
@@ -109,7 +109,7 @@ export const AppBar = () => {
           <a href="#" className="hover:scale-110 border-b h-10 text-center transition duration-200" onClick={() => setIsSidebarOpen(false)}>Insight's</a>
 
           <a href="/signup">
-            <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+            <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
               Join Us
             </CirculerBtn>
           </a>

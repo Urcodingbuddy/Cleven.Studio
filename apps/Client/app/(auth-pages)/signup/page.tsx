@@ -17,12 +17,12 @@ export default function Home() {
       <div className="w-full max-w-md space-y-8 relative">
         {/* Glass card */}
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl border border-white/10">
-        {/* Logo */}
-        <div className="flex justify-center mb-2">
+          {/* Logo */}
+          <div className="flex justify-center mb-2">
             <div className="relative">
-            <a href="/">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
-            </a>
+              <a href="/">
+                <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+              </a>
               <div className="absolute inset-0 flex items-center justify-center">
               </div>
             </div>
@@ -31,14 +31,14 @@ export default function Home() {
           <div className="text-center space-y-2 mb-1">
             <h1 className="text-2xl font-semibold text-white"></h1>
             <p className="text-xl font-semibold text-white">
-            Orchestrating Solutions Beyond the Obvious!{" "}</p>
+              Orchestrating Solutions Beyond the Obvious!{" "}</p>
           </div>
 
 
           <div className="text-center space-y-2 mb-5">
             <h1 className="text-2xl font-semibold text-white"></h1>
             <p className="text-gray-300 text-sm">
-            Already have account{" "}
+              Already have account{" "}
               <a href="/signin" className="text-white underline hover:text-gray-200">
                 Sign in
               </a>
@@ -65,19 +65,19 @@ export default function Home() {
                 />
               </div>
             </div>
-            
+
             <input
               type="email"
               placeholder="Email Address*"
               className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
             />
-            
+
             <input
               type="password"
               placeholder="Password*"
               className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
             />
-            
+
             <input
               type="password"
               placeholder="Confirm password*"
@@ -95,7 +95,9 @@ export default function Home() {
 
           <div className="relative my-8">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10"></div>
+              <div className="w-1/2 border-t border-white/10"></div>
+              <span className="px-2  text-gray-400">OR</span>
+              <div className="w-1/2 border-t border-white/10"></div>
             </div>
             <div className="relative flex justify-center text-sm">
             </div>
@@ -103,7 +105,7 @@ export default function Home() {
 
 
           {/* Social Logins */}
-          <div className="space-y-3 mt-8">  
+          <div className="space-y-3 mt-8">
             <button
               type="button"
               className="w-full flex justify-center cursor-pointer items-center px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white hover:bg-[#2c2c2c] transition-colors"
@@ -115,7 +117,7 @@ export default function Home() {
               />
               <span> Continue with Google</span>
             </button>
-            
+
           </div>
         </div>
       </div>

@@ -3,6 +3,8 @@ import InputBox from "@repo/ui/inputBox"
 import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -17,7 +19,7 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <div className="relative">
               <a href="/">
-                <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+                <Image src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
               </a>
               <div className="absolute inset-0 flex items-center justify-center">
               </div>
@@ -26,17 +28,17 @@ export default function Home() {
 
           <div className="text-center space-y-2 mb-8">
             <h1 className="text-2xl font-semibold text-white">Yoo, Welcome back!</h1>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm">
               First time here?{" "}
-              <a href="/signup" className="text-white underline hover:text-gray-200">
+              <Link href="/signup" className="text-white underline hover:text-gray-200">
                 Sign up
-              </a>
+              </Link>
             </p>
           </div>
 
           <form className="space-y-4">
             <InputBox
-              placeholder={"email*"}
+              placeholder={"Email Address*"}
               type={"email"}
               onChange={function (value: string): void {
                 throw new Error("Function not implemented.");
@@ -45,7 +47,7 @@ export default function Home() {
             </InputBox>
 
             <InputBox
-              placeholder={"password*"}
+              placeholder={"Password*"}
               type={"password"}
               onChange={function (value: string): void {
                 throw new Error("Function not implemented.");
@@ -73,6 +75,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Social Logins */}
           <GoogleBtn />
         </div>
       </div>

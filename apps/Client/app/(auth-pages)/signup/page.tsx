@@ -1,17 +1,16 @@
 "use client";
-
+import InputBox from "@repo/ui/inputBox"
 import { ArrowRight } from "lucide-react";
+import { GoogleBtn } from "@repo/ui/googleBtn";
+import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
       {/* Animated gradient background */}
-      <div className="fixed inset-0 bg-black">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-b-lg bg-white blur-[100px]  "></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-b-lg bg-white blur-[100px]"></div>
-        </div>
-      </div>
+      <AnimatedGradientBackgroud/>
+
 
       {/* Content */}
       <div className="w-full max-w-md space-y-8 relative">
@@ -21,7 +20,7 @@ export default function Home() {
           <div className="flex justify-center mb-2">
             <div className="relative">
               <a href="/">
-                <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+                <Image src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
               </a>
               <div className="absolute inset-0 flex items-center justify-center">
               </div>
@@ -37,7 +36,7 @@ export default function Home() {
 
           <div className="text-center space-y-2 mb-5">
             <h1 className="text-2xl font-semibold text-white"></h1>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-400 text-sm">
               Already have account{" "}
               <a href="/signin" className="text-white underline hover:text-gray-200">
                 Sign in
@@ -50,40 +49,49 @@ export default function Home() {
           {/* Form */}
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
-              <div>
-                <input
-                  type="text"
-                  placeholder="First name*"
-                  className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
-                />
-              </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="Last name*"
-                  className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
-                />
-              </div>
+              <InputBox
+              placeholder={"Fisrt name*"}
+              type={"text"}
+              onChange={function (value: string): void {
+                throw new Error("Function not implemented.");
+              }}
+              />
+              
+              <InputBox
+              placeholder={"Last name*"}
+              type={"text"}
+              onChange={function (value: string): void {
+                throw new Error("Function not implemented.");
+              }}
+              />
             </div>
 
-            <input
-              type="email"
-              placeholder="Email Address*"
-              className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
-            />
 
-            <input
-              type="password"
-              placeholder="Password*"
-              className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
-            />
+            <InputBox
+              placeholder={"Email Address*"}
+              type={"email"}
+              onChange={function (value: string): void {
+                throw new Error("Function not implemented.");
+              }}
+              />  
+            
+            <InputBox
+              placeholder={"Password*"}
+              type={"Password"}
+              onChange={function (value: string): void {
+                throw new Error("Function not implemented.");
+              }}
+            />  
+            
+            <InputBox
+              placeholder={"Confirm Password*"}
+              type={"Password"}
+              onChange={function (value: string): void {
+                throw new Error("Function not implemented.");
+              }}
+            />  
 
-            <input
-              type="password"
-              placeholder="Confirm password*"
-              className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
-            />
-
+            
             <button
               type="submit"
               className="w-full bg-[#1c1c1c] hover:bg-[#2c2c2c] text-white font-medium py-3 rounded-xl cursor-pointer transition-colors flex items-center justify-center space-x-2 group"
@@ -105,20 +113,7 @@ export default function Home() {
 
 
           {/* Social Logins */}
-          <div className="space-y-3 mt-8">
-            <button
-              type="button"
-              className="w-full flex justify-center cursor-pointer items-center px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white hover:bg-[#2c2c2c] transition-colors"
-            >
-              <img
-                src="https://www.google.com/favicon.ico"
-                alt="Google"
-                className="w-5 h-5 mr-3"
-              />
-              <span> Continue with Google</span>
-            </button>
-
-          </div>
+          <GoogleBtn />
         </div>
       </div>
     </main>

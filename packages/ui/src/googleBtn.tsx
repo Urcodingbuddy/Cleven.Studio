@@ -1,5 +1,5 @@
 import { signIn } from "next-auth/react"
-import Image from "next/image";
+
 
 export const GoogleBtn = () =>{
     return(
@@ -8,7 +8,7 @@ export const GoogleBtn = () =>{
             onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
             className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl cursor-pointer backdrop-blur-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
           >
-            <Image
+            <img
               src="https://www.google.com/favicon.ico"
               alt="Google"
               className="w-5 h-5"

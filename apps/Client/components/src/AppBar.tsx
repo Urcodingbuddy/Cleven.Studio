@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { CirculerBtn } from "./CirculerBtn";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+
 
 export const AppBar = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -48,7 +48,7 @@ export const AppBar = () => {
         <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
             <a href="/">
-              <Image src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+              <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
             </a>
           </div>
 

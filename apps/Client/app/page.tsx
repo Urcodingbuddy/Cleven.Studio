@@ -8,7 +8,6 @@ import { Footer } from "@repo/components/Footer";
 import { Services } from "@repo/components/Services";
 import { Testimonials } from "@repo/components/Testimonials";
 import { TextHoverEffect } from "../@/components/ui/text-hover-effect";
-import Image from "next/image";
 export default function Home() {
 
   return (
@@ -16,7 +15,7 @@ export default function Home() {
     <SmoothScrollProvider/>
     <AppBar/>
     <ContainerScroll>
-    <Image src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75" alt="" />
+    <img src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75" alt="" />
     </ContainerScroll>
     <HeroMessage/>
     <EssentialSection/>

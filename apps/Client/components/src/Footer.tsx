@@ -1,6 +1,4 @@
 'use client';
-
-import Image from 'next/image';
 import Link from 'next/link';
 
 export const Footer = () => {
@@ -12,7 +10,7 @@ export const Footer = () => {
         <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center space-x-2">
             <div className="w-14">
-              <Link href="/"><Image src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></Link>
+              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></Link>
             </div>
             <span className="text-xl font-bold">CLEVEN.STUDIO</span>
           </div>

@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
 import Link from "next/link";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
           <div className="flex justify-center mb-8">
             <div className="relative">
               <a href="/">
-                <Image src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+                <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
               </a>
               <div className="absolute inset-0 flex items-center justify-center">
               </div>

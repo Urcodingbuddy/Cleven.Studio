@@ -17,7 +17,7 @@ export default function InputBox({
             placeholder={placeholder}
             onChange={(e) => onChange(e.target.value)} // Pass the event directly
             onInput={onInput}
-            className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-gray-400  focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 rounded-xl bg-[#1c1c1c] border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-white/10 focus:border-transparent transition-all"
         />
     )
 }

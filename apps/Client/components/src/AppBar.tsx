@@ -109,7 +109,7 @@ export const AppBar = () => {
           <a href="#" className="hover:scale-110 border-b h-10 text-center transition duration-200" onClick={() => setIsSidebarOpen(false)}>Insight's</a>
 
           <a href="/signup">
-            <CirculerBtn className="inline-flex h-10 w-26 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+            <CirculerBtn className="inline-flex h-10 w-26 cursor-pointer animate-shimmer items-center justify-center rounded-full border-8 border-white bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
               Join Us
             </CirculerBtn>
           </a>

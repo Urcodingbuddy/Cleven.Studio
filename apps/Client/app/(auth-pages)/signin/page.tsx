@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
 import Link from "next/link";
+import { GithubBtn } from "@repo/ui/githubBtn";
 
 
 export default function Signin() {
@@ -83,7 +84,9 @@ export default function Signin() {
           </div>
 
           {/* Social Logins */}
-          <GoogleBtn />
+          <div className="grid grid-cols-2 gap-4">
+          <GoogleBtn /><GithubBtn/>
+          </div>
         </div>
       </div>
     </main>

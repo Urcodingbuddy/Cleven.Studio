@@ -5,9 +5,9 @@ export default function Layout({
 }: {children: React.ReactNode;}) {
     return (
         <div className="flex relative">
-            <div className="border-r border-r-[#A704BF] min-h-full z-10">
+            <div className="min-h-full z-10">
                 <div>
-                    hy
+                    hy I am Sidebar
                 </div>
             </div>
 

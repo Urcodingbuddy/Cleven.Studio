@@ -6,16 +6,18 @@ import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
 import Link from "next/link";
 
 
-export default function Home() {
+export default function Signin() {
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
       {/* Animated gradient background */}
-      <AnimatedGradientBackgroud/>
+      <div className="fixed inset-0 bg-black">
+        <AnimatedGradientBackgroud />
+      </div>
 
       <div className="w-full max-w-md space-y-8 relative">
         <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl border border-white/10">
           {/* Logo */}
-          
+
           <div className="flex justify-center mb-8">
             <div className="relative">
               <a href="/">

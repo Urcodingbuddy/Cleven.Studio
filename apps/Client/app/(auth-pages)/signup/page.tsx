@@ -3,13 +3,15 @@ import InputBox from "@repo/ui/inputBox"
 import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
       {/* Animated gradient background */}
-      <AnimatedGradientBackgroud/>
-
+      <div className="fixed inset-0 bg-black">
+        <AnimatedGradientBackgroud />
+      </div>
 
       {/* Content */}
       <div className="w-full max-w-md space-y-8 relative">
@@ -37,9 +39,9 @@ export default function Home() {
             <h1 className="text-2xl font-semibold text-white"></h1>
             <p className="text-gray-400 text-sm">
               Already have account{" "}
-              <a href="/signin" className="text-white underline hover:text-gray-200">
+              <Link href="/signin" className="text-white underline hover:text-gray-200">
                 Sign in
-              </a>
+              </Link>
             </p>
           </div>
 
@@ -49,19 +51,19 @@ export default function Home() {
           <form className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
               <InputBox
-              placeholder={"Fisrt name*"}
-              type={"text"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+                placeholder={"Fisrt name*"}
+                type={"text"}
+                onChange={function (value: string): void {
+                  throw new Error("Function not implemented.");
+                }}
               />
-              
+
               <InputBox
-              placeholder={"Last name*"}
-              type={"text"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+                placeholder={"Last name*"}
+                type={"text"}
+                onChange={function (value: string): void {
+                  throw new Error("Function not implemented.");
+                }}
               />
             </div>
 
@@ -72,25 +74,25 @@ export default function Home() {
               onChange={function (value: string): void {
                 throw new Error("Function not implemented.");
               }}
-              />  
-            
+            />
+
             <InputBox
               placeholder={"Password*"}
               type={"Password"}
               onChange={function (value: string): void {
                 throw new Error("Function not implemented.");
               }}
-            />  
-            
+            />
+
             <InputBox
               placeholder={"Confirm Password*"}
               type={"Password"}
               onChange={function (value: string): void {
                 throw new Error("Function not implemented.");
               }}
-            />  
+            />
 
-            
+
             <button
               type="submit"
               className="w-full bg-[#1c1c1c] hover:bg-[#2c2c2c] text-white font-medium py-3 rounded-xl cursor-pointer transition-colors flex items-center justify-center space-x-2 group"

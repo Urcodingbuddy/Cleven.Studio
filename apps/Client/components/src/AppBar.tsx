@@ -50,7 +50,7 @@ export const AppBar = () => {
         <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
             <Link href="/">
-            <Image src="/cleven-logo.svg" alt="cleven.studio" width={80} height={64} priority />
+            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
             </Link>
           </div>
 

@@ -1,17 +1,16 @@
 'use client';
-
 import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="bg-white/5 h-screen flex items-center text-white py-20">
+    <footer className="bg-white/5 h-full lg:h-[100vh] flex items-center text-white py-20">
       
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center space-x-2">
             <div className="w-14">
-              <a href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></a>
+              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></Link>
             </div>
             <span className="text-xl font-bold">CLEVEN.STUDIO</span>
           </div>

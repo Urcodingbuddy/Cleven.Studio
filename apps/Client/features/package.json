@@ -1,0 +1,22 @@
+{
+    "name": "@repo/features",
+      "version": "1.0.0",
+      "type": "module",
+      "private": true,
+     "exports": {
+      
+      },
+      "scripts": {
+        "lint": "eslint . --max-warnings 0",
+        "generate:component": "turbo gen react-component",
+        "check-types": "tsc --noEmit"
+      },
+      "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+      },
+        "devDependencies": {
+          "typescript": "^5.3.3"
+        }
+      }
+    

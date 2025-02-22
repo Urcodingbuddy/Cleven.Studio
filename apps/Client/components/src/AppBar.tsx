@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import { CirculerBtn } from "./CirculerBtn";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+
 
 export const AppBar = () => {
   const [isHidden, setIsHidden] = useState(false);
@@ -46,9 +49,9 @@ export const AppBar = () => {
       <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg bg-transparent shadow-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}>
         <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
-            <a href="/">
-              <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
-            </a>
+            <Link href="/">
+            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -58,11 +61,11 @@ export const AppBar = () => {
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Insight's</a>
 
-            <a href="/signup">
-              <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+            <Link href="/signup">
+              <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
                 Join Us
               </CirculerBtn>
-            </a>
+            </Link>
           </ul>
 
           {/* Mobile Menu Button with Animation */}
@@ -98,7 +101,7 @@ export const AppBar = () => {
 
       {/* Sidebar - Hidden on md and larger screens */}
       <div
-        className={`md:hidden fixed top-[80px] right-0 left-auto h-[calc(100vh-80px)] border-t w-full backdrop-blur-3xl text-white transition-transform ${
+        className={`md:hidden fixed  top-[80px] right-0 left-auto h-[calc(100vh-80px)] border-t w-full backdrop-blur-3xl text-white transition-transform ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         } duration-300 z-50 shadow-lg`}
       >
@@ -109,7 +112,7 @@ export const AppBar = () => {
           <a href="#" className="hover:scale-110 border-b h-10 text-center transition duration-200" onClick={() => setIsSidebarOpen(false)}>Insight's</a>
 
           <a href="/signup">
-            <CirculerBtn className="inline-flex h-10 w-26 cursor-pointer animate-shimmer items-center justify-center rounded-full border-8 border-white bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+            <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
               Join Us
             </CirculerBtn>
           </a>

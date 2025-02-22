@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { CirculerBtn } from "./CirculerBtn";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
 
 
 export const AppBar = () => {
@@ -47,9 +49,9 @@ export const AppBar = () => {
       <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg bg-transparent shadow-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}>
         <div id="navBar" className="flex justify-between items-center px-4 p-2">
           <div id="cleven_logo">
-            <a href="/">
-              <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
-            </a>
+            <Link href="/">
+            <Image src="/cleven-logo.svg" alt="cleven.studio" width={80} height={64} priority />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -59,11 +61,11 @@ export const AppBar = () => {
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Insight's</a>
 
-            <a href="/signup">
+            <Link href="/signup">
               <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
                 Join Us
               </CirculerBtn>
-            </a>
+            </Link>
           </ul>
 
           {/* Mobile Menu Button with Animation */}

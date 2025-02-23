@@ -5,7 +5,7 @@ export const GithubBtn = () => {
     return (
         <button
             type="button"
-            onClick={() => signIn('google', { callbackUrl: '/dashboard' })}
+            onClick={() => signIn('github', { callbackUrl: '/workspace' })}
             className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-xl cursor-pointer backdrop-blur-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
         >
              <svg  fill="white" aria-hidden="true" viewBox="0 0 24 24" version="1.1" data-view-component="true"   className="octicon w-5 h-5 octicon-mark-github v-align-middle">

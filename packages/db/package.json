@@ -4,6 +4,9 @@
   "dependencies": {
     "@prisma/client": "^6.4.1"
   },
+  "scripts": {
+    "postinstall": "prisma generate"
+  },
   "devDependencies": {
     "prisma": "^6.4.1"
   },

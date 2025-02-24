@@ -8,6 +8,7 @@
     "./code": "./src/code.tsx",
     "./inputBox":"./src/inputBox.tsx",
     "./googleBtn":"./src/googleBtn.tsx",
+    "./githubBtn":"./src/githubBtn.tsx",
     "./gradientBg":"./src/gradientBg.tsx"
   },
   "scripts": {

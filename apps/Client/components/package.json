@@ -15,7 +15,8 @@
   "./GlowCards":"./src/GlowCards.tsx",
   "./Services" : "./src/Services.tsx",
   "./Testimonials":"./src/Testimonials.tsx",
-  "./HoverBtn":"./src/HoveBtn.tsx"
+  "./HoverBtn":"./src/HoveBtn.tsx",
+  "./ClevenLoader" : "./src/ClevenLoader.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

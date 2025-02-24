@@ -6,9 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "db:generate": "cd packages/db && npx prisma generate && cd ../..",
-    "vercel-build": "npx prisma generate && turbo build"
-    
+    "db:generate": "cd packages/db && npx prisma generate && cd ../.."
+
   },
   "devDependencies": {
     "prettier": "^3.4.2",

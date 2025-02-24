@@ -7,7 +7,6 @@
   "scripts": {
     "postinstall": "prisma generate"
   },
-  
   "devDependencies": {
     "prisma": "^6.4.1"
   },

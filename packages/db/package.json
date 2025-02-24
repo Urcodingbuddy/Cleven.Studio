@@ -7,7 +7,7 @@
   },
   "scripts": {
     "postinstall": "npx prisma generate",
-     "vercel-build": "npx prisma generate && cd ../.. && turbo build"
+     "vercel-build": "npx prisma generate && turbo build"
   },
   "devDependencies": {
     "prisma": "^6.4.1"

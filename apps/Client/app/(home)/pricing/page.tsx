@@ -45,8 +45,8 @@ export default function Home() {
       name: "Premium",
       price: isYearly ? "$1069" : "$99",
       features: [
-        "Weekly Website Health Check",
-        "Weekly Website Health Check",
+        "Bi-Weekly Website Health Check",
+        "Backup Services",
         "Content Updates",
         "Support",
         "Advanced Bug Fixing & Debugging",
@@ -62,7 +62,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen w-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet-900 via-black to-black text-white">
+    <div className="min-h-screen w-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-black to-black text-white">
       {/* Navigation */}
       <AppBar />
       <main className="pt-32 pb-16 px-4">
@@ -71,7 +71,7 @@ export default function Home() {
           <h1 className="text-[150px] font-bold leading-none text-transparent bg-gradient-to-b from-gray-300 to-gray-600 bg-clip-text tracking-tighter">
             Pricing
           </h1>
-          <p className="mt-6 text-lg text-violet-200">
+          <p className="mt-6 text-lg text-white/65">
             Choose the perfect plan for your needs
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
           </span>
           <button
             onClick={() => setIsYearly(!isYearly)}
-            className="relative inline-flex h-7 w-12 items-center rounded-full bg-violet-900/50 transition-colors hover:bg-violet-900/70"
+            className="relative inline-flex h-7 w-12 items-center rounded-full bg-white/30 transition-colors hover:bg-white/50"
           >
             <span
               className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out ${
@@ -97,7 +97,7 @@ export default function Home() {
             className={`text-sm font-medium ${isYearly ? "text-white" : "text-gray-400"}`}
           >
             Yearly
-            <span className="ml-2 text-xs text-violet-400">
+            <span className="ml-2 text-xs text-white">
               (Save up to 10%)
             </span>
           </span>
@@ -110,13 +110,13 @@ export default function Home() {
               key={index}
               className={`relative rounded-2xl ${
                 plan.popular
-                  ? "bg-gradient-to-b from-violet-900/50 to-black border-violet-500/50"
+                  ? "bg-gradient-to-b from-white/15 to-black border-white/50"
                   : "bg-white/5 border-white/10"
-              } backdrop-blur-xl border p-8 overflow-hidden group hover:border-violet-500/50 transition-all duration-300 hover:scale-105`}
+              } backdrop-blur-xl border p-8 overflow-hidden group hover:border-white/50 transition-all duration-300 hover:scale-105`}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-violet-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-white/5 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
                   BEST VALUE
                 </div>
@@ -125,7 +125,7 @@ export default function Home() {
               {/* Gradient Orb */}
               <div
                 className={`absolute -top-20 -right-20 w-40 h-40 rounded-full blur-3xl transition-opacity duration-300 ${
-                  plan.popular ? "bg-violet-500/30" : "bg-white/10"
+                  plan.popular ? "bg-white/25" : "bg-white/10"
                 } group-hover:opacity-75`}
               />
 
@@ -140,7 +140,7 @@ export default function Home() {
                   )}
                 </div>
                 {plan.savings && (
-                  <div className="text-sm text-violet-400 mb-6">
+                  <div className="text-sm text-white   mb-6">
                     {plan.savings}
                   </div>
                 )}
@@ -152,7 +152,7 @@ export default function Home() {
                       className="flex items-start gap-3 text-sm text-gray-300"
                     >
                       <Check
-                        className={`w-5 h-5 shrink-0 ${plan.popular ? "text-violet-400" : "text-white"}`}
+                        className={`w-5 h-5 shrink-0 ${plan.popular ? "text-white" : "text-white/65"}`}
                       />
                       {feature}
                     </li>
@@ -162,7 +162,7 @@ export default function Home() {
                 <button
                   className={`w-full py-3 px-4 rounded-full cursor-pointer font-medium transition-all duration-200 ${
                     plan.buttonVariant === "default"
-                      ? "bg-violet-500 text-white hover:bg-violet-600 hover:scale-105"
+                      ? "bg-white/10 text-white hover:bg-white/20 "
                       : "bg-white/10 hover:bg-white/20"
                   }`}
                 >

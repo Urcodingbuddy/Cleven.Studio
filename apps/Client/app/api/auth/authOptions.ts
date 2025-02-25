@@ -58,7 +58,7 @@ export const authOptions: AuthOptions = {
             id: existingUser.id,
             name: existingUser.name,
             email: existingUser.email,
-            imageUrl: existingUser.imageURL,
+            imageURL: existingUser.imageURL,
           }
         }
 
@@ -122,7 +122,7 @@ export const authOptions: AuthOptions = {
               name: user.name!,
               email: user.email!,
               auth_type: account.provider === "google" ? "Google" : "Github",
-              imageURL: profile?.avatar_url ?? profile?.picture ?? user.imageUrl ?? null,
+              imageURL: profile?.avatar_url ?? profile?.picture ?? user.imageURL ?? null,
             },
           });
         }

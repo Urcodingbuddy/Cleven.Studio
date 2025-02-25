@@ -7,8 +7,8 @@ declare module "next-auth" {
     id: string;
     name: string;
     email: string;
-    auth_type: "Google" | "Github";
-    imageUrl: string | null;
+    auth_type?: "Google" | "Github";
+    imageUrl?: string | null;
   }
 
   interface Session extends DefaultSession {

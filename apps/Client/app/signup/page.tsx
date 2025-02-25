@@ -2,16 +2,41 @@
 import InputBox from "@repo/ui/inputBox"
 import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
-import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
 import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
+import { useState } from "react";
+import { useSignUp  } from "../../lib/hooks/handleSignup";
 
-export default function Home() {
+export default function Signup() {
+
+  const [email, setEmail] = useState("")
+  const [firstName, setfirstName] = useState("")
+  const [lastName, setlastName] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { handleSignUp } = useSignUp();
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); 
+    setLoading(true)
+    handleSignUp(
+      email, 
+      firstName,
+      lastName,
+      password, 
+      confirmPassword, 
+      setError,
+      setLoading
+    );
+  };
+
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
       {/* Animated gradient background */}
       <div className="fixed inset-0 bg-black">
-      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-30">
           <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] rounded-b-lg bg-white blur-[100px] "></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px]  bg-white blur-[100px]"></div>
           <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#0c0c0c] blur-[100px] animate-pulse delay-700"></div>
@@ -21,7 +46,7 @@ export default function Home() {
       {/* Content */}
       <div className="w-full max-w-md space-y-8 relative">
         {/* Glass card */}
-        <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl border border-white/10">
+        <div className="backdrop-blur-xl bg-white/5 px-8 pt-8 rounded-3xl shadow-2xl border border-white/10">
           {/* Logo */}
           <div className="flex justify-center mb-2">
             <div className="relative">
@@ -53,22 +78,20 @@ export default function Home() {
 
 
           {/* Form */}
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-2 gap-4">
               <InputBox
                 placeholder={"Fisrt name*"}
                 type={"text"}
-                onChange={function (value: string): void {
-                  throw new Error("Function not implemented.");
-                }}
+
+                onChange={(value)=>setfirstName(value)}
               />
 
               <InputBox
                 placeholder={"Last name*"}
                 type={"text"}
-                onChange={function (value: string): void {
-                  throw new Error("Function not implemented.");
-                }}
+
+                onChange={(value)=>setlastName(value)}
               />
             </div>
 
@@ -76,25 +99,22 @@ export default function Home() {
             <InputBox
               placeholder={"Email Address*"}
               type={"email"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+
+              onChange={(value)=>setEmail(value)}
             />
 
             <InputBox
               placeholder={"Password*"}
               type={"Password"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+
+              onChange={(value)=>setPassword(value)}
             />
 
             <InputBox
               placeholder={"Confirm Password*"}
               type={"Password"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+
+              onChange={(value)=>setConfirmPassword(value)}
             />
 
 
@@ -120,7 +140,11 @@ export default function Home() {
 
           {/* Social Logins */}
           <div className="grid grid-cols-2 gap-4">
-          <GoogleBtn /><GithubBtn/>
+            <GoogleBtn /><GithubBtn />
+          </div>
+
+          <div className="w-full min-h-8 flex justify-center items-center text-red-500">
+            {error}
           </div>
         </div>
       </div>

@@ -58,7 +58,7 @@ export const authOptions: AuthOptions = {
             id: existingUser.id,
             name: existingUser.name,
             email: existingUser.email,
-            image: existingUser.imageURL,
+            imageUrl: existingUser.imageURL,
           }
         }
 
@@ -122,7 +122,7 @@ export const authOptions: AuthOptions = {
               name: user.name!,
               email: user.email!,
               auth_type: account.provider === "google" ? "Google" : "Github",
-              imageURL: profile?.avatar_url ?? profile?.picture ?? user.image ?? null,
+              imageURL: profile?.avatar_url ?? profile?.picture ?? user.imageUrl ?? null,
             },
           });
         }
@@ -134,7 +134,6 @@ export const authOptions: AuthOptions = {
       if (user) {
         token.id = user.id;
         token.email = user.email;
-        token.name = user.name;
       }
       return token;
     },
@@ -142,7 +141,6 @@ export const authOptions: AuthOptions = {
     async session({ session, token }: { session: Session; token: JWT }) {
       if (session.user) {
         session.user.id = token.id;
-
       }
       return session;
     },

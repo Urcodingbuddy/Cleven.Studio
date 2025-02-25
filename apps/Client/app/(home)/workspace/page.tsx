@@ -1,16 +1,12 @@
-import { div } from "motion/react-client"
+export default function Home() {
+  return (
+    <div className="space-y-6">
+      <h1 className="text-4xl font-bold text-white "></h1>
+      {/* <p className="text-muted-foreground text-white ">
+        Welcome to your dashboard. This is a beautiful sidebar example with hover effects.
+      </p> */}
+      {/* <h1 className="text-white" >Hello</h1> */}
 
-export default function WorkspacePage() {
-    return (
-      <div className="bg-[#0c0c0c] h-screen w-full">
-
-      <div className="bg-white p-6 rounded-lg shadow-lg">
-        <h1 className="text-2xl font-bold text-gray-800">Welcome to Your Workspace</h1>
-        <p className="text-gray-600 mt-2">
-          Manage your projects, tasks, and collaborate with your team here.
-        </p>
-      </div>
-      </div>
-    );
-  }
-  
+    </div>
+  );
+}

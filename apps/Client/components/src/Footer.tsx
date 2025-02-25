@@ -26,7 +26,7 @@ export const Footer = () => {
           <h3 className="text-sm font-semibold tracking-wider">SERVICES</h3>
           <ul className="space-y-4">
             {[
-              { name: "Website Maintenance & Support", link: "/services#maintenance" },
+              { name: "Website Maintenance & Support", link: "/pricing" },
               { name: "Website Speed Optimization", link: "/services#speed-optimization" },
               { name: "Bug Fixing & Debugging", link: "/services#bug-fixing" },
               { name: "Content Update & Management", link: "/services#content-update" },

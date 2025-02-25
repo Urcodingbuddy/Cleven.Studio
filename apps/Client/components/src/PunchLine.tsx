@@ -40,7 +40,7 @@ export const PunchLine = () => {
           </p>
           {/* Smooth Scroll Trigger */}
           <div className="h-28 flex flex-col items-center group cursor-pointer" onClick={handleScroll}>
-            <p className="text-md font-semibold text-zinc-400 hover:font-bold">Learn More</p>
+            <p className="text-md font-semibold text-zinc-400 hover:font-bold hover:text-zinc-200 ">Learn More</p>
             <ArrowDown className="group-hover:translate-y-2 text-white duration-500 transition-transform" />
           </div>
         </div>

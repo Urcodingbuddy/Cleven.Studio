@@ -5,6 +5,8 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import useLenis from "../../lib/hooks/useLenis";
+
 
 
 export const AppBar = () => {
@@ -43,26 +45,37 @@ export const AppBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+    //Lenis for getting scroll down
+    const lenis = useLenis(); // ✅ Now it returns Lenis | null
+    const handleScroll = () => {
+      if (lenis) {
+        lenis.scrollTo("#services_sec", {
+          duration: 2.5,
+          easing: (t: number) => 1 - Math.pow(1 - t, 3),
+        });
+      }
+    };
+
   return (
     <>
       {/* Main Navbar */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg bg-transparent shadow-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}>
-        <div id="navBar" className="flex justify-between items-center px-4 p-2">
+        <div id="navBar" className="flex justify-between items-center px-5 p-2">
           <div id="cleven_logo">
             <Link href="/">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" />
+            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-15 object-cover cursor-pointer" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-14 text-[#D9D9D9]">
-            <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Home</a>
-            <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Services</a>
+            <a href="" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Home</a>
+            <a href="#" onClick={handleScroll} className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Services</a>
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Help</a>
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Insight's</a>
 
             <Link href="/signup">
-              <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] hover:shadow-3xl hover:shadow-white font-medium transition-colors group">
+              <CirculerBtn className="inline-flex h-11 w-27 px-0.5 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] hover:shadow-3xl hover:shadow-white font-medium transition-colors group">
                 Join Us
               </CirculerBtn>
             </Link>

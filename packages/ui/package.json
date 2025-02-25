@@ -9,7 +9,8 @@
     "./inputBox":"./src/inputBox.tsx",
     "./googleBtn":"./src/googleBtn.tsx",
     "./githubBtn":"./src/githubBtn.tsx",
-    "./gradientBg":"./src/gradientBg.tsx"
+    "./gradientBg":"./src/gradientBg.tsx",
+    "./pricing-client" : "./src/pricing-client.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
+import { Providers } from "../provider";
 
 export const metadata: Metadata = {
   title: "Cleven | Orchestrating Solutions Beyond the Obvious ",
@@ -18,9 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Providers>
       <body className={`bg-[#0c0c0c] ${raleway.className}`}>
         {children}
       </body>
+      </Providers>
     </html>
   );
 }

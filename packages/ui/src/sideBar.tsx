@@ -25,7 +25,6 @@ const sidebarItems = [
 export default function Sidebar() {
   const [isHovered, setIsHovered] = useState(false);
   const { data: session } = useSession();
-
   return (
     <div
       className={cn(

@@ -1,13 +1,25 @@
 "use client";
+import { useState } from 'react'
 import InputBox from "@repo/ui/inputBox"
 import { ArrowRight } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
-import AnimatedGradientBackgroud from "@repo/ui/gradientBg";
 import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
+import { useSignIn } from "../../lib/hooks/handleSignin";
+
 
 
 export default function Signin() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const [loading, setLoading] = useState(false)
+  const { handleSignIn } = useSignIn();
+
+  const handleSubmit = () => {
+    setLoading(true);
+    handleSignIn(email, password, setError, setLoading);
+  };
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
       {/* Animated gradient background */}
@@ -21,7 +33,7 @@ export default function Signin() {
       </div>
 
       <div className="w-full max-w-md space-y-8 relative">
-        <div className="backdrop-blur-xl bg-white/5 p-8 rounded-3xl shadow-2xl border border-white/10">
+        <div className="backdrop-blur-xl bg-white/5 px-8 pt-8  rounded-3xl shadow-2xl border border-white/10">
           {/* Logo */}
 
           <div className="flex justify-center mb-8">
@@ -44,22 +56,19 @@ export default function Signin() {
             </p>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit} >
             <InputBox
               placeholder={"Email Address*"}
               type={"email"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+
+              onChange={(value) => setEmail(value)}
             >
             </InputBox>
 
             <InputBox
               placeholder={"Password*"}
               type={"password"}
-              onChange={function (value: string): void {
-                throw new Error("Function not implemented.");
-              }}
+              onChange={(value) => setPassword(value)}
             >
             </InputBox>
 
@@ -85,10 +94,17 @@ export default function Signin() {
 
           {/* Social Logins */}
           <div className="grid grid-cols-2 gap-4">
-          <GoogleBtn /><GithubBtn/>
+            <GoogleBtn /><GithubBtn />
           </div>
+
+          <div className="w-full min-h-8 flex justify-center items-center text-red-500">
+            {error}
+          </div>
+
         </div>
       </div>
     </main>
   );
 }
+
+

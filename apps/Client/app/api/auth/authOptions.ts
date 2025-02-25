@@ -126,6 +126,10 @@ export const authOptions: AuthOptions = {
             },
           });
         }
+        if (!existingUser?.id) {
+          throw new Error("User ID is missing");
+        }
+        user.id = existingUser.id;
       }
       return true;
     },
@@ -133,7 +137,6 @@ export const authOptions: AuthOptions = {
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
-        token.email = user.email;
       }
       return token;
     },

@@ -29,7 +29,7 @@ export default function Profile() {
                 <>
                     <h1>{user?.name}</h1>
                     <p>{user?.email}</p>
-                    {user?.image && <img src={user.image} alt="Profile" />}
+                    {user?.imageUrl && <img src={user.imageUrl} alt="Profile" />}
                 </>
             )}
         </div>

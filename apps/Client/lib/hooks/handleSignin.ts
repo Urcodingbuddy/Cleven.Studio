@@ -2,7 +2,6 @@ import { signIn } from 'next-auth/react';
 import { useRouter } from "next/navigation";
 
 
-// Custom hook for sign-in logic
 export const useSignIn = () => {
   const router = useRouter();
   

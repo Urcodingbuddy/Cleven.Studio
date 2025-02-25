@@ -16,7 +16,8 @@ export default function Signin() {
   const [loading, setLoading] = useState(false)
   const { handleSignIn } = useSignIn();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     setLoading(true);
     handleSignIn(email, password, setError, setLoading);
   };

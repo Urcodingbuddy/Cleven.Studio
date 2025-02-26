@@ -1,8 +1,8 @@
+
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { cn } from '../../../apps/Client/@/lib/utils';
 import { useSession } from 'next-auth/react';
 
 import {
@@ -20,17 +20,22 @@ const sidebarItems = [
   { icon: BadgeHelp, label: 'Help Center', href: '/analytics' },
   { icon: Receipt, label: 'Billing', href: '/messages' },
   { icon: Store, label: 'Market Place', href: '/settings' },
+} from "lucide-react";
 ];
 
 export default function Sidebar() {
   const [isHovered, setIsHovered] = useState(false);
   const { data: session } = useSession();
-
   return (
     <div
       className={cn(
         'fixed left-0 top-0 h-screen bg-[#0c0c0c] backdrop-blur-lg bg-opacity-40 text-white z-10 transition-all duration-500 ease-in-out shadow-lg flex flex-col justify-between',
         isHovered ? 'w-64' : 'w-16'
+  return (
+    <div
+      className={cn(
+        "fixed left-0 top-0 h-screen bg-gray-900 text-white transition-all duration-300 ease-in-out",
+        isHovered ? "w-64" : "w-16"
       )}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -42,6 +47,13 @@ export default function Sidebar() {
             src='./Cleven removeBg.png'
             className='h-12 w-12 object-cover '
             alt='Cleven Logo'
+      <div className="flex h-full flex-col">
+        <div className="flex h-16 items-center justify-center border-b border-gray-800">
+          {/* <BarChart2 className="h-8 w-8 text-primary-foreground" /> */}
+          <img
+            src="./Cleven removeBg.png"
+            className="h-12 w-12 object-cover "
+            alt=""
           />
         </div>
 

@@ -4,7 +4,6 @@ import { CirculerBtn } from "./CirculerBtn";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import useLenis from "../../lib/hooks/useLenis";
 
 
@@ -14,7 +13,7 @@ export const AppBar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Handle body scroll lock
+
   useEffect(() => {
     if (isSidebarOpen) {
       // Prevent scrolling on the body when sidebar is open

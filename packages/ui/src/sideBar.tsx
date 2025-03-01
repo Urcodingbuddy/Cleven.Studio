@@ -10,7 +10,7 @@ const sidebarItems = [
   { icon: CloudUpload, label: "Upload", href: "/upload" },
   { icon: LifeBuoy, label: "Help Center", href: "/help-center" },
   { icon: ReceiptText, label: "Billing", href: "/billing" },
-  { icon: Store, label: "Market Place ", href: "/settings" },
+  { icon: Store, label: "Market Place ", href: "/market-place" },
 ];
 
 export default function Sidebar() {

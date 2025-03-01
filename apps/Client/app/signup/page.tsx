@@ -7,6 +7,8 @@ import { GithubBtn } from "@repo/ui/githubBtn";
 import { useState } from "react";
 import { useSignUp  } from "../../lib/hooks/handleSignup";
 
+
+
 export default function Signup() {
 
   const [email, setEmail] = useState("")
@@ -122,8 +124,14 @@ export default function Signup() {
               type="submit"
               className="w-full bg-[#1c1c1c] hover:bg-[#2c2c2c] text-white font-medium py-3 rounded-xl cursor-pointer transition-colors flex items-center justify-center space-x-2 group"
             >
-              <span>Sign up</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              {loading ? (
+                <div className="mini-loader"></div>
+              ) : (
+                <>
+                  <span>Sign up</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
           </form>
 

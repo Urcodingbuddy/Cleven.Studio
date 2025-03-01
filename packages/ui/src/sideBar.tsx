@@ -9,7 +9,7 @@ const sidebarItems = [
   { icon: Radar, label: "Workspace", href: "/workspace" },
   { icon: CloudUpload, label: "Upload", href: "/upload" },
   { icon: LifeBuoy, label: "Help Center", href: "/help-center" },
-  { icon: ReceiptText, label: "Billing", href: "/notifications" },
+  { icon: ReceiptText, label: "Billing", href: "/billing" },
   { icon: Store, label: "Market Place ", href: "/settings" },
 ];
 

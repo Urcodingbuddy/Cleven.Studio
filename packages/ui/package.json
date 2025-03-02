@@ -11,7 +11,8 @@
     "./githubBtn":"./src/githubBtn.tsx",
     "./gradientBg":"./src/gradientBg.tsx",
     "./pricing-client" : "./src/pricing-client.tsx",
-    "./sideBar" : "./src/sideBar.tsx"
+    "./sideBar" : "./src/sideBar.tsx",
+    "./sidebarV2" : "./src/sidebarV2.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

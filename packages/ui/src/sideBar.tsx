@@ -10,7 +10,7 @@ const sidebarItems = [
   { icon: CloudUpload, label: "Upload", href: "/upload" },
   { icon: LifeBuoy, label: "Help Center", href: "/help-center" },
   { icon: ReceiptText, label: "Billing", href: "/billing" },
-  { icon: Store, label: "Market Place ", href: "/settings" },
+  { icon: Store, label: "Market Place ", href: "/market-place" },
 ];
 
 export default function Sidebar() {
@@ -58,7 +58,9 @@ export default function Sidebar() {
         {/* Logout Button */}
         <div className="mt-auto p-4">
           <button className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-400 hover:text-white hover:bg-[#2a2d32] w-full">
+          <Link href="/profile">
           <User className="h-5 w-5 cursor-pointer " />
+          </Link>
             {isExpanded && <span className="cursor-pointer" >Profile</span>}
           </button>
         </div>

@@ -5,6 +5,11 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import useLenis from "../../lib/hooks/useLenis";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
+
 
 
 
@@ -12,6 +17,8 @@ export const AppBar = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  
 
 
   useEffect(() => {
@@ -59,10 +66,10 @@ export const AppBar = () => {
     <>
       {/* Main Navbar */}
       <nav className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg bg-transparent shadow-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}>
-        <div id="navBar" className="flex justify-between items-center px-5 p-2">
+        <div id="navBar" className="flex justify-between items-center px-6  p-4">
           <div id="cleven_logo">
             <Link href="/">
-            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-15 object-cover cursor-pointer" />
+            <img src="./Cleven removeBg.png" alt="cleven.studio" className="h-10 object-cover cursor-pointer" />
             </Link>
           </div>
 

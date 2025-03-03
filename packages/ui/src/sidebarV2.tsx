@@ -3,8 +3,12 @@
 import { Radar, Store, LifeBuoy, UploadCloud as CloudUpload, ReceiptText } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSession } from "next-auth/react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const sidebarItems = [
     { icon: Radar, label: "Workspace", href: "/workspace" },

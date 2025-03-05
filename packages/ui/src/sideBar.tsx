@@ -18,7 +18,7 @@ export default function Sidebar() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="flex">
+    <div className="flex fixed ">
       {/* Sidebar */}
       <div
         className={`bg-[#1c1c1c] h-screen flex flex-col fixed transition-all duration-300 ${

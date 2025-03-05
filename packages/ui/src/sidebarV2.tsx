@@ -3,8 +3,12 @@
 import { Radar, Store, LifeBuoy, UploadCloud as CloudUpload, ReceiptText } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useSession } from "next-auth/react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 const sidebarItems = [
     { icon: Radar, label: "Workspace", href: "/workspace" },
@@ -13,6 +17,7 @@ const sidebarItems = [
     { icon: ReceiptText, label: "Billing", href: "/billing" },
     { icon: Store, label: "Market Place ", href: "/market-place" },
 ];
+
 
 export default function SidebarV2() {
     const pathname = usePathname();
@@ -38,7 +43,7 @@ export default function SidebarV2() {
                         </Link>
                         <span className="text-white font-semibold">CLEVEN.STUDIO</span>
                     </div>
-                    <div className="flex flex-col gap-10  py-4 px-3">
+                    <div className="flex flex-col gap-4  py-4 px-3">
                         {sidebarItems.map((item) => {
                             const Icon = item.icon;
                             const isActive = pathname === item.href;

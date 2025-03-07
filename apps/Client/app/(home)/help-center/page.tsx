@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search, Filter, MessageSquare, BookOpen, HelpCircle, Lock, Bug } from "lucide-react";
 import { motion } from "framer-motion";
+// import { FaDiscord } from "react-icons/fa";
 import FAQ from "@repo/components/FAQ";
 
 export default function HelpCenter() {
@@ -29,7 +30,7 @@ export default function HelpCenter() {
                 <path d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg> */}
-              <img src="./Cleven removeBg.png" className="h-12 object-cover " alt="" />
+              {/* <img src="./Cleven removeBg.png" className="h-14 w-20 object-cover " alt="" /> */}
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, x: -20 }}
@@ -66,7 +67,7 @@ export default function HelpCenter() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full p-4 pl-10 pr-12 rounded-md bg-gray-900 border border-gray-800 focus:border-gray-700 focus:outline-none transition-colors"
+                className="w-full p-4 pl-10 pr-12 rounded-md bg-[#1A1A1A] border-gray-800 focus:border-gray-700 focus:outline-none transition-colors"
                 placeholder="Search for articles, tickets, or chat history..."
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -87,7 +88,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <HelpCircle className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">Get Started</span>
@@ -96,7 +97,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <MessageSquare className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">Live Chat</span>
@@ -105,7 +106,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <BookOpen className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">Knowledge Base</span>
@@ -125,7 +126,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <HelpCircle className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">FAQ's</span>
@@ -134,7 +135,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <Lock className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">Reset Password</span>
@@ -143,7 +144,7 @@ export default function HelpCenter() {
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
+                className="bg-[#1A1A1A] border border-gray-800 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-800 transition-colors"
               >
                 <Bug className="w-8 h-8 mb-3 text-gray-300" />
                 <span className="text-center">Report Bug</span>
@@ -164,13 +165,7 @@ export default function HelpCenter() {
                 whileTap={{ scale: 0.98 }}
                 className="bg-gray-900 border border-gray-800 rounded-lg p-4 flex items-center justify-center gap-3 cursor-pointer hover:bg-gray-800 transition-colors"
               >
-                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-400">
-                  <path d="M18 4a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V7a3 3 0 0 0-3-3Z"></path>
-                  <path d="M6 4a3 3 0 0 1 3 3v4a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3Z"></path>
-                  <path d="M18 20a3 3 0 0 1-3-3v-4a3 3 0 0 1 6 0v4a3 3 0 0 1-3 3Z"></path>
-                  <path d="M6 20a3 3 0 0 0 3-3v-4a3 3 0 0 0-6 0v4a3 3 0 0 0 3 3Z"></path>
-                  <path d="M12 4v16"></path>
-                </svg>
+
                 <span>Discord</span>
               </motion.div>
               
@@ -188,7 +183,7 @@ export default function HelpCenter() {
             </div>
           </motion.div>
         </motion.div>
-        <FAQ/>
+        {/* <FAQ/> */}
       </div>
     </div>
   );

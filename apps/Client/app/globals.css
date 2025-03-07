@@ -1,56 +1,70 @@
 @import "tailwindcss";
 
-
-
 body {
-    overflow: hidden; /* Hide the scrollbar */
-    user-select: none;
-  }
-  
-  body::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar for WebKit browsers */
-  }
+  overflow: hidden; /* Hide the scrollbar */
+  /* user-select: none; */
+}
 
+body::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar for WebKit browsers */
+}
+::selection {
+  color: #1a1a1a;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  @layer base {
-    :root {
-      --background: 0 0% 0%;
-      --foreground: 0 0% 100%;
-    }
-  }
-  
-  @keyframes shimmer {
-    from {
-      background-position: 0 0;
-    }
-    to {
-      background-position: -200% 0;
-    }
-  }
-  
-  .animate-shimmer {
-    animation: shimmer 2s linear infinite;
-  }
-  
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
 
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
   }
+}
 
-  .hover\:\[animation-play-state\:paused\]:hover {
-    animation-play-state: paused;
+@keyframes shimmer {
+  from {
+    background-position: 0 0;
   }
-  
-  .animate-scroll {
-    animation: scroll var(--animation-duration, 40s) linear infinite var(--animation-direction, forwards);
+  to {
+    background-position: -200% 0;
   }
-  /* HTML: <div class="loader"></div> */
+}
+
+.animate-shimmer {
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.hover\:\[animation-play-state\:paused\]:hover {
+  animation-play-state: paused;
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration, 40s) linear infinite
+    var(--animation-direction, forwards);
+}
+/* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
   aspect-ratio: 1;
@@ -61,7 +75,7 @@ body {
   animation: l15 1s infinite linear;
 }
 .loader::before,
-.loader::after {    
+.loader::after {
   content: "";
   grid-area: 1/1;
   margin: 2px;
@@ -74,7 +88,6 @@ body {
   animation-duration: 3s;
 }
 
-
 .mini-loader {
   width: 24px;
   aspect-ratio: 1;
@@ -85,7 +98,7 @@ body {
   animation: l15 1s infinite linear;
 }
 .mini-loader::before,
-.mini-loader::after {    
+.mini-loader::after {
   content: "";
   grid-area: 1/1;
   margin: 2px;
@@ -97,61 +110,83 @@ body {
   margin: 6px;
   animation-duration: 3s;
 }
-@keyframes l15{ 
-  100%{transform: rotate(1turn)}
+@keyframes l15 {
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
-  @layer utilities {
-    .bg-grid {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23000000'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-    }
-  
-    .bg-grid-small {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='%23000000'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-    }
-  
-    .bg-dot {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='%23000000' cx='10' cy='10' r='1.625'/%3E%3C/svg%3E");
-    }
+@layer utilities {
+  .bg-grid {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23000000'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+  }
 
-    .bg-grid-white {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23bbbbbb' opacity='0.15'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-    }
-    
-    
-    .bg-gradient-radial {
-      background: radial-gradient(circle, #e5e5e5 0%, transparent 50%, #737373 100%);
-    }
-    
+  .bg-grid-small {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='8' height='8' fill='none' stroke='%23000000'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
   }
-  
-  /* market-place/Poster */
 
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+  .bg-dot {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='16' height='16' fill='none'%3E%3Ccircle fill='%23000000' cx='10' cy='10' r='1.625'/%3E%3C/svg%3E");
   }
-  
-  .animate-shimmer {
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
-    background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+
+  .bg-grid-white {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%23bbbbbb' opacity='0.15'%3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
   }
-  
-  .animate-pulse-slow {
-    animation: pulse 3s infinite ease-in-out;
+
+  .bg-gradient-radial {
+    background: radial-gradient(
+      circle,
+      #e5e5e5 0%,
+      transparent 50%,
+      #737373 100%
+    );
   }
-  
-  .animate-float {
-    animation: float 4s infinite ease-in-out;
-  }
-  
-  .animate-glow {
-    animation: glow 3s infinite ease-in-out;
-  }
-  
-  .stagger-1 { animation-delay: 0.1s; }
-  .stagger-2 { animation-delay: 0.2s; }
-  .stagger-3 { animation-delay: 0.3s; }
-  .stagger-4 { animation-delay: 0.4s; }
-  .stagger-5 { animation-delay: 0.5s; }
-  .stagger-6 { animation-delay: 0.6s; }
+}
+
+/* market-place/Poster */
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+}
+
+.animate-glow {
+  animation: glow 3s infinite ease-in-out;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+.stagger-6 {
+  animation-delay: 0.6s;
+}

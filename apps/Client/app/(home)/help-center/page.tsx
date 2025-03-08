@@ -251,13 +251,3 @@ export default function HelpCenter() {
     </div>
   );
 }
-
-// Add this to your globals.css
-// @keyframes fadeIn {
-//   from { opacity: 0; transform: translateY(10px); }
-//   to { opacity: 1; transform: translateY(0); }
-// }
-// 
-// .animate-fade-in {
-//   animation: fadeIn 0.3s ease-out forwards;
-// }

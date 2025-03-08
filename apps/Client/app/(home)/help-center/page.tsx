@@ -48,7 +48,7 @@ export default function HelpCenter() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen w-screen bg-[#0c0c0c] text-white">
       <Head>
         <title>Help Center | Cleven Studio</title>
         <meta name="description" content="Get help and support for Cleven Studio services" />
@@ -58,22 +58,6 @@ export default function HelpCenter() {
       <header className="py-6 px-6 md:px-12">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path 
-                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" 
-                stroke="white" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-              <path 
-                d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18Z" 
-                stroke="white" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
           </div>
           <div className="text-xl font-semibold">Help Center</div>
         </div>
@@ -188,7 +172,7 @@ export default function HelpCenter() {
         {/* Community Section */}
         <section className="mb-12">
           <h2 className="text-xl font-semibold mb-6">Collaborate with the Cleven.studio community!</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 ml-38 max-w-xl">
             <Link href="https://discord.gg/clevenstudio" target="_blank">
               <div className="bg-gray-900 p-4 rounded-lg flex items-center space-x-3 transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:translate-x-1 cursor-pointer">
                 <svg className="w-6 h-6 text-indigo-400" viewBox="0 0 24 24" fill="currentColor">

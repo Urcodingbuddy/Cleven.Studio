@@ -10,6 +10,7 @@ export default function HelpCenter() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   
   const faqItems = [
+    
     {
       id: 1,
       question: "What is Cleven Studio, and what services do you offer?",

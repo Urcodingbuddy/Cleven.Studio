@@ -21,7 +21,7 @@ const sidebarItems = [
 
 export default function SidebarV2() {
     const pathname = usePathname();
-    const [isExpanded, setIsExpanded] = useState(true);
+    const [isExpanded, setIsExpanded] = useState(false);
     const { data: session } = useSession();
 
     return (
@@ -43,7 +43,7 @@ export default function SidebarV2() {
                         </Link>
                         <span className="text-white font-semibold">CLEVEN.STUDIO</span>
                     </div>
-                    <div className="flex flex-col gap-4  py-4 px-3">
+                    <div className="flex flex-col gap-10  py-4 px-3">
                         {sidebarItems.map((item) => {
                             const Icon = item.icon;
                             const isActive = pathname === item.href;

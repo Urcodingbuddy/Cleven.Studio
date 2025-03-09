@@ -181,7 +181,7 @@ export const PunchLine = () => {
                 ref={headlineRef}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 mb-5 sm:mb-10 text-center max-w-6xl"
               >
-                Unleashing the Power of Performance <br /> to Make Your <span className="bg-gradient-to-r from-[#67e8f9] to-[#3b82f6] bg-clip-text text-transparent animate-pulse">Website Invincible.</span> 
+                Unleashing the Power of Performance <br /> to Make Your <span className="bg-gradient-to-r from-[#67e8f9] to-[#3b82f6] bg-clip-text text-transparent">Website Invincible.</span> 
               </h1>
             </motion.div>
 

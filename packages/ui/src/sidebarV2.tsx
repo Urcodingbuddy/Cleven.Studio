@@ -53,8 +53,8 @@ export default function SidebarV2() {
                                     href={item.href}
                                     className="flex gap-6"
                                 >
-                                    <Icon className={`w-7 h-7 mb-8 ${isActive ? 'text-blue-500' : ' text-white'}`} />
-                                    <span className={`w-7 h-7 mb-8  ${isActive ? 'text-blue-500' : ' text-white '}`} >{item.label}</span>
+                                    <Icon className={`w-7 h-7 mb-8 ${isActive ? 'text-blue-400' : ' text-white'}`} />
+                                    <span className={`w-7 h-7 mb-8  ${isActive ? 'text-blue-400' : ' text-white '}`} >{item.label}</span>
                                 </Link>
                             );
                         })}
@@ -62,11 +62,11 @@ export default function SidebarV2() {
                     <div className="h-8">
                         <Link href="/profile" className="flex items-center text-gray-400  hover:bg-[#0c0c0c] rounded-lg px-2">
                             {session?.user?.image ? (
-                                <img src={session.user.image} className="h-8 w-8 rounded-full" alt="Profile" />
+                                <img src={session.user.image} className="h-8 w-8 rounded-full border-2 border-blue-800" alt="Profile" />
                             ) : (
                                 <span className="h-5 w-5 rounded-full" />
                             )}
-                            <span className="ml-6  w-[250px]">{session?.user?.name || 'Profile'}</span>
+                            <span className={`ml-6  w-[250px]  ${pathname === '/profile' ? 'text-blue-400' : ''}`}>{session?.user?.name || 'Profile'}</span>
                         </Link>
                     </div>
                 </div>
@@ -90,18 +90,18 @@ export default function SidebarV2() {
                         const isActive = pathname === item.href;
                         return (
                             <Link href={item.href} key={item.label}>
-                                <Icon className={`w-7 h-7 mb-8 ${isActive ? 'text-blue-500' : ' text-white'}`} />
+                                <Icon className={`w-7 h-7 mb-8  ${isActive ? 'text-blue-400' : ' text-white'}`} />
                             </Link>
                         )
                     })}
                 </div>
                 <div className="w-8 h-8">
                     <Link href="/profile" className="flex items-center text-gray-400 hover:text-white hover:bg-[#0c0c0c] rounded-lg">
-                        {session?.user?.image ? (
-                            <img src={session.user.image} className="h-8 w-8 rounded-full" alt="Profile" />
-                        ) : (
-                            <span className="h-5 w-5 rounded-full bg-gray-400" />
-                        )}
+                    {session?.user?.image ? (
+                                <img src={session.user.image} className={` border-2 border-blue-800 h-8 w-8 rounded-full `} alt="Profile" />
+                            ) : (
+                                <span className="h-5 w-5 rounded-full" />
+                            )}
                         
                     </Link>
                 </div>

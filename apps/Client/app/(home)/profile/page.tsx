@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { LogOut, User, HandCoins } from 'lucide-react';
 import { useSession } from 'next-auth/react';
+import { motion } from 'motion/react';
 
 export default function AccountCenter() {
   const [activeTab, setActiveTab] = useState('personal');
@@ -61,7 +62,7 @@ export default function AccountCenter() {
       </Head>
 
       {/* Header */}
-      <header className="py-4 px-6 flex justify-between items-center border-b border-gray-700">
+      <header className="py-4 px-6 flex justify-between mb-10 items-center border-gray-700">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8">
           </div>
@@ -70,34 +71,53 @@ export default function AccountCenter() {
       </header>
 
       {/* Navigation Tabs */}
-      <nav className="py-4 px-6 border-b border-gray-700">
-        <ul className="flex space-x-6">
-          <li>
-            <button
-              onClick={() => setActiveTab('personal')}
-              className={`flex items-center space-x-2 transition duration-300 ${activeTab === 'personal' ? 'text-white' : 'text-gray-400 hover:text-white'}`}
-            >
-              <User className="w-5 h-5" viewBox="0 0 20 20" fill="currentColor" />
-              <span className="font-medium">Personal Details</span>
-            </button>
-          </li>
-          <li>
-            <button
-              onClick={() => setActiveTab('plans')}
-              className={`flex items-center space-x-2 transition duration-300 ${activeTab === 'plans' ? 'text-white' : 'text-gray-400 hover:text-white'}`}
-            >
-              <HandCoins size={28} strokeWidth={1} />
-              <span className="font-medium">Active Plans</span>
-            </button>
-          </li>
+      <nav className="py-6 px-8 relative">
+        <ul className="flex items-center gap-8">
+          {[
+            { id: 'personal', label: 'Personal Details', icon: <User className="w-5 h-5" /> },
+            { id: 'plans', label: 'Active Plans', icon: <HandCoins size={24} strokeWidth={1.5} /> }
+          ].map(tab => (
+            <li key={tab.id} className="relative">
+              <button
+                onClick={() => setActiveTab(tab.id)}
+                className={`
+                  flex items-center gap-3 px-4 py-2
+                  transition-all duration-300 ease-out
+                  ${activeTab === tab.id 
+                    ? 'text-white' 
+                    : 'text-gray-400 hover:text-white'
+                  }
+                `}
+              >
+                {tab.icon}
+                <span className="font-medium">{tab.label}</span>
+              </button>
+              {activeTab === tab.id && (
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"
+                  layoutId="activeTab"
+                  transition={{
+                    type: "spring",
+                    stiffness: 380,
+                    damping: 30
+                  }}
+                />
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
 
       {/* Main content */}
-      <main className="py-12 px-6 max-w-6xl mx-auto">
+      <main className="py-12 px-6 max-w-6xl mx-auto ">
         {activeTab === 'personal' ? (
           // Personal Details Tab
-          <>
+          <motion.div
+            className="mb-12 transition-all duration-500 opacity-100 transform translate-y-0 animate-fade-in"
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{ opacity: 1, translateY: 0 }}
+            exit={{ opacity: 0, translateY: 20 }}
+          >
             {/* User profile */}
             <div className="mb-12 transition-all duration-300 hover:transform hover:translate-y-1">
               <div className="flex items-center space-x-4 mb-2">
@@ -172,7 +192,17 @@ export default function AccountCenter() {
                 />
               </div>
             </div>
-          </>
+
+            <div className="flex justify-end mt-8">
+          <button
+            onClick={handleLogout}
+            className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1"
+          >
+            Log out
+            <LogOut className='ml-2' />
+          </button>
+        </div>
+          </motion.div>
         ) : (
           // Active Plans Tab - Membership Details
           <div className="bg-black rounded-lg p-6 transition-all duration-500 opacity-100 transform translate-y-0 animate-fade-in">
@@ -246,15 +276,7 @@ export default function AccountCenter() {
           </div>
         )}
 
-        <div className="flex justify-end mt-8">
-          <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1"
-          >
-            Log out
-            <LogOut className='ml-2' />
-          </button>
-        </div>
+        
       </main>
     </div>
   );

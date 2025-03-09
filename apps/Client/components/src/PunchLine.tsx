@@ -107,7 +107,7 @@ export const PunchLine = () => {
       // Continuous floating animation
       gsap.to(scrollButtonRef.current.querySelector('svg'), {
         y: 10,
-        duration: 1.5,
+        duration: 2,
         repeat: -1,
         yoyo: true,
         ease: "power1.inOut"
@@ -181,7 +181,7 @@ export const PunchLine = () => {
                 ref={headlineRef}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 mb-5 sm:mb-10 text-center max-w-6xl"
               >
-                Unleashing the Power of Performance <br /> to Make Your Website Invincible.
+                Unleashing the Power of Performance <br /> to Make Your <span className="bg-gradient-to-r from-[#67e8f9] to-[#3b82f6] bg-clip-text text-transparent animate-pulse">Website</span> Invincible.
               </h1>
             </motion.div>
 

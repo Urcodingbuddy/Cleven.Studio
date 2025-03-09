@@ -125,10 +125,10 @@ export default function AccountCenter() {
                   {session?.user?.image ? (
                     <img src={session.user.image} className="rounded-full" alt="Profile" />
                   ) : (
-                    <span className="h-16 w-16 rounded-full bg-gray-400" />
+                    <img src={`https://robohash.org/${session?.user?.name}.png?size=200x200`} className="rounded-full border"  alt="" />
                   )}
                 </div>
-                {session?.user?.image ? (
+                {session?.user ? (
                     <div>
                       <h2 className="text-2xl font-semibold">{session.user.name}</h2>
                       <p className="text-gray-400">{session.user.email}</p>

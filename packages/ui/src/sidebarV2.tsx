@@ -63,7 +63,7 @@ export default function SidebarV2() {
                             {session?.user?.image ? (
                                 <img src={session.user.image} className="h-8 w-8 rounded-full border-2 border-blue-800" alt="Profile" />
                             ) : (
-                                <span className="h-5 w-5 rounded-full" />
+                                <img src={`https://robohash.org/${session?.user?.name}.png?size=30x30`} className="rounded-full border"  alt="" />
                             )}
                             <span className={`ml-6  w-[250px]  ${pathname === '/profile' ? 'text-blue-400' : ''}`}>{session?.user?.name || 'Profile'}</span>
                         </Link>
@@ -99,7 +99,7 @@ export default function SidebarV2() {
                     {session?.user?.image ? (
                                 <img src={session.user.image} className={` border-2 border-blue-800 h-8 w-8 rounded-full `} alt="Profile" />
                             ) : (
-                                <span className="h-5 w-5 rounded-full" />
+                                <img src={`https://robohash.org/${session?.user?.name}.png?size=35x35`} className="rounded-full border"  alt="" />
                             )}
                         
                     </Link>

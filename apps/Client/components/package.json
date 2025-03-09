@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
  "exports": {
-  "./CirculerBtn":"./src/CirculerBtn.tsx",
+  
   "./AppBar" : "./src/AppBar.tsx",
   "./PunchLine":"./src/PunchLine.tsx",
   "./HeroMessage" : "./src/HeroMessage.tsx",

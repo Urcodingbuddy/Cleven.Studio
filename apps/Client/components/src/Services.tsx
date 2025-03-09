@@ -29,7 +29,7 @@ const services = [
     description:
       "Stay up-to-date with regular content updates, blog management, e-Commerce and other content services.",
     icon: Puzzle,
-    link: "/services#content-update",
+    link: "/pricing/content-update",
   },
   {
     title: "Minimum Viable Product(MVP)",

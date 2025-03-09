@@ -9,7 +9,8 @@ body::-webkit-scrollbar {
   display: none; /* Hide the scrollbar for WebKit browsers */
 }
 ::selection {
-  color: #1a1a1a;
+  color: black;
+  background: #67e8f9;
 }
 
 @keyframes fadeIn {

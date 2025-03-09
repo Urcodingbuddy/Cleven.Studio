@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { CirculerBtn } from "./CirculerBtn";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import useLenis from "../../lib/hooks/useLenis";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { InteractiveHoverButton } from "../../@/components/ui/hoverBtn";
 gsap.registerPlugin(useGSAP,ScrollTrigger);
 
 
@@ -81,9 +81,9 @@ export const AppBar = () => {
             <a href="#" className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out">Insight's</a>
 
             <Link href="/signup">
-              <CirculerBtn className="inline-flex h-11 w-27 px-0.5 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] hover:shadow-3xl hover:shadow-white font-medium transition-colors group">
+              <InteractiveHoverButton>
                 Join Us
-              </CirculerBtn>
+              </InteractiveHoverButton>
             </Link>
           </ul>
 
@@ -131,9 +131,9 @@ export const AppBar = () => {
           <a href="#" className="hover:scale-110 border-b h-10 text-center transition duration-200" onClick={() => setIsSidebarOpen(false)}>Insight's</a>
 
           <a href="/signup">
-            <CirculerBtn className="inline-flex h-11 w-28 cursor-pointer animate-shimmer items-center justify-center rounded-full border border-slate-800 hover:border-slate-500 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] font-medium transition-colors group">
+            <InteractiveHoverButton>
               Join Us
-            </CirculerBtn>
+            </InteractiveHoverButton>
           </a>
         </ul>
       </div>

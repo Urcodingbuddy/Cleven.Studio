@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react'
 import InputBox from "@repo/ui/inputBox"
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
@@ -32,7 +32,7 @@ export default function Signin() {
           <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#0c0c0c] blur-[100px] animate-pulse delay-700"></div>
         </div>
       </div>
-
+ 
       <div className="w-full max-w-md space-y-8 relative">
         <div className="backdrop-blur-xl bg-white/5 px-8 pt-8  rounded-3xl shadow-2xl border border-white/10">
           {/* Logo */}

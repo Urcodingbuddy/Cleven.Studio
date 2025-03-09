@@ -22,7 +22,7 @@ const services = [
     description:
       "Get help with fixing bugs and resolving issues to ensure your website works flawlessly..",
     icon: Bug,
-    link: "/services#bug-fixing",
+    link: "/pricing/bug-fixing",
   },
   {
     title: "Content Update & Management",

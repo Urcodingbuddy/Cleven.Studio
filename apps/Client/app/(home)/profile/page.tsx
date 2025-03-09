@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { LogOut, User, HandCoins } from 'lucide-react';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
 
 export default function AccountCenter() {
@@ -195,8 +195,8 @@ export default function AccountCenter() {
 
             <div className="flex justify-end mt-8">
           <button
-            onClick={handleLogout}
-            className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1"
+            onClick={() => signOut({ callbackUrl: "/" })}
+            className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
           >
             Log out
             <LogOut className='ml-2' />

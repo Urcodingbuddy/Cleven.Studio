@@ -89,7 +89,7 @@ export const Footer = () => {
               {[
                 { name: 'Terms & Conditions', link: '/legal#terms' },
                 { name: 'Privacy Policy', link: '/privacy-policy' },
-                { name: 'Refund Policy', link: '/legal#refund' },
+                { name: 'Refund Policy', link: '/refund' },
                 { name: 'support@cleven.studio', link: 'mailto:support@cleven.studio' },
               ].map((item) => (
                 <li key={item.name}>

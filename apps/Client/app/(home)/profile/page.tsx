@@ -1,11 +1,10 @@
 'use client'
 
 import { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { LogOut, User, HandCoins } from 'lucide-react';
+import { LogOut, User, HandCoins, Headset } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 
 export default function AccountCenter() {
   const [activeTab, setActiveTab] = useState('personal');
@@ -43,9 +42,6 @@ export default function AccountCenter() {
     }));
   };
 
-  const handleLogout = () => {
-    alert('Logged out successfully');
-  };
 
   const toggleSection = (section: keyof ExpandedSections): void => {
     setExpandedSections((prev: ExpandedSections) => ({
@@ -56,11 +52,6 @@ export default function AccountCenter() {
 
   return (
     <div className="min-h-screen bg-[#0c0c0c] w-screen ml-17 text-white">
-      <Head>
-        <title>Account Center</title>
-        <meta name="description" content="User account center" />
-      </Head>
-
       {/* Header */}
       <header className="py-4 px-6 flex justify-between mb-10 items-center border-gray-700">
         <div className="flex items-center space-x-3">
@@ -105,6 +96,11 @@ export default function AccountCenter() {
               )}
             </li>
           ))}
+          <Link href="/help-center">
+            <span className='text-gray-400 hover:text-white flex items-center gap-2'>
+            <Headset className='w-6 h-6' /> Help Center
+            </span>
+          </Link>
         </ul>
       </nav>
 

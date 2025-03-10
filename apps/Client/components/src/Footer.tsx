@@ -9,7 +9,7 @@ export const Footer = () => {
         {/* Company Info */}
         <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center space-x-2">
-            <div className="w-14">
+            <div>
               <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></Link>
             </div>
             <span className="text-xl font-bold">CLEVEN.STUDIO</span>
@@ -47,7 +47,7 @@ export const Footer = () => {
           <h3 className="text-sm font-semibold tracking-wider">SUPPORT</h3>
           <ul className="space-y-4">
             {[
-              { name: 'Help', link: '/support#help' },
+              { name: 'Help', link: '/help-center' },
               { name: 'Live Chat', link: '/support#live-chat' },
               { name: 'Open a Ticket', link: '/support#ticket' },
               { name: 'Discord', link: 'https://discord.gg/PsH86NfA' },

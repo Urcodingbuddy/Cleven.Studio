@@ -19,7 +19,7 @@
   },
   "include": [
     "src"
-  ],
+, "../app/privacy-policy/page.tsx"  ],
   "exclude": [
     "node_modules",
     "dist"

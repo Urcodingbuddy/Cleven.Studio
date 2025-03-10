@@ -88,7 +88,7 @@ export const Footer = () => {
             <ul className="space-y-4">
               {[
                 { name: 'Terms & Conditions', link: '/legal#terms' },
-                { name: 'Privacy Policy', link: '/legal#privacy' },
+                { name: 'Privacy Policy', link: '/privacy-policy' },
                 { name: 'Refund Policy', link: '/legal#refund' },
                 { name: 'support@cleven.studio', link: 'mailto:support@cleven.studio' },
               ].map((item) => (

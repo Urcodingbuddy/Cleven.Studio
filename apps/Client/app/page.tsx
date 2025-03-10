@@ -8,6 +8,7 @@ import { Footer } from "@repo/components/Footer";
 import { Services } from "@repo/components/Services";
 import { Testimonials } from "@repo/components/Testimonials";
 import { TextHoverEffect } from "../@/components/ui/text-hover-effect";
+import PrivacyPolicy from "./privacy-policy/page";
 export default function Home() {
 
   return (

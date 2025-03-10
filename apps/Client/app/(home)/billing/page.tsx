@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen ml-14 w-screen bg-black text-white p-6">
+    <div className="min-h-screen w-screen bg-black text-white p-6 rounded-tl-2xl mt-3">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

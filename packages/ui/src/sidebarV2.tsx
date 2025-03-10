@@ -1,6 +1,6 @@
 "use client";
 // @ts-ignore
-import { Radar, Store, LifeBuoy, UploadCloud as CloudUpload, ReceiptText } from "lucide-react";
+import { Radar, Store,  UploadCloud as CloudUpload, ReceiptText } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
@@ -14,7 +14,7 @@ const sidebarItems = [
     { icon: Radar, label: "Workspace", href: "/workspace" },
     { icon: CloudUpload, label: "Upload", href: "/upload" },
     { icon: ReceiptText, label: "Billing", href: "/billing" },
-    { icon: Store, label: "Market Place ", href: "/market-place" },
+    { icon: Store, label: "Market Place ", href: "/marketplace" },
 ];
 
 

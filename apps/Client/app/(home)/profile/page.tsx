@@ -51,7 +51,7 @@ export default function AccountCenter() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0c0c0c] w-screen ml-17 text-white">
+    <div className="min-h-screen bg-[#0c0c0c] w-screen text-white rounded-tl-2xl mt-3">
       {/* Header */}
       <header className="py-4 px-6 flex justify-between mb-10 items-center border-gray-700">
         <div className="flex items-center space-x-3">

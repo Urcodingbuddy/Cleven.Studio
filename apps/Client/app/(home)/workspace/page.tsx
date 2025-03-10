@@ -2,9 +2,8 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { Github } from 'lucide-react';
+
 
 export default function Home() {
   const [progress, setProgress] = useState(0);
@@ -16,7 +15,6 @@ export default function Home() {
       if (progress < 100) {
         const newProgress = Math.min(progress + 2, 100);
         setProgress(newProgress);
-        
         if (newProgress > 25 && newProgress <= 50) {
           setStatus('Injecting');
         } else if (newProgress > 50 && newProgress < 90) {
@@ -47,12 +45,7 @@ export default function Home() {
   ];
   
   return (
-    <div className="bg-[#0c0c0c] w-screen h-screen flex flex-col overflow-hidden">
-      <Head>
-        <title>Project Status Dashboard</title>
-        <meta name="description" content="Track your project status" />
-      </Head>
-      
+    <div className="bg-[#0c0c0c] w-screen flex flex-col rounded-tl-2xl mt-3 overflow-y-scroll">
       <div className="flex-1 flex items-center justify-center p-4">
         <div className="max-w-4xl w-full mx-auto">
           <div className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
@@ -82,7 +75,7 @@ export default function Home() {
                 
                 <p className="text-zinc-500 mb-1">Source</p>
                 <div className="flex items-center">
-                  <Github size={16} className="mr-2" />
+                  
                   <p className="text-white">{projectData.source}</p>
                 </div>
                 <p className="text-white">{projectData.deadline}</p>

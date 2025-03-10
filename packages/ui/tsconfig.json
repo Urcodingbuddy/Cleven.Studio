@@ -3,6 +3,6 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src", "../../apps/Client/@/components/ui/pricing-layout.tsx"],
+  "include": ["src", "../../apps/Client/@/components/ui/pricing-layout.tsx", "../../apps/Client/@/components/ui/sideBar.tsx"],
   "exclude": ["node_modules", "dist"]
 }

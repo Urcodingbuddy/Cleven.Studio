@@ -1,18 +1,17 @@
 import React from "react";
-import { SmoothScrollProvider } from "../../components/src/SmoothScrollProvider";
-import Sidebar  from "@repo/ui/sideBar";
-import SidebarV2 from "@repo/ui/sidebarV2";
+import SidebarDemo  from "../../@/components/ui/sideBarV3";
+import SidebarV3 from "../../@/components/ui/sideBarV3";
 
 export default function Layout({
     children,
 }: {children: React.ReactNode;}) {
     return (
         <div className="flex">
-            
             <div className="absolute">
-                <SidebarV2/>
+                    <SidebarV3>
+                        {children}
+                    </SidebarV3>
             </div>
-                {children}
         </div>
     )
 }

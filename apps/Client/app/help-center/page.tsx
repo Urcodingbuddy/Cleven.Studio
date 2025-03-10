@@ -51,13 +51,11 @@ export default function HelpCenter() {
           </div>
           <button 
             onClick={() => { router.back() }}
-            className="relative flex items-center justify-center p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:bg-[#67e8f9]/20 hover:border-[#67e8f9] group"
-            aria-label="Back"
+            className="relative flex items-center justify-center p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:bg-[#67e8f9]/20 hover:text-[#67e8f9] hover:border-[#67e8f9] group"
+            title='Back'
           >
-            <ArrowLeft className="w-6 h-6 transition-transform duration-300 group-hover:scale-110 group-hover:text-[#67e8f9]"/>
-            <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 text-sm bg-gray-900/90 text-[#67e8f9] rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm border border-[#67e8f9]/20">
-              Back
-            </span>
+            <ArrowLeft className="w-6 h-6 transition-transform duration-300 hover:scale-110"/>
+            
           </button>
             <div className="text-xl font-semibold">Help Center</div>
         </div>

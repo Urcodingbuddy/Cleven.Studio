@@ -26,12 +26,12 @@ export const Footer = () => {
           <h3 className="text-sm font-semibold tracking-wider">SERVICES</h3>
           <ul className="space-y-4">
             {[
-              { name: "Website Maintenance & Support", link: "/pricing" },
-              { name: "Website Speed Optimization", link: "/services#speed-optimization" },
-              { name: "Bug Fixing & Debugging", link: "/services#bug-fixing" },
-              { name: "Content Update & Management", link: "/services#content-update" },
-              { name: "Social Media Integration", link: "/services#social-media" },
-              { name: "Minimum Viable Product (MVP)", link: "/services#mvp" },
+              { name: "Website Maintenance & Support", link: "/pricing/webMaintenace" },
+              { name: "Bug Fixing & Debugging", link: "/pricing/bug-fixing" },
+              { name: "Content Update & Management", link: "/pricing/content-update" },
+              { name: "Minimum Viable Product (MVP)", link: "/pricing/mvp" },
+              { name: "Website Speed Optimization", link: "/pricing/speed_optimization" },
+              { name: "Social Media Integration", link: "/pricing/social_media" },
             ].map((item) => (
               <li key={item.name}>
                 <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">

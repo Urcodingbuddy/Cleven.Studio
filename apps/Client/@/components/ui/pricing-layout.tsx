@@ -115,4 +115,3 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
     </div>
   )
 }
-

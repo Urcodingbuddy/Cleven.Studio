@@ -56,6 +56,6 @@ const plans = [
 ];
 
 export default function Home() {
-  return  <PricingLayout title="Web Maintenance" plans={plans} />
+  return  <PricingLayout title="Pricing" plans={plans} />
 }
 

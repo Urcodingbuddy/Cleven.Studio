@@ -8,7 +8,7 @@ export default function Layout({
 }: {children: React.ReactNode;}) {
     return (
         <div className="flex">
-            <SmoothScrollProvider/>
+            
             <div className="absolute">
                 <SidebarV2/>
             </div>

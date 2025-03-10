@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getToken } from "next-auth/jwt";
 
-const protectedRoutes = ["/billing", "/market-place", "/profile", "/upload", "/workspace"];
+const protectedRoutes = ["/billing", "/marketplace", "/profile", "/upload", "/workspace"];
 
 export async function middleware(req: NextRequest) {
     const session = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
@@ -24,5 +24,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/", "/billing", "/market-place", "/profile", "/upload", "/workspace"],
+    matcher: ["/", "/billing", "/marketplace", "/profile", "/upload", "/workspace"],
 };

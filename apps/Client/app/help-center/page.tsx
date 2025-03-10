@@ -1,11 +1,12 @@
-// pages/help-center.js
 'use client'
 
 import { useState } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function HelpCenter() {
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   
@@ -37,29 +38,28 @@ export default function HelpCenter() {
     }
   ];
 
-  interface FaqItem {
-    id: number;
-    question: string;
-    answer: string;
-  }
-
   const toggleFaq = (id: number): void => {
     setExpandedFaq(expandedFaq === id ? null : id);
   };
 
   return (
     <div className="min-h-screen w-screen bg-[#0c0c0c] text-white">
-      <Head>
-        <title>Help Center | Cleven Studio</title>
-        <meta name="description" content="Get help and support for Cleven Studio services" />
-      </Head>
-      
       {/* Header */}
       <header className="py-6 px-6 md:px-12">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8">
           </div>
-          <div className="text-xl font-semibold">Help Center</div>
+          <button 
+            onClick={() => { router.back() }}
+            className="relative flex items-center justify-center p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:bg-[#67e8f9]/20 hover:border-[#67e8f9] group"
+            aria-label="Back"
+          >
+            <ArrowLeft className="w-6 h-6 transition-transform duration-300 group-hover:scale-110 group-hover:text-[#67e8f9]"/>
+            <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-2 py-1 text-sm bg-gray-900/90 text-[#67e8f9] rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm border border-[#67e8f9]/20">
+              Back
+            </span>
+          </button>
+            <div className="text-xl font-semibold">Help Center</div>
         </div>
       </header>
       

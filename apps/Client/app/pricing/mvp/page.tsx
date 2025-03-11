@@ -51,5 +51,5 @@ export default function Mvp() {
         },
       ]
 
-    return <PricingLayout title="Pricing" plans={plans} />
+    return <PricingLayout title="Minimum Viable Product" plans={plans} />
 }

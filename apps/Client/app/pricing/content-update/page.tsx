@@ -57,5 +57,5 @@ export default function WebMaintenance() {
     },
   ];
 
-  return <PricingLayout title="Pricing" plans={plans} />
+  return <PricingLayout title="Content Update" plans={plans} />
 }

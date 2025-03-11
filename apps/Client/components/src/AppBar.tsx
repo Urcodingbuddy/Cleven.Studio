@@ -93,7 +93,7 @@ export const AppBar = () => {
               Help
             </Link>
             <Link
-              href="./Insights"
+              href="./insights"
               className="text-[1.1rem] hover:scale-110 transition duration-200 ease-in-out"
             >
               Insight's

@@ -16,7 +16,6 @@
     "./Testimonials": "./src/Testimonials.tsx",
     "./HoverBtn": "./src/HoveBtn.tsx",
     "./ClevenLoader": "./src/ClevenLoader.tsx",
-    "./Insights": "./src/Insights.tsx",
     "./PrivacyPolicy": "./src/PrivacyPolicy.tsx"
   },
   "scripts": {

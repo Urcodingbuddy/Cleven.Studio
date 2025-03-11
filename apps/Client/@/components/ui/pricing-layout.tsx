@@ -1,8 +1,9 @@
 "use client"
 
 import { Check } from "lucide-react"
-import { useState, useEffect } from "react"
-import Lenis from "@studio-freight/lenis"
+import { useState } from "react"
+import { SmoothScrollProvider } from "../../../components/src/SmoothScrollProvider"
+
 
 export type PricingPlan = {
   name: string
@@ -22,24 +23,7 @@ interface PricingLayoutProps {
 export default function PricingLayout({ title, plans }: PricingLayoutProps) {
   const [isYearly, setIsYearly] = useState(false)
 
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      touchMultiplier: 2,
-    })
 
-    function raf(time: number) {
-      lenis.raf(time)
-      requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf)
-
-    return () => {
-      lenis.destroy()
-    }
-  }, [])
 
   function cn(...classes: (string | boolean | undefined)[]): string {
     return classes.filter(Boolean).join(" ")
@@ -47,6 +31,7 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
 
   return (
     <div className="min-h-screen w-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-black to-black text-white overflow-x-hidden">
+      <SmoothScrollProvider/>
       <main className="container mx-auto pt-28 md:pt-24 lg:pt-32 pb-16 px-4">
         
         {/* Heading */}

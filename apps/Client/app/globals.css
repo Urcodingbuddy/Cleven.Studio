@@ -5,9 +5,16 @@ body {
   /* user-select: none; */
 }
 
-body::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar for WebKit browsers */
+/* Hide scrollbars for all elements */
+::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
+
+body {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+
 ::selection {
   color: black;
   background: #67e8f9;

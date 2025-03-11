@@ -35,21 +35,21 @@ const services = [
     title: "Minimum Viable Product(MVP)",
     description: "Data-driven insights to help grow your business.",
     icon: LineChart,
-    link: "/services#mvp",
+    link: "/pricing/mvp",
   },
   {
     title: "Website Speed Optimization",
     description:
       "Improve your website's performance and reduce load times with our optimization tools.",
     icon: Shield,
-    link: "/services#speed-optimization",
+    link: "/pricing/speed_optimization",
   },
   {
     title: "Social Media Integration",
     description:
       "Connect your website with your social media platforms seamlessly, enhancing engagement",
     icon: Smartphone,
-    link: "/services#social-media",
+    link: "/pricing/social_media",
   },
 ];
 

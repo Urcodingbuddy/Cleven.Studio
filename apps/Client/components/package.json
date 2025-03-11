@@ -1,22 +1,23 @@
 {
-"name": "@repo/components",
+  "name": "@repo/components",
   "version": "1.0.0",
   "type": "module",
   "private": true,
- "exports": {
-  
-  "./AppBar" : "./src/AppBar.tsx",
-  "./PunchLine":"./src/PunchLine.tsx",
-  "./HeroMessage" : "./src/HeroMessage.tsx",
-  "./SmoothScrollProvider":"./src/SmoothScrollProvider",  
-  "./EssentialSection" : "./src/EssentialSection.tsx",
-  "./FAQ" : "./src/FAQ.tsx",
-  "./Footer" : "./src/Footer.tsx",
-  "./GlowCards":"./src/GlowCards.tsx",
-  "./Services" : "./src/Services.tsx",
-  "./Testimonials":"./src/Testimonials.tsx",
-  "./HoverBtn":"./src/HoveBtn.tsx",
-  "./ClevenLoader" : "./src/ClevenLoader.tsx"
+  "exports": {
+    "./AppBar": "./src/AppBar.tsx",
+    "./PunchLine": "./src/PunchLine.tsx",
+    "./HeroMessage": "./src/HeroMessage.tsx",
+    "./SmoothScrollProvider": "./src/SmoothScrollProvider",
+    "./EssentialSection": "./src/EssentialSection.tsx",
+    "./FAQ": "./src/FAQ.tsx",
+    "./Footer": "./src/Footer.tsx",
+    "./GlowCards": "./src/GlowCards.tsx",
+    "./Services": "./src/Services.tsx",
+    "./Testimonials": "./src/Testimonials.tsx",
+    "./HoverBtn": "./src/HoveBtn.tsx",
+    "./ClevenLoader": "./src/ClevenLoader.tsx",
+    "./Insights": "./src/Insights.tsx",
+    "./PrivacyPolicy": "./src/PrivacyPolicy.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",
@@ -27,9 +28,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-    "devDependencies": {
-      "typescript": "^5.3.3"
-    }
+  "devDependencies": {
+    "typescript": "^5.3.3"
   }
-
- 
+}

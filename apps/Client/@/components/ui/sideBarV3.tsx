@@ -29,7 +29,7 @@ export default function SidebarV3({ children }: { children: React.ReactNode }) {
     },
     {
       label: "Market Place",
-      href: "/marketplace",
+      href: "/market-place",
       icon: <Store className="text-neutral-700 dark:text-neutral-200 h-5.5 w-5.5 shrink-0" />,
     },
   ]

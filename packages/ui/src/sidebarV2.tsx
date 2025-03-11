@@ -14,7 +14,7 @@ const sidebarItems = [
     { icon: Radar, label: "Workspace", href: "/workspace" },
     { icon: CloudUpload, label: "Upload", href: "/upload" },
     { icon: ReceiptText, label: "Billing", href: "/billing" },
-    { icon: Store, label: "Market Place ", href: "/marketplace" },
+    { icon: Store, label: "Market Place ", href: "/market-place" },
 ];
 
 

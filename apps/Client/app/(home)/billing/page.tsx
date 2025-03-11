@@ -43,7 +43,7 @@ export default function Home() {
     setSelectedOrder(selectedOrder === orderId ? null : orderId);
   };
   return (
-    <div className="overflow-auto w-screen  bg-black text-white p-6 rounded-2xl mr-3 my-3 ">
+    <div className="overflow-auto w-screen  bg-[#0c0c0c] text-white p-6 rounded-2xl mr-3 my-3 ">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

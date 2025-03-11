@@ -14,9 +14,11 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
   { name: "Home", href: "/" },
   { name: "Bug Fixing", href: "/pricing/bug-fixing" },
-  { name: "Web Maintenance", href: "/pricing/webMaintenace" },
+  { name: "Web Maintenance", href: "/pricing/web-maintenance" },
   { name: "Content Update", href: "/pricing/content-update" },
   { name: "MVP Package", href: "/pricing/mvp" },
+  { name: "Social Media", href: "/pricing/social-media" },
+  { name: "Speed Optimization", href: "/pricing/speed-optimization" },
 ];
 
 export default function PricingLayout({ children }: { children: React.ReactNode }) {
@@ -32,13 +34,24 @@ export default function PricingLayout({ children }: { children: React.ReactNode 
   const updateNavigationItems = () => {
     if (typeof window !== 'undefined') {
       const screenWidth = window.innerWidth;
-      if (screenWidth < 768) {
+      if (screenWidth < 570) {
         setVisibleItems(navigation.slice(0, 2));
         setOverflowItems(navigation.slice(2));
-      } else if (screenWidth < 1024) {
+      } else if (screenWidth < 770) {
         setVisibleItems(navigation.slice(0, 3));
         setOverflowItems(navigation.slice(3));
-      } else {
+      }else if (screenWidth < 870) {
+        setVisibleItems(navigation.slice(0, 4));
+        setOverflowItems(navigation.slice(4));
+      }
+      else if (screenWidth < 970) {
+        setVisibleItems(navigation.slice(0, 5));
+        setOverflowItems(navigation.slice(5));
+      } else if (screenWidth < 1070) {
+        setVisibleItems(navigation.slice(0, 6));
+        setOverflowItems(navigation.slice(6));
+      }
+       else {
         setVisibleItems(navigation);
         setOverflowItems([]);
       }

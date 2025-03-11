@@ -27,7 +27,7 @@ export default function Home() {
       description:
         "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Minimum Viable Product(MVP)",
@@ -44,7 +44,7 @@ export default function Home() {
       title: "Web Maintenance and support",
       description: "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Bug Fixing & Debugging",
@@ -68,7 +68,7 @@ export default function Home() {
       description:
         "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Bug Fixing & Debugging",
@@ -110,7 +110,7 @@ export default function Home() {
     <>
       <main className="ml-18">
         <div id="logo" className="p-6">
-          <h1 className="text-white text-2xl ">Market Place </h1>
+          <h1 className="text-white text-2xl ">Market Place</h1>
         </div>
 
         {/* Dimmy image */}

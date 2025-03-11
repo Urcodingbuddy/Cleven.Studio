@@ -26,7 +26,7 @@ export default function Home() {
       description:
         "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Minimum Viable Product(MVP)",
@@ -43,7 +43,7 @@ export default function Home() {
       title: "Web Maintenance and support",
       description: "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Bug Fixing & Debugging",
@@ -67,7 +67,7 @@ export default function Home() {
       description:
         "Keep your website running smoothly with ongoing support, maintenance, and updates.",
       icon: Code2,
-      link: "/pricing/webMaintenace",
+      link: "/pricing/web-maintenance",
     },
     {
       title: "Bug Fixing & Debugging",

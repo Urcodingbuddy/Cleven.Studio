@@ -6,6 +6,7 @@ import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
 import { useState } from "react";
 import { useSignUp  } from "../../lib/hooks/handleSignup";
+import { SmoothScrollProvider } from "../../components/src/SmoothScrollProvider";
 
 
 
@@ -36,7 +37,9 @@ export default function Signup() {
 
   return (
     <main className="min-h-screen relative flex items-center justify-center px-4 overflow-hidden">
+      <SmoothScrollProvider/>
       {/* Animated gradient background */}
+
       <div className="fixed inset-0 bg-black">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] rounded-b-lg bg-white blur-[100px] "></div>

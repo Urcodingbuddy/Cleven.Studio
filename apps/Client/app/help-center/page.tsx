@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-
+import { SmoothScrollProvider } from '../../components/src/SmoothScrollProvider';
 export default function HelpCenter() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
@@ -43,7 +43,8 @@ export default function HelpCenter() {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-[#0c0c0c] text-white">
+    <div className="w-screen bg-[#0c0c0c] text-white">
+      <SmoothScrollProvider/>
       {/* Header */}
       <header className="py-6 px-6 md:px-12">
         <div className="flex items-center space-x-3">

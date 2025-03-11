@@ -15,7 +15,7 @@ const services = [
     description:
       "Keep your website running smoothly with ongoing support, maintenance, and updates.",
     icon: Code2,
-    link: "/pricing/webMaintenace",
+    link: "/pricing/web-maintenance",
   },
   {
     title: "Bug Fixing & Debugging",

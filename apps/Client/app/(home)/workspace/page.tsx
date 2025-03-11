@@ -45,8 +45,8 @@ export default function Home() {
   ];
   
   return (
-    <div className="bg-[#0c0c0c] w-screen flex flex-col rounded-tl-2xl mt-3 overflow-y-scroll">
-      <div className="flex-1 flex items-center justify-center p-4">
+    <div className="bg-[#0c0c0c] overflow-y-scroll w-screen flex flex-col p-6 rounded-2xl mr-3 my-3 ">
+      <div className="flex-1 flex items-center justify-center">
         <div className="max-w-4xl w-full mx-auto">
           <div className="bg-zinc-900 rounded-xl p-6 mb-6 border border-zinc-800">
             <div className="flex flex-col md:flex-row justify-between md:items-start gap-6">

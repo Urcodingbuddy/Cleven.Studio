@@ -33,7 +33,7 @@ export default function Home() {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       setFile(e.dataTransfer.files[0]);
     }
@@ -76,9 +76,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen w-screen bg-black text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <motion.div 
+    <div className="w-screen overflow-y-scroll bg-[#0c0c0c] text-white rounded-2xl mr-3 my-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -89,7 +89,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-400">Step {step} of 2</span>
               <div className="w-24 h-2 bg-gray-800 rounded-full overflow-hidden">
-                <motion.div 
+                <motion.div
                   className="h-full bg-blue-600"
                   initial={{ width: "50%" }}
                   animate={{ width: step === 1 ? "50%" : "100%" }}
@@ -98,7 +98,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           <AnimatePresence mode="wait">
             {step === 1 ? (
               <motion.div
@@ -116,7 +116,7 @@ export default function Home() {
                     transition={{ delay: 0.1, duration: 0.4 }}
                     className="mb-8"
                   >
-                    <div 
+                    <div
                       className={`relative border-2 border-dashed rounded-lg p-12 transition-all duration-300 ease-in-out flex flex-col items-center justify-center ${dragActive ? "border-blue-500 bg-blue-500/10" : "border-gray-700 hover:border-gray-500"}`}
                       onDragEnter={handleDrag}
                       onDragLeave={handleDrag}
@@ -130,7 +130,7 @@ export default function Home() {
                           </div>
                           <div className="flex items-center gap-2">
                             <span className="truncate max-w-[250px]">{file.name}</span>
-                            <button 
+                            <button
                               onClick={handleRemoveFile}
                               className="p-1 rounded-full hover:bg-gray-700 transition-colors"
                             >
@@ -156,7 +156,7 @@ export default function Home() {
                     </div>
                   </motion.div>
 
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.4 }}
@@ -281,7 +281,7 @@ export default function Home() {
                           <span>{category || "Select a category"}</span>
                           <ChevronDown size={18} className={`transition-transform duration-300 ${showDropdown ? "rotate-180" : ""}`} />
                         </button>
-                        
+
                         <AnimatePresence>
                           {showDropdown && (
                             <motion.div
@@ -319,8 +319,8 @@ export default function Home() {
                       <label className="block mb-2">Tags</label>
                       <div className="flex gap-2 mb-2 flex-wrap">
                         {tags.map((tag) => (
-                          <span 
-                            key={tag} 
+                          <span
+                            key={tag}
                             className="bg-gray-800 text-white px-3 py-1 rounded-full flex items-center gap-1"
                           >
                             {tag}
@@ -350,69 +350,13 @@ export default function Home() {
                     </div>
                   </motion.div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3, duration: 0.4 }}
-                  >
-                    <div className="mb-6">
-                      <label className="block mb-2">Project Details</label>
-                      <div className="space-y-4">
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
-                          <GitBranch size={18} className="text-gray-400" />
-                          <div className="flex-grow">
-                            <p className="text-sm text-gray-400">Default Branch</p>
-                            <p>main</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
-                          <Tag size={18} className="text-gray-400" />
-                          <div className="flex-grow">
-                            <p className="text-sm text-gray-400">Version</p>
-                            <p>1.0.0</p>
-                          </div>
-                        </div>
-                        
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
-                          <Clock size={18} className="text-gray-400" />
-                          <div className="flex-grow">
-                            <p className="text-sm text-gray-400">Last Updated</p>
-                            <p>Just now</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                <div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.4 }}
-                  >
-                    <div className="mb-6">
-                      <label className="block mb-2">Collaborators</label>
-                      <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
-                        <Users size={18} className="text-gray-400" />
-                        <div className="flex-grow">
-                          <p>No collaborators yet</p>
-                        </div>
-                        <button className="px-3 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors text-sm">
-                          Add
-                        </button>
-                      </div>
-                      <p className="mt-2 text-sm text-gray-500">You can add collaborators after creating the project</p>
-                    </div>
-                  </motion.div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5, duration: 0.4 }}
                   >
-                    <div className="mb-6">
+                    <div className="">
                       <label className="block mb-2">Project Structure</label>
                       <div className="p-4 rounded-md bg-gray-900 border border-gray-800 font-mono text-sm">
                         <div className="flex items-center gap-2 mb-2">
@@ -443,6 +387,65 @@ export default function Home() {
                       <p className="mt-2 text-sm text-gray-500">Preview of your project structure</p>
                     </div>
                   </motion.div>
+
+                </div>
+
+                <div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.4 }}
+                  >
+                    <div className="mb-6">
+                      <label className="block mb-2">Collaborators</label>
+                      <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                        <Users size={18} className="text-gray-400" />
+                        <div className="flex-grow">
+                          <p>No collaborators yet</p>
+                        </div>
+                        <button className="px-3 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors text-sm">
+                          Add
+                        </button>
+                      </div>
+                      <p className="mt-2 text-sm text-gray-500">You can add collaborators after creating the project</p>
+                    </div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.4 }}
+                  >
+                    <div className="mb-6">
+                      <label className="block mb-2">Project Details</label>
+                      <div className="space-y-4">
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                          <GitBranch size={18} className="text-gray-400" />
+                          <div className="flex-grow">
+                            <p className="text-sm text-gray-400">Default Branch</p>
+                            <p>main</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                          <Tag size={18} className="text-gray-400" />
+                          <div className="flex-grow">
+                            <p className="text-sm text-gray-400">Version</p>
+                            <p>1.0.0</p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                          <Clock size={18} className="text-gray-400" />
+                          <div className="flex-grow">
+                            <p className="text-sm text-gray-400">Last Updated</p>
+                            <p>Just now</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
                 </div>
               </motion.div>
             )}
@@ -457,20 +460,20 @@ export default function Home() {
             {step === 1 ? (
               <div></div>
             ) : (
-              <button 
+              <button
                 onClick={prevStep}
                 className="px-6 py-3 rounded-md border border-gray-800 hover:bg-gray-800 transition-colors"
               >
                 Back
               </button>
             )}
-            
+
             {step === 1 ? (
               <div className="flex gap-4">
                 <button className="px-6 py-3 rounded-md border border-gray-800 hover:bg-gray-800 transition-colors">
                   Cancel
                 </button>
-                <button 
+                <button
                   onClick={nextStep}
                   className="px-6 py-3 bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
                 >

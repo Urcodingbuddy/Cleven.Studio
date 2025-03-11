@@ -18,6 +18,9 @@ export default function Home() {
     { id: "#6521", start: "21/4/25", end: "21/5/25", amount: "$129.03", status: "PAID", date: "2025-04-05" },
     { id: "#7733", start: "15/4/25", end: "15/5/25", amount: "$99.99", status: "PAID", date: "2025-04-01" },
     { id: "#8844", start: "10/4/25", end: "10/5/25", amount: "$149.50", status: "Pending", date: "2025-03-28" },
+    { id: "#8844", start: "10/4/25", end: "10/5/25", amount: "$149.50", status: "Pending", date: "2025-03-28" },
+    { id: "#8844", start: "10/4/25", end: "10/5/25", amount: "$149.50", status: "Pending", date: "2025-03-28" },
+    { id: "#8844", start: "10/4/25", end: "10/5/25", amount: "$149.50", status: "Pending", date: "2025-03-28" },
   ];
 
   // Filter by search query and status
@@ -39,9 +42,8 @@ export default function Home() {
   const handleOrderClick = (orderId: string) => {
     setSelectedOrder(selectedOrder === orderId ? null : orderId);
   };
-
   return (
-    <div className="min-h-screen w-screen bg-black text-white p-6 rounded-tl-2xl mt-3">
+    <div className="overflow-auto w-screen  bg-black text-white p-6 rounded-2xl mr-3 my-3 ">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

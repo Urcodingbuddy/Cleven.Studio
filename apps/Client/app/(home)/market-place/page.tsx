@@ -106,7 +106,8 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <> 
+      {/* Dont Touch this div */}
       <main className="w-screen overflow-y-scroll bg-[#0c0c0c] text-white rounded-2xl mr-3 my-3 p-6">
         <div id="logo" className="p-6">
           <h1 className="text-white text-2xl ">Market Place </h1>

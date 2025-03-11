@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Shield } from 'lucide-react';
-
+import { SmoothScrollProvider } from '../../components/src/SmoothScrollProvider';
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
@@ -44,6 +44,7 @@ const sections = [
 export default function PrivacyPolicy() {
   return (
     <div className="min-h-screen bg-[#0c0c0c] text-white">
+      <SmoothScrollProvider/>
       <div className="max-w-4xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

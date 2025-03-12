@@ -9,7 +9,7 @@ export default function HelpCenter() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-  
+
   const faqItems = [
     {
       id: 1,
@@ -44,30 +44,31 @@ export default function HelpCenter() {
 
   return (
     <div className="w-screen bg-[#0c0c0c] text-white">
-      <SmoothScrollProvider/>
+      <SmoothScrollProvider />
       {/* Header */}
       <header className="py-6 px-6 md:px-12">
-        <div className="flex items-center space-x-3">
-          <div className="w-8 h-8">
+        <div className="flex items-center space-x-3 gap-10">
+          <div className="w-8 h-8 flex items-center">
+            <button
+              onClick={() => { router.back() }}
+              className="relative flex items-center justify-center p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:bg-[#67e8f9]/20 hover:text-[#67e8f9] hover:border-[#67e8f9] group cursor-pointer"
+              title='Back'
+            >
+              <ArrowLeft className="w-6 h-6 transition-transform duration-300 hover:scale-110" />
+
+            </button>
           </div>
-          <button 
-            onClick={() => { router.back() }}
-            className="relative flex items-center justify-center p-2 rounded-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 transition-all duration-300 hover:bg-[#67e8f9]/20 hover:text-[#67e8f9] hover:border-[#67e8f9] group cursor-pointer"
-            title='Back'
-          >
-            <ArrowLeft className="w-6 h-6 transition-transform duration-300 hover:scale-110"/>
-            
-          </button>
-            <div className="text-xl font-semibold">Help Center</div>
+
+          <div className="text-xl font-semibold">Help Center</div>
         </div>
       </header>
-      
+
       {/* Main content */}
       <main className="max-w-4xl mx-auto px-6 pb-16">
         {/* Hero Section */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-8 animate-fade-in">How Can We Help You?</h1>
-          
+
           {/* Search Bar */}
           <div className="relative max-w-xl mx-auto mb-12 transition-all duration-300 hover:scale-102">
             <input
@@ -89,7 +90,7 @@ export default function HelpCenter() {
             </button>
           </div>
         </div>
-        
+
         {/* Quick Access Section */}
         <section className="mb-12">
           <h2 className="text-xl font-semibold mb-6">Quick Access</h2>
@@ -104,7 +105,7 @@ export default function HelpCenter() {
                 </div>
               </div>
             </Link>
-            
+
             <Link href="#live-chat">
               <div className="bg-gray-900 p-5 rounded-lg text-center transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:scale-105 cursor-pointer border border-transparent hover:border-gray-700">
                 <div className="flex flex-col items-center">
@@ -115,7 +116,7 @@ export default function HelpCenter() {
                 </div>
               </div>
             </Link>
-            
+
             <Link href="#knowledge-base">
               <div className="bg-gray-900 p-5 rounded-lg text-center transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:scale-105 cursor-pointer border border-transparent hover:border-gray-700">
                 <div className="flex flex-col items-center">
@@ -128,7 +129,7 @@ export default function HelpCenter() {
             </Link>
           </div>
         </section>
-        
+
         {/* Help & Support Section */}
         <section className="mb-12">
           <h2 className="text-xl font-semibold mb-6">Help & Support</h2>
@@ -143,7 +144,7 @@ export default function HelpCenter() {
                 </div>
               </div>
             </Link>
-            
+
             <Link href="#reset-password">
               <div className="bg-gray-900 p-5 rounded-lg text-center transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:scale-105 cursor-pointer border border-transparent hover:border-gray-700">
                 <div className="flex flex-col items-center">
@@ -154,7 +155,7 @@ export default function HelpCenter() {
                 </div>
               </div>
             </Link>
-            
+
             <Link href="#report-bug">
               <div className="bg-gray-900 p-5 rounded-lg text-center transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:scale-105 cursor-pointer border border-transparent hover:border-gray-700">
                 <div className="flex flex-col items-center">
@@ -167,7 +168,7 @@ export default function HelpCenter() {
             </Link>
           </div>
         </section>
-        
+
         {/* Community Section */}
         <section className="mb-12">
           <h2 className="text-xl font-semibold mb-6">Collaborate with the Cleven.studio community!</h2>
@@ -180,7 +181,7 @@ export default function HelpCenter() {
                 <span>Discord</span>
               </div>
             </Link>
-            
+
             <Link href="https://cleven-studio.slack.com" target="_blank">
               <div className="bg-gray-900 p-4 rounded-lg flex items-center space-x-3 transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:translate-x-1 cursor-pointer">
                 <svg className="w-6 h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
@@ -191,13 +192,13 @@ export default function HelpCenter() {
             </Link>
           </div>
         </section>
-        
+
         {/* FAQ Section */}
         <section className="mb-12" id="faqs">
           <h2 className="text-xl font-semibold mb-6">FAQ's</h2>
           <div className="space-y-4">
             {faqItems.map((faq) => (
-              <div 
+              <div
                 key={faq.id}
                 className="bg-gray-900 rounded-lg overflow-hidden transition-all duration-300 hover:bg-gray-800"
               >
@@ -206,17 +207,17 @@ export default function HelpCenter() {
                   onClick={() => toggleFaq(faq.id)}
                 >
                   <span className="font-medium">{faq.question}</span>
-                  <svg 
+                  <svg
                     className={`w-5 h-5 transition-transform duration-300 ${expandedFaq === faq.id ? 'transform rotate-180' : ''}`}
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                   </svg>
                 </button>
-                
+
                 {expandedFaq === faq.id && (
                   <div className="p-4 pt-0 bg-gray-800 animate-fade-in">
                     <p className="text-gray-300">{faq.answer}</p>
@@ -227,7 +228,7 @@ export default function HelpCenter() {
           </div>
         </section>
       </main>
-      
+
       {/* Footer */}
       <footer className="py-6 px-6 bg-gray-900 border-t border-gray-800">
         <div className="max-w-4xl mx-auto text-center">

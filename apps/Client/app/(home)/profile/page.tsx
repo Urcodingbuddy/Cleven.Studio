@@ -34,13 +34,6 @@ export default function AccountCenter() {
     contentUpdate: boolean;
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { name, value } = e.target;
-    setUserData((prev: UserData) => ({
-      ...prev,
-      [name]: value
-    }));
-  };
 
 
   const toggleSection = (section: keyof ExpandedSections): void => {
@@ -75,8 +68,8 @@ export default function AccountCenter() {
                 className={`
                   flex items-center gap-3 px-4 py-2
                   transition-all duration-300 ease-out
-                  ${activeTab === tab.id 
-                    ? 'text-white' 
+                  ${activeTab === tab.id
+                    ? 'text-white'
                     : 'text-gray-400 hover:text-white'
                   }
                 `}
@@ -99,7 +92,7 @@ export default function AccountCenter() {
           ))}
           <Link href="/help-center">
             <span className='text-gray-400 hover:text-white flex items-center gap-2'>
-            <Headset className='w-6 h-6' /> Help Center
+              <Headset className='w-6 h-6' /> Help Center
             </span>
           </Link>
         </ul>
@@ -118,24 +111,24 @@ export default function AccountCenter() {
             {/* User profile */}
             <div className="mb-12 transition-all duration-300 hover:transform hover:translate-y-1">
               <div className="flex items-center space-x-4 mb-2">
-              <div className="w-16 h-16 hover:border-2 hover:border-white rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 hover:border-2 hover:border-white rounded-full flex items-center justify-center">
                   {session?.user?.image ? (
                     <img src={session.user.image} className="rounded-full" alt="Profile" />
                   ) : (
-                    <img src={`https://robohash.org/${session?.user?.name}.png?size=200x200`} className="rounded-full border"  alt="" />
+                    <img src={`https://robohash.org/${session?.user?.name}.png?size=200x200`} className="rounded-full border" alt="" />
                   )}
                 </div>
                 {session?.user ? (
-                    <div>
-                      <h2 className="text-2xl font-semibold">{session.user.name}</h2>
-                      <p className="text-gray-400">{session.user.email}</p>
-                    </div>
-                  ) : (
-                    <div>
-                      <h2 className="text-2xl font-semibold">user</h2>
-                      <p className="text-gray-400">user@gmail.com</p>
-                    </div>
-                  )}
+                  <div>
+                    <h2 className="text-2xl font-semibold">{session.user.name}</h2>
+                    <p className="text-gray-400">{session.user.email}</p>
+                  </div>
+                ) : (
+                  <div>
+                    <h2 className="text-2xl font-semibold">user</h2>
+                    <p className="text-gray-400">user@gmail.com</p>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -147,8 +140,9 @@ export default function AccountCenter() {
                   type="text"
                   name="fullName"
                   value={session?.user?.name}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  disabled={true}
+                    readOnly={true}
+                    className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -159,8 +153,9 @@ export default function AccountCenter() {
                   type="email"
                   name="email"
                   value={session?.user?.email}
-                  onChange={handleChange}
-                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  disabled={true}
+                  readOnly={true}
+                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
                   placeholder="Enter your email"
                 />
               </div>
@@ -171,7 +166,7 @@ export default function AccountCenter() {
                   type="tel"
                   name="contactNumber"
                   value={userData.contactNumber}
-                  onChange={handleChange}
+
                   className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
                   placeholder="Enter your contact number"
                 />
@@ -183,7 +178,6 @@ export default function AccountCenter() {
                   type="password"
                   name="password"
                   value={userData.password}
-                  onChange={handleChange}
                   className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
                   placeholder="Enter your password"
                 />
@@ -191,14 +185,14 @@ export default function AccountCenter() {
             </div>
 
             <div className="flex justify-end mt-8">
-          <button
-            onClick={() => signOut({ callbackUrl: "/" })}
-            className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
-          >
-            Log out
-            <LogOut className='ml-2' />
-          </button>
-        </div>
+              <button
+                onClick={() => signOut({ callbackUrl: "/" })}
+                className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
+              >
+                Log out
+                <LogOut className='ml-2' />
+              </button>
+            </div>
           </motion.div>
         ) : (
           // Active Plans Tab - Membership Details
@@ -273,7 +267,7 @@ export default function AccountCenter() {
           </div>
         )}
 
-        
+
       </main>
     </div>
   );

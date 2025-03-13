@@ -59,6 +59,8 @@ export const authOptions: AuthOptions = {
             name: existingUser.name,
             email: existingUser.email,
             imageURL: existingUser.imageURL,
+            createdAt: existingUser.createdAt,
+            lastPasswordUpdated: existingUser.lastPasswordUpdated
           }
         }
 
@@ -96,7 +98,9 @@ export const authOptions: AuthOptions = {
                 name:fullName,
                 email:credentials?.email,
                 password:hashedPassword,
-                auth_type:"credentials"
+                auth_type:"credentials",
+                createdAt: Date(),
+                lastPasswordUpdated:Date()
               }
             })
             return {name: newUser.name, id: newUser.id, email:newUser.email}
@@ -123,6 +127,7 @@ export const authOptions: AuthOptions = {
               email: user.email!,
               auth_type: account.provider === "google" ? "Google" : "Github",
               imageURL: profile?.avatar_url ?? profile?.picture ?? user.imageURL ?? null,
+              createdAt:Date(),
             },
           });
         }

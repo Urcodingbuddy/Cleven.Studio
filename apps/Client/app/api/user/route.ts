@@ -19,6 +19,10 @@ export async function GET(req: NextRequest) {
                 email: true,
                 name: true,
                 imageURL: true,
+                createdAt:true,
+                lastPasswordUpdated:true,
+                auth_type:true,
+                phone:true,
             },
         });
 

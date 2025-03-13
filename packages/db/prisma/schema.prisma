@@ -20,6 +20,8 @@ model User {
   password String?
   phone    String?
   imageURL String?
+  createdAt DateTime? @default(now())
+  lastPasswordUpdated DateTime?
   auth_type         AuthType
 }
 

@@ -99,8 +99,7 @@ export const authOptions: AuthOptions = {
                 email:credentials?.email,
                 password:hashedPassword,
                 auth_type:"credentials",
-                createdAt: Date(),
-                lastPasswordUpdated:Date()
+                lastPasswordUpdated: new Date(),
               }
             })
             return {name: newUser.name, id: newUser.id, email:newUser.email}

@@ -186,7 +186,7 @@ export default function AccountCenter() {
 
             <div className="flex justify-end mt-8">
               <button
-                onClick={() => signOut({ callbackUrl: "/" })}
+                onClick={() => signOut({ redirect: false })}
                 className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
               >
                 Log out

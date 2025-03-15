@@ -34,7 +34,8 @@
     "redis": "^4.7.0",
     "split-type": "^0.3.4",
     "swiper": "^11.2.4",
-    "tailwind-merge": "^3.0.2"
+    "tailwind-merge": "^3.0.2",
+    "sooner": "^1.0.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",

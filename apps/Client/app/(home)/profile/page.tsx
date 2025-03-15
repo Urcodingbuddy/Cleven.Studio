@@ -5,6 +5,7 @@ import { LogOut, User, HandCoins, Headset } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import { Button, Modal, useModal } from 'sooner'; // Import from sooner
 
 export default function AccountCenter() {
   const [activeTab, setActiveTab] = useState('personal');
@@ -22,6 +23,8 @@ export default function AccountCenter() {
     contentUpdate: false
   });
 
+  const { isOpen, openModal, closeModal } = useModal(); // useModal hook from sooner
+
   interface UserData {
     fullName: string;
     email: string;
@@ -34,8 +37,6 @@ export default function AccountCenter() {
     contentUpdate: boolean;
   }
 
-
-
   const toggleSection = (section: keyof ExpandedSections): void => {
     setExpandedSections((prev: ExpandedSections) => ({
       ...prev,
@@ -43,14 +44,17 @@ export default function AccountCenter() {
     }));
   };
 
+  const handleLogout = async () => {
+    await signOut({ redirect: false });
+    openModal();
+  };
+
   return (
-    // Dont Touch this div 
     <div className="bg-[#0c0c0c] overflow-auto w-screen text-white rounded-2xl mr-3 my-3 p-6">
       {/* Header */}
       <header className="py-4 px-6 flex justify-between mb-10 items-center border-gray-700">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8">
-          </div>
+          <div className="w-8 h-8"></div>
           <div className="text-xl font-semibold">Account Center</div>
         </div>
       </header>
@@ -141,8 +145,8 @@ export default function AccountCenter() {
                   name="fullName"
                   value={session?.user?.name}
                   disabled={true}
-                    readOnly={true}
-                    className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  readOnly={true}
+                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scal[...]
                   placeholder="Enter your full name"
                 />
               </div>
@@ -155,7 +159,7 @@ export default function AccountCenter() {
                   value={session?.user?.email}
                   disabled={true}
                   readOnly={true}
-                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-[...]
                   placeholder="Enter your email"
                 />
               </div>
@@ -166,7 +170,6 @@ export default function AccountCenter() {
                   type="tel"
                   name="contactNumber"
                   value={userData.contactNumber}
-
                   className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
                   placeholder="Enter your contact number"
                 />
@@ -186,7 +189,7 @@ export default function AccountCenter() {
 
             <div className="flex justify-end mt-8">
               <button
-                onClick={() => signOut({ redirect: false })}
+                onClick={handleLogout}
                 className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
               >
                 Log out
@@ -267,7 +270,19 @@ export default function AccountCenter() {
           </div>
         )}
 
-
+        {/* Modal for logout confirmation */}
+        <Modal isOpen={isOpen} onClose={closeModal} title="Logout">
+          <div className="p-4">
+            <p>You are logged out from Cleven.Studio</p>
+            <div className="flex justify-end mt-4">
+              <Link href="/">
+                <Button onClick={closeModal} className="bg-blue-500 text-white px-4 py-2 rounded">
+                  OK
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </Modal>
       </main>
     </div>
   );

@@ -16,6 +16,7 @@ export function GlowCards() {
       }
       title="Codebase Optimization"
       description="We enhance performance by restructuring and optimizing your existing website code."
+      imgSrc="./code-optimization.jpeg"
     />
     <GridItem
       className="md:col-span-6 lg:col-span-8 group"
@@ -24,6 +25,7 @@ export function GlowCards() {
       }
       title="Website Redesign & Maintenance"
       description="From minor UI tweaks to full redesigns, we provide scalable and modern solutions."
+      imgSrc="website Redesign and Maintenance.jpeg"
     />
 
     {/* Middle row */}
@@ -34,6 +36,7 @@ export function GlowCards() {
       }
       title="Security & Performance Audits"
       description="We analyze vulnerabilities and optimize speed for a seamless user experience."
+      imgSrc="Security & Performance Audits.jpeg"
     />
 
     {/* Bottom row */}
@@ -44,6 +47,7 @@ export function GlowCards() {
       }
       title="Custom Feature Development"
       description="Need a unique feature? We build custom integrations tailored to your business."
+      imgSrc="Custom Feature Development.jpeg"
     />
     <GridItem
       className="md:col-span-6 lg:col-span-6 group"
@@ -52,6 +56,7 @@ export function GlowCards() {
       }
       title="SEO & Accessibility Improvements"
       description="We ensure your site is optimized for search engines and accessible to all users."
+      imgSrc="SEO & Accessibility Improvements.jpeg"
     />
   </ul>
 </div>
@@ -63,23 +68,33 @@ interface GridItemProps {
   title: string
   description: React.ReactNode
   className?: string
+  imgSrc?: string
 }
 
-const GridItem = ({ icon, title, description, className }: GridItemProps) => {
+const GridItem = ({ icon, title, description, className, imgSrc }: GridItemProps) => {
   return (
     <li className={`min-h-[200px] list-none ${className}`}>
       <div className="relative h-full rounded-3xl border border-neutral-800 bg-[#0c0c0c] p-2 transition-all duration-300">
         <GlowingEffect spread={25} glow={true} disabled={false} proximity={60} inactiveZone={0.01} />
+
+        {/* Background Image */}
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-2xl border-neutral-800 p-6 transition-all duration-300">
-          <div className="relative flex flex-1 flex-col justify-between gap-4">
-            <div className="w-fit rounded-xl border border-neutral-800 text-white bg-neutral-900/50 p-3">{icon}</div>
+          <div className="absolute inset-0">
+            <img src={imgSrc} alt="Background" className="h-full w-full object-cover" />
+            {/* Black Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/100 via-black/80 to-transparent"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative flex flex-1 flex-col justify-between gap-4 z-10">
+            <div className="w-fit rounded-xl border border-neutral-800 text-white bg-neutral-900/60 p-3">{icon}</div>
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold tracking-tight text-white md:text-2xl">{title}</h3>
-              <p className="text-sm text-neutral-400 md:text-base">{description}</p>
+              <h3 className="text-lg font-semibold tracking-tight text-white md:text-xl">{title}</h3>
+              <p className="text-xs text-neutral-400 md:text-sm">{description}</p>
             </div>
           </div>
         </div>
       </div>
     </li>
-  )
-}
+  );
+};

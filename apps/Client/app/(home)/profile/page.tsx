@@ -4,11 +4,13 @@ import { useState } from 'react';
 import { LogOut, User, HandCoins, Headset } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
+import axios from 'axios';
 import Link from 'next/link';
 
 export default function AccountCenter() {
-  const [activeTab, setActiveTab] = useState('personal');
   const { data: session } = useSession();
+  const [activeTab, setActiveTab] = useState('personal');
+ 
   const [userData, setUserData] = useState({
     fullName: '',
     email: '',

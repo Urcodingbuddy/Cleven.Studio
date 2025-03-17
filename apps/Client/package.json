@@ -17,7 +17,7 @@
     "@studio-freight/lenis": "^1.0.42",
     "@tabler/icons-react": "^3.30.0",
     "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/postcss": "^4.0.1",
+    "@tailwindcss/postcss": "^4.0.14",
     "axios": "^1.8.3",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",
@@ -37,10 +37,10 @@
     "recoil": "^0.7.7",
     "redis": "^4.7.0",
     "resend": "^4.1.2",
+    "sooner": "^1.0.2",
     "split-type": "^0.3.4",
     "swiper": "^11.2.4",
-    "tailwind-merge": "^3.0.2",
-    "sooner": "^1.0.2"
+    "tailwind-merge": "^3.0.2"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
@@ -54,8 +54,8 @@
     "@types/react-dom": "19.0.3",
     "@types/uuid": "^10.0.0",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.1",
-    "tailwindcss": "^4.0.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.14",
     "typescript": "5.7.3"
   },
   "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).",

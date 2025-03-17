@@ -1,15 +1,17 @@
 "use client"
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LogOut, User, HandCoins, Headset } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-export default function AccountCenter() {
+export default function Profile() {
   const [activeTab, setActiveTab] = useState("personal")
   const { data: session } = useSession()
+  const router = useRouter();
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
@@ -38,10 +40,30 @@ export default function AccountCenter() {
     }))
   }
 
+  const [countdown, setCountdown] = useState(3);
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+
+    let timer = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev === 1) {
+          clearInterval(timer);
+          setIsModalOpen(false);
+          router.push("/");
+        }
+        return prev - 1;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [isModalOpen, router]);
+  
   const handleLogout = async () => {
     await signOut({ redirect: false })
     await fetch('/api/auth/session');
     setIsModalOpen(true)
+    setCountdown(3)
   }
 
   return (
@@ -270,23 +292,14 @@ export default function AccountCenter() {
 
         {/* Simple Modal for logout confirmation */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full">
-              <h3 className="text-xl font-semibold mb-4">Logout</h3>
-              <p>You are logged out from Cleven.Studio</p>
-              <div className="flex justify-end mt-6">
-                <Link href="/#">
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
-                  >
-                    OK
-                  </button>
-                </Link>
-              </div>
-            </div>
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition-opacity duration-300">
+          <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full text-center shadow-lg relative">
+            <h3 className="text-2xl font-bold mb-4">Logged Out</h3>
+            <p className="text-gray-300">You are logged out from Cleven.Studio.</p>
+            <p className="mt-4 text-gray-400">Redirecting out in <span className="font-semibold text-white">{countdown}</span> seconds...</p>
           </div>
-        )}
+        </div>
+      )}
       </main>
     </div>
   )

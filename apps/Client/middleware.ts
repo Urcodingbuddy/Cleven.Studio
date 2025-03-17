@@ -12,10 +12,13 @@ export async function middleware(req: NextRequest) {
 
     if (isProtectedRoute) {
         if (!session || !session.id) {
-            return NextResponse.redirect(new URL("/signin", req.url));
+            return NextResponse.redirect(new URL("/", req.url));
         }
     }
 
+    if(pathname.startsWith('/signin') || pathname.startsWith('/signup') && session?.id) {
+        return NextResponse.redirect(new URL('/workspace', req.url));
+    }
 
     if (!session && pathname.startsWith('/workspace')) {
         return NextResponse.redirect(new URL('/', req.url));
@@ -29,5 +32,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-    matcher: ["/", "/billing", "/market-place", "/profile", "/upload", "/workspace"],
+    matcher: ["/", "/signup", "/signin", "/billing", "/market-place", "/profile", "/upload", "/workspace"],
 };

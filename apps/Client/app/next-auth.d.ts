@@ -9,6 +9,8 @@ declare module "next-auth" {
     email: string;
     auth_type?: "Google" | "Github";
     imageURL?: string | null;
+    createdAt?: Date | null;
+    lastPasswordUpdated?: Date | null;
   }
 
   interface Session extends DefaultSession {

@@ -16,7 +16,7 @@ export default function Home() {
     <AppBar/>
     <SmoothScrollProvider/>
     <ContainerScroll>
-    <img src="https://ui.aceternity.com/_next/image?url=%2Flinear.webp&w=3840&q=75" alt="" />
+    <img src="./dashboard-ex.jpg" alt="" />
     </ContainerScroll>
     <HeroMessage/>
     <EssentialSection/>

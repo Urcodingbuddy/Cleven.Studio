@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { useState } from 'react';
 import { LogOut, User, HandCoins, Headset } from 'lucide-react';
@@ -8,51 +8,47 @@ import axios from 'axios';
 import Link from 'next/link';
 
 export default function AccountCenter() {
-  const { data: session } = useSession();
-  const [activeTab, setActiveTab] = useState('personal');
- 
+  const [activeTab, setActiveTab] = useState("personal")
+  const { data: session } = useSession()
   const [userData, setUserData] = useState({
-    fullName: '',
-    email: '',
-    contactNumber: '',
-    password: ''
-  });
+    fullName: "",
+    email: "",
+    contactNumber: "",
+    password: "",
+  })
 
   // State for dropdown sections in the plans tab
   const [expandedSections, setExpandedSections] = useState({
     maintenance: false,
-    contentUpdate: false
-  });
+    contentUpdate: false,
+  })
 
-  interface UserData {
-    fullName: string;
-    email: string;
-    contactNumber: string;
-    password: string;
-  }
+  // Simple modal state
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   interface ExpandedSections {
-    maintenance: boolean;
-    contentUpdate: boolean;
+    maintenance: boolean
+    contentUpdate: boolean
   }
-
-
 
   const toggleSection = (section: keyof ExpandedSections): void => {
     setExpandedSections((prev: ExpandedSections) => ({
       ...prev,
-      [section]: !prev[section]
-    }));
-  };
+      [section]: !prev[section],
+    }))
+  }
+
+  const handleLogout = async () => {
+    await signOut({ redirect: false })
+    setIsModalOpen(true)
+  }
 
   return (
-    // Dont Touch this div 
     <div className="bg-[#0c0c0c] overflow-auto w-screen text-white rounded-2xl mr-3 my-3 p-6">
       {/* Header */}
       <header className="py-4 px-6 flex justify-between mb-10 items-center border-gray-700">
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8">
-          </div>
+          <div className="w-8 h-8"></div>
           <div className="text-xl font-semibold">Account Center</div>
         </div>
       </header>
@@ -61,19 +57,16 @@ export default function AccountCenter() {
       <nav className="py-6 px-8 relative">
         <ul className="flex items-center gap-8">
           {[
-            { id: 'personal', label: 'Personal Details', icon: <User className="w-5 h-5" /> },
-            { id: 'plans', label: 'Active Plans', icon: <HandCoins size={24} strokeWidth={1.5} /> }
-          ].map(tab => (
+            { id: "personal", label: "Personal Details", icon: <User className="w-5 h-5" /> },
+            { id: "plans", label: "Active Plans", icon: <HandCoins size={24} strokeWidth={1.5} /> },
+          ].map((tab) => (
             <li key={tab.id} className="relative">
               <button
                 onClick={() => setActiveTab(tab.id)}
                 className={`
                   flex items-center gap-3 px-4 py-2
                   transition-all duration-300 ease-out
-                  ${activeTab === tab.id
-                    ? 'text-white'
-                    : 'text-gray-400 hover:text-white'
-                  }
+                  ${activeTab === tab.id ? "text-white" : "text-gray-400 hover:text-white"}
                 `}
               >
                 {tab.icon}
@@ -86,15 +79,15 @@ export default function AccountCenter() {
                   transition={{
                     type: "spring",
                     stiffness: 380,
-                    damping: 30
+                    damping: 30,
                   }}
                 />
               )}
             </li>
           ))}
           <Link href="/help-center">
-            <span className='text-gray-400 hover:text-white flex items-center gap-2'>
-              <Headset className='w-6 h-6' /> Help Center
+            <span className="text-gray-400 hover:text-white flex items-center gap-2">
+              <Headset className="w-6 h-6" /> Help Center
             </span>
           </Link>
         </ul>
@@ -102,7 +95,7 @@ export default function AccountCenter() {
 
       {/* Main content */}
       <main className="py-12 px-6 max-w-6xl mx-auto ">
-        {activeTab === 'personal' ? (
+        {activeTab === "personal" ? (
           // Personal Details Tab
           <motion.div
             className="mb-12 transition-all duration-500 opacity-100 transform translate-y-0 animate-fade-in"
@@ -115,9 +108,13 @@ export default function AccountCenter() {
               <div className="flex items-center space-x-4 mb-2">
                 <div className="w-16 h-16 hover:border-2 hover:border-white rounded-full flex items-center justify-center">
                   {session?.user?.image ? (
-                    <img src={session.user.image} className="rounded-full" alt="Profile" />
+                    <img src={session.user.image || "/placeholder.svg"} className="rounded-full" alt="Profile" />
                   ) : (
-                    <img src={`https://robohash.org/${session?.user?.name}.png?size=200x200`} className="rounded-full border" alt="" />
+                    <img
+                      src={`https://robohash.org/${session?.user?.name}.png?size=200x200`}
+                      className="rounded-full border"
+                      alt=""
+                    />
                   )}
                 </div>
                 {session?.user ? (
@@ -141,10 +138,10 @@ export default function AccountCenter() {
                 <input
                   type="text"
                   name="fullName"
-                  value={session?.user?.name}
+                  value={session?.user?.name || ""}
                   disabled={true}
-                    readOnly={true}
-                    className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  readOnly={true}
+                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your full name"
                 />
               </div>
@@ -154,10 +151,10 @@ export default function AccountCenter() {
                 <input
                   type="email"
                   name="email"
-                  value={session?.user?.email}
+                  value={session?.user?.email || ""}
                   disabled={true}
                   readOnly={true}
-                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  className="w-full p-3 cursor-not-allowed bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your email"
                 />
               </div>
@@ -168,8 +165,8 @@ export default function AccountCenter() {
                   type="tel"
                   name="contactNumber"
                   value={userData.contactNumber}
-
-                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  onChange={(e) => setUserData({ ...userData, contactNumber: e.target.value })}
+                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your contact number"
                 />
               </div>
@@ -180,7 +177,8 @@ export default function AccountCenter() {
                   type="password"
                   name="password"
                   value={userData.password}
-                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 transform focus:scale-101"
+                  onChange={(e) => setUserData({ ...userData, password: e.target.value })}
+                  className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your password"
                 />
               </div>
@@ -188,11 +186,11 @@ export default function AccountCenter() {
 
             <div className="flex justify-end mt-8">
               <button
-                onClick={() => signOut({ callbackUrl: "/" })}
+                onClick={handleLogout}
                 className="bg-red-600 text-white px-4 py-2 rounded flex items-center transition-all duration-300 hover:bg-red-700 hover:shadow-lg transform hover:translate-y-1 cursor-pointer"
               >
                 Log out
-                <LogOut className='ml-2' />
+                <LogOut className="ml-2" />
               </button>
             </div>
           </motion.div>
@@ -210,12 +208,12 @@ export default function AccountCenter() {
 
               <div className="space-y-4">
                 <button
-                  onClick={() => toggleSection('maintenance')}
+                  onClick={() => toggleSection("maintenance")}
                   className="w-full flex items-center justify-between bg-black bg-opacity-80 p-3 rounded text-left text-white transition-all duration-300 hover:bg-opacity-100"
                 >
                   <span>Website Maintenance & Support</span>
                   <svg
-                    className={`w-5 h-5 transition-transform duration-300 ${expandedSections.maintenance ? 'transform rotate-180' : ''}`}
+                    className={`w-5 h-5 transition-transform duration-300 ${expandedSections.maintenance ? "transform rotate-180" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -238,12 +236,12 @@ export default function AccountCenter() {
                 )}
 
                 <button
-                  onClick={() => toggleSection('contentUpdate')}
+                  onClick={() => toggleSection("contentUpdate")}
                   className="w-full flex items-center justify-between bg-black bg-opacity-80 p-3 rounded text-left text-white transition-all duration-300 hover:bg-opacity-100"
                 >
                   <span>Content Update Management & Bug Fixing</span>
                   <svg
-                    className={`w-5 h-5 transition-transform duration-300 ${expandedSections.contentUpdate ? 'transform rotate-180' : ''}`}
+                    className={`w-5 h-5 transition-transform duration-300 ${expandedSections.contentUpdate ? "transform rotate-180" : ""}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -269,8 +267,27 @@ export default function AccountCenter() {
           </div>
         )}
 
-
+        {/* Simple Modal for logout confirmation */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full">
+              <h3 className="text-xl font-semibold mb-4">Logout</h3>
+              <p>You are logged out from Cleven.Studio</p>
+              <div className="flex justify-end mt-6">
+                <Link href="/">
+                  <button
+                    onClick={() => setIsModalOpen(false)}
+                    className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+                  >
+                    OK
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </main>
     </div>
-  );
+  )
 }
+

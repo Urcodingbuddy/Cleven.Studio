@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     // Dont Touch this div 
-    <div className="w-screen overflow-y-scroll bg-[#0c0c0c] text-white rounded-2xl mr-3 my-3">
+    <div className="w-screen overflow-y-scroll bg-[#0E0E0E] text-white rounded-2xl mr-3 my-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -144,7 +144,7 @@ export default function Home() {
                         <>
                           <Upload className="w-12 h-12 mb-4 text-gray-400" />
                           <p className="text-center mb-2 text-lg">
-                            Drag & Drop Or <span className="text-blue-500 underline cursor-pointer">choose file</span> to upload
+                            Drag & Drop Or <span className="underline font-bold" >choose file</span> to upload
                           </p>
                           <p className="text-sm text-gray-500">Supports ZIP, RAR, or repository files up to 500MB</p>
                           <input
@@ -184,7 +184,7 @@ export default function Home() {
                           value={link}
                           onChange={(e) => setLink(e.target.value)}
                           placeholder="e.g., https://github.com/your-repository"
-                          className="w-full pl-10 p-3 rounded-md bg-gray-900 border border-gray-800 focus:border-blue-500 focus:outline-none transition-colors"
+                          className="w-full pl-10 p-3 rounded-md bg-[#161616] border border-gray-800 focus:border-gray-500 focus:outline-none transition-colors"
                         />
                       </div>
                       <p className="mt-2 text-sm text-gray-500">We'll automatically import your project from GitHub, GitLab, or Bitbucket</p>
@@ -199,13 +199,13 @@ export default function Home() {
                     transition={{ delay: 0.4, duration: 0.4 }}
                   >
                     <div className="mb-6">
-                      <label className="block mb-2">Project Name<span className="text-blue-500">*</span></label>
+                      <label className="block mb-2">Project Name<span className="text-gray-500">*</span></label>
                       <input
                         type="text"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="My Awesome Project"
-                        className="w-full p-3 rounded-md bg-gray-900 border border-gray-800 focus:border-blue-500 focus:outline-none transition-colors"
+                        className="w-full p-3 rounded-md bg-[#161616] border border-gray-800 focus:border-gray-500 focus:outline-none transition-colors"
                         required
                       />
                     </div>
@@ -217,13 +217,13 @@ export default function Home() {
                     transition={{ delay: 0.5, duration: 0.4 }}
                   >
                     <div className="mb-6">
-                      <label className="block mb-2">Description<span className="text-blue-500">*</span></label>
+                      <label className="block mb-2">Description<span className="text-gray-500">*</span></label>
                       <textarea
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                         placeholder="Describe your project in detail..."
                         rows={6}
-                        className="w-full p-3 rounded-md bg-gray-900 border border-gray-800 focus:border-blue-500 focus:outline-none transition-colors resize-none"
+                        className="w-full p-3 rounded-md bg-[#161616] border border-gray-800 focus:border-gray-500 focus:outline-none transition-colors resize-none"
                         required
                       />
                     </div>
@@ -239,13 +239,13 @@ export default function Home() {
                       <div className="flex gap-4">
                         <button
                           onClick={() => setVisibility("private")}
-                          className={`flex-1 p-3 rounded-md border transition-colors ${visibility === "private" ? "border-[#1c1c1c] bg-blue-500/10" : "border-gray-800 hover:border-gray-700"}`}
+                          className={`flex-1 p-3 rounded-md border transition-colors ${visibility === "private" ? "border-gray-500 bg-[#161616]" : "border-gray-800 hover:border-gray-700"}`}
                         >
                           Private
                         </button>
                         <button
                           onClick={() => setVisibility("public")}
-                          className={`flex-1 p-3 rounded-md border transition-colors ${visibility === "public" ? "border-[#1c1c1c] bg-blue-500/10" : "border-gray-800 hover:border-gray-700"}`}
+                          className={`flex-1 p-3 rounded-md border transition-colors ${visibility === "public" ? "bg-[#161616] focus:border-2 border-gray-500 " : "border-gray-800 hover:border-gray-700"}`}
                         >
                           Public
                         </button>
@@ -277,7 +277,7 @@ export default function Home() {
                       <div className="relative">
                         <button
                           onClick={() => setShowDropdown(!showDropdown)}
-                          className="w-full p-3 rounded-md bg-gray-900 border border-gray-800 focus:border-blue-500 focus:outline-none transition-colors flex justify-between items-center"
+                          className="w-full p-3 rounded-md bg-[#161616] border-gray-800 focus:border-blue-500 focus:outline-none transition-colors flex justify-between items-center"
                         >
                           <span>{category || "Select a category"}</span>
                           <ChevronDown size={18} className={`transition-transform duration-300 ${showDropdown ? "rotate-180" : ""}`} />
@@ -290,7 +290,7 @@ export default function Home() {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: -10 }}
                               transition={{ duration: 0.2 }}
-                              className="absolute z-10 mt-1 w-full bg-gray-900 border border-gray-800 rounded-md shadow-lg"
+                              className="absolute z-10 mt-1 w-full bg-[#161616] border border-gray-800 rounded-md shadow-lg"
                             >
                               {categories.map((cat) => (
                                 <button
@@ -299,7 +299,7 @@ export default function Home() {
                                     setCategory(cat);
                                     setShowDropdown(false);
                                   }}
-                                  className="w-full text-left p-3 hover:bg-gray-800 transition-colors"
+                                  className="w-full text-left p-3 hover:bg-[#1A1A1A] transition-colors"
                                 >
                                   {cat}
                                 </button>
@@ -338,11 +338,11 @@ export default function Home() {
                           onChange={(e) => setCurrentTag(e.target.value)}
                           onKeyDown={handleTagKeyDown}
                           placeholder="Add a tag"
-                          className="flex-grow p-3 rounded-md bg-gray-900 border border-gray-800 focus:border-blue-500 focus:outline-none transition-colors"
+                          className="flex-grow p-3 rounded-md bg-[#161616] border border-gray-800 focus:border-gray-500 focus:outline-none transition-colors"
                         />
                         <button
                           onClick={addTag}
-                          className="px-4 py-2 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors"
+                          className="px-4 py-2 bg-[#161616] rounded-md hover:bg-[#1A1A1A] transition-colors"
                         >
                           Add
                         </button>
@@ -359,7 +359,7 @@ export default function Home() {
                   >
                     <div className="">
                       <label className="block mb-2">Project Structure</label>
-                      <div className="p-4 rounded-md bg-gray-900 border border-gray-800 font-mono text-sm">
+                      <div className="p-4 rounded-md bg-[#161616] border border-gray-800 font-mono text-sm">
                         <div className="flex items-center gap-2 mb-2">
                           <Folder size={16} className="text-blue-400" />
                           <span>project-root/</span>
@@ -399,12 +399,12 @@ export default function Home() {
                   >
                     <div className="mb-6">
                       <label className="block mb-2">Collaborators</label>
-                      <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                      <div className="flex items-center gap-3 p-3 rounded-md bg-[#161616] border border-gray-800">
                         <Users size={18} className="text-gray-400" />
                         <div className="flex-grow">
                           <p>No collaborators yet</p>
                         </div>
-                        <button className="px-3 py-1 bg-gray-800 rounded-md hover:bg-gray-700 transition-colors text-sm">
+                        <button className="px-3 py-1 bg-[#1a1a1a] rounded-md hover:bg-[#161616] transition-colors text-sm">
                           Add
                         </button>
                       </div>
@@ -420,7 +420,7 @@ export default function Home() {
                     <div className="mb-6">
                       <label className="block mb-2">Project Details</label>
                       <div className="space-y-4">
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-[#161616] border border-gray-800">
                           <GitBranch size={18} className="text-gray-400" />
                           <div className="flex-grow">
                             <p className="text-sm text-gray-400">Default Branch</p>
@@ -428,7 +428,7 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-[#161616] border border-gray-800">
                           <Tag size={18} className="text-gray-400" />
                           <div className="flex-grow">
                             <p className="text-sm text-gray-400">Version</p>
@@ -436,7 +436,7 @@ export default function Home() {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-3 p-3 rounded-md bg-gray-900 border border-gray-800">
+                        <div className="flex items-center gap-3 p-3 rounded-md bg-[#161616] border border-gray-800">
                           <Clock size={18} className="text-gray-400" />
                           <div className="flex-grow">
                             <p className="text-sm text-gray-400">Last Updated</p>
@@ -463,7 +463,7 @@ export default function Home() {
             ) : (
               <button
                 onClick={prevStep}
-                className="px-6 py-3 rounded-md border border-gray-800 hover:bg-gray-800 transition-colors"
+                className="px-6 py-3 rounded-md border border-[#161616] hover:bg-[#1A1A1A] transition-colors"
               >
                 Back
               </button>
@@ -471,18 +471,18 @@ export default function Home() {
 
             {step === 1 ? (
               <div className="flex gap-4">
-                <button className="px-6 py-3 rounded-md border border-gray-800 hover:bg-gray-800 transition-colors">
+                <button className="px-6 py-3 rounded-md border border-gray-800 hover:bg-[#1A1A1A] transition-colors">
                   Cancel
                 </button>
                 <button
                   onClick={nextStep}
-                  className="px-6 py-3 bg-blue-600 rounded-md hover:bg-blue-700 transition-colors"
+                  className="px-6 py-3 bg-[#161616] rounded-md hover:bg-[#1A1A1A] transition-colors"
                 >
                   Next
                 </button>
               </div>
             ) : (
-              <button className="px-6 py-3 bg-blue-600 rounded-md hover:bg-blue-700 transition-colors">
+              <button className="px-6 py-3 bg-[#161616]  rounded-md hover:bg-[#1A1A1A] transition-colors">
                 Create Project
               </button>
             )}

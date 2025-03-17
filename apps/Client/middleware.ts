@@ -16,8 +16,13 @@ export async function middleware(req: NextRequest) {
         }
     }
 
+
+    if (!session && pathname.startsWith('/workspace')) {
+        return NextResponse.redirect(new URL('/', req.url));
+    }
+
     if (pathname === "/" && session?.id) {
-        return NextResponse.redirect(new URL("/workspace", req.url)); 
+        return NextResponse.redirect(new URL("/workspace", req.url));
     }
 
     return NextResponse.next();

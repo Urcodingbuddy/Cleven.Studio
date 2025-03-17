@@ -40,6 +40,7 @@ export default function AccountCenter() {
 
   const handleLogout = async () => {
     await signOut({ redirect: false })
+    await fetch('/api/auth/session');
     setIsModalOpen(true)
   }
 

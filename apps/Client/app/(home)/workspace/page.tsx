@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 
-export default function Home() {
+export default function WorkSpace() {
   const [progress, setProgress] = useState(0);
   const [status, setStatus] = useState('File fetched');
 

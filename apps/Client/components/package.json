@@ -16,7 +16,8 @@
     "./Testimonials": "./src/Testimonials.tsx",
     "./HoverBtn": "./src/HoveBtn.tsx",
     "./ClevenLoader": "./src/ClevenLoader.tsx",
-    "./PrivacyPolicy": "./src/PrivacyPolicy.tsx"
+    "./PrivacyPolicy": "./src/PrivacyPolicy.tsx",
+    "./Logout": "./src/Logout.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

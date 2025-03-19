@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { LogOut, User, HandCoins, Headset } from 'lucide-react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'motion/react';
-import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 

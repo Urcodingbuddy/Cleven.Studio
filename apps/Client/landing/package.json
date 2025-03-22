@@ -1,0 +1,34 @@
+{
+  "name": "@repo/landing",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "exports": {
+    "./AppBar": "./src/AppBar.tsx",
+    "./PunchLine": "./src/PunchLine.tsx",
+    "./HeroMessage": "./src/HeroMessage.tsx",
+    "./SmoothScrollProvider": "./src/SmoothScrollProvider",
+    "./EssentialSection": "./src/EssentialSection.tsx",
+    "./FAQ": "./src/FAQ.tsx",
+    "./Footer": "./src/Footer.tsx",
+    "./GlowCards": "./src/GlowCards.tsx",
+    "./Services": "./src/Services.tsx",
+    "./Testimonials": "./src/Testimonials.tsx",
+    "./HoverBtn": "./src/HoveBtn.tsx",
+    "./ClevenLoader": "./src/ClevenLoader.tsx",
+    "./PrivacyPolicy": "./src/PrivacyPolicy.tsx",
+    "./Logout": "./src/Logout.tsx"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "generate:component": "turbo gen react-component",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

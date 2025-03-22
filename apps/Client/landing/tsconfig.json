@@ -1,0 +1,24 @@
+{
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true, 
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "importHelpers": true,
+    "jsx": "preserve",
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

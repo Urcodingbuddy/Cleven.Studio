@@ -117,7 +117,7 @@ export default function Home() {
         <div className="flex p-4 ">
           <img
             src="https://www.udgamschool.com/wp-content/uploads/2023/05/dummy-image-grey-e1398449111870.jpg"
-            className="w-screen h-60 object-cover "
+            className="w-screen h-60 object-cover  "
             alt=""
           />
         </div>

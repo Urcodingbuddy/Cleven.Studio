@@ -1,7 +1,13 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
-    "jsx" : "preserve",
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@repo/components/*": ["components/*"],
+      "@repo/landing/*": ["landing/src/*"],
+      "@/lib/*": ["lib/*"]
+    },
     "plugins": [
       {
         "name": "next"
@@ -13,8 +19,9 @@
     "**/*.tsx",
     "next-env.d.ts",
     "next.config.js",
-    ".next/types/**/*.ts"
-, "tailwind.config.js"  ],
+    ".next/types/**/*.ts",
+    "tailwind.config.js"
+  ],
   "exclude": [
     "node_modules"
   ]

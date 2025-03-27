@@ -6,7 +6,7 @@ import { GoogleBtn } from "@repo/ui/googleBtn";
 import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
 import { useSignIn } from "../../lib/hooks/handleSignin";
-import { SmoothScrollProvider } from '../../components/src/SmoothScrollProvider';
+import  SmoothScrollProvider from '@repo/landing/SmoothScrollProvider';
 
 
 

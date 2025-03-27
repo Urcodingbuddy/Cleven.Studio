@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Shield } from 'lucide-react';
-import { SmoothScrollProvider } from '../../components/src/SmoothScrollProvider';
+import  SmoothScrollProvider  from '@repo/landing/SmoothScrollProvider';
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },

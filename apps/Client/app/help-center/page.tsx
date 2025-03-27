@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { SmoothScrollProvider } from '../../components/src/SmoothScrollProvider';
+import SmoothScrollProvider  from '@repo/landing/SmoothScrollProvider';
 export default function HelpCenter() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');

@@ -2,15 +2,10 @@
   "name": "@repo/db",
   "version": "0.0.0",
   "dependencies": {
-    "prisma": "^6.4.1",
-    "@prisma/client": "^6.4.1"
-  },
-  "scripts": {
-    "postinstall": "npx prisma generate",
-     "vercel-build": "npx prisma generate && turbo build"
+    "@prisma/client": "^6.5.0"
   },
   "devDependencies": {
-    "prisma": "^6.4.1"
+    "prisma": "^6.5.0"
   },
   "exports": {
     "./client": "./index.ts"

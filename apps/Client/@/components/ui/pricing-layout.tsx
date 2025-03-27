@@ -2,7 +2,7 @@
 
 import { Check } from "lucide-react"
 import { useState } from "react"
-import { SmoothScrollProvider } from "../../../components/src/SmoothScrollProvider"
+import  SmoothScrollProvider  from "@repo/landing/SmoothScrollProvider"
 
 
 export type PricingPlan = {

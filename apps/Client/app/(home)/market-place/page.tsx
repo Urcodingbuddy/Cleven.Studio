@@ -1,4 +1,4 @@
-import Footer from "@repo/components/Footer";
+
 import {
   ArrowRight,
   Code2,
@@ -225,9 +225,7 @@ export default function Home() {
         <div className="mb-10" >
         <p className="text-gray-500 absolute left-[38%]" >© Copyright 2024-2027 cleven.studio. All Rights Reserved</p>
         </div>
-
       </main>
-
     </>
   );
 }

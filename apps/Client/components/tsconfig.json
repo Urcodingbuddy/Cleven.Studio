@@ -1,5 +1,6 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
+  
   "compilerOptions": {
     "outDir": "dist",
     "allowImportingTsExtensions": true,
@@ -17,9 +18,6 @@
     "importHelpers": true,
     "jsx": "preserve",
   },
-  "include": [
-    "src"
-, "../app/privacy-policy/page.tsx"  ],
   "exclude": [
     "node_modules",
     "dist"

@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { PunchLine } from "@repo/components/PunchLine";
+import { PunchLine } from "@repo/landing/PunchLine";
 
 export const ContainerScroll = ({
   children,

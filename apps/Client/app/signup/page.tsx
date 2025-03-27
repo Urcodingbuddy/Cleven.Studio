@@ -6,7 +6,7 @@ import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
 import { useState } from "react";
 import { useSignUp  } from "../../lib/hooks/handleSignup";
-import { SmoothScrollProvider } from "../../components/src/SmoothScrollProvider";
+import  SmoothScrollProvider  from "@repo/landing/SmoothScrollProvider";
 
 
 

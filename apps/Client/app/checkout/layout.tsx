@@ -1,10 +1,19 @@
-export default function CheckoutLayout({ children }: { children: React.ReactNode }) {
+
+export default function CheckoutLayout({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50">
-        <header className="w-full p-4 bg-blue-600 text-white text-center">
-          <h1 className="text-xl font-bold">Checkout</h1>
+      <div className="min-h-screen bg-gray-100">
+        <header className="bg-blue-600 p-4 text-white text-center">
+          <h1 className="text-2xl font-bold">Secure Checkout</h1>
         </header>
-        <main className="w-full max-w-3xl p-6 bg-white shadow-lg rounded-lg">{children}</main>
+        <main className="max-w-4xl mx-auto p-6">{children}</main>
+        <footer className="text-center p-4 mt-8 text-gray-600">
+          &copy; {new Date().getFullYear()} clevenstudios. All Rights Reserved.
+        </footer>
       </div>
     );
   }
+  

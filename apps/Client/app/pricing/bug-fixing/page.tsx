@@ -1,8 +1,12 @@
 "use client"
 import React from 'react';
 import PricingLayout, { PricingPlan } from '../../../@/components/ui/pricing-layout';
+import { useRouter } from 'next/navigation';
 
 export default function WebMaintenance() {
+  
+  const router = useRouter()
+
   const plans: PricingPlan[] = [
     {
       name: "Basic",

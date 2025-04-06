@@ -3,7 +3,11 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
+import { ServiceProgressDashboard } from "../../../@/components/ui/service-progress-dashboard"
+// import { ProgressControlPanel } from "@/components/progress-control-panel"
+import { MultiStepProgressBar } from "../../../@/components/ui/multi-step-progress-bar"
+// import { ProgressStateExample } from "@/components/progress-state-ex/ample"
+// import { SimplifiedProgressBar } from "@/components/simplified-progress-bar"
 
 export default function WorkSpace() {
   const [progress, setProgress] = useState(0);
@@ -98,7 +102,10 @@ export default function WorkSpace() {
 
           {/* Project Status Goes here */}
 
-          
+          <div className="pt-6">
+            <h2 className="text-xl font-semibold mb-6 text-white">Dashboard View</h2>
+            <ServiceProgressDashboard />
+          </div>
 
 
         </div>

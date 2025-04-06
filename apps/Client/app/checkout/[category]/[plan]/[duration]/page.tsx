@@ -2,14 +2,15 @@ import { plans } from '../../../../../@/lib/planData';
 import { notFound } from 'next/navigation';
 
 type Props = {
-  params: {
+  params: Promise<{
     category: string;
     plan: string;
     duration: 'monthly' | 'yearly';
-  };
+  }>;
 };
 
-export default async function CheckoutPage({ params }: Props) {
+export default async function CheckoutPage(props: Props) {
+  const params = await props.params;
   const { category, plan, duration } = params;
 
   const selectedPlan = plans.find(

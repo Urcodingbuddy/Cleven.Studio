@@ -24,7 +24,7 @@ interface PricingLayoutProps {
 }
 
 
-export default function PricingLayout({ title, plans, onClick }: PricingLayoutProps) {
+export default function PricingLayout({ title, plans }: PricingLayoutProps) {
   const [isYearly, setIsYearly] = useState(false)
   const router = useRouter()
 

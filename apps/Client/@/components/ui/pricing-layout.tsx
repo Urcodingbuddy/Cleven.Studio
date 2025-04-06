@@ -3,8 +3,8 @@
 import { Check } from "lucide-react"
 import { useState } from "react"
 import  SmoothScrollProvider  from "@repo/landing/SmoothScrollProvider"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { DynamicCheckOutBtn } from "app/checkout/[category]/[plan]/[duration]/page"
 
 
 export type PricingPlan = {
@@ -26,12 +26,7 @@ interface PricingLayoutProps {
 
 export default function PricingLayout({ title, plans }: PricingLayoutProps) {
   const [isYearly, setIsYearly] = useState(false)
-  const router = useRouter()
-
-  const handleSelectPlan = (plan : any) => {
-    router.push(`/checkout?plan=${encodeURIComponent(plan.name)}&price=${encodeURIComponent(plan.price)}`);
-  };
-
+ 
 
   function cn(...classes: (string | boolean | undefined)[]): string {
     return classes.filter(Boolean).join(" ")
@@ -97,9 +92,11 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
                   ))}
                 </ul>
 
-                <button className={`w-full py-2.5 md:py-3 px-4 rounded-full text-sm md:text-base cursor-pointer font-medium transition-all duration-200 ${plan.buttonVariant === "default" ? "bg-white/10 text-white hover:bg-white/20" : "bg-white/10 hover:bg-white/20"}`}  onClick={() => handleSelectPlan}  >
-                  Get Started
-                </button>
+                <DynamicCheckOutBtn
+                  category={title}
+                  duration={isYearly ? "yearly" : "monthly"}
+                  plan={plan.name}
+                />
               </div>
             </div>
           ))}

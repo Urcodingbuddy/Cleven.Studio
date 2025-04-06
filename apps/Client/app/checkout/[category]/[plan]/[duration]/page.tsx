@@ -1,28 +1,39 @@
-"use client";
+import { plans } from '../../../../../@/lib/planData';
+import { notFound } from 'next/navigation';
 
-import { useRouter } from "next/navigation";
-
-export function DynamicCheckOutBtn({
-  category,
-  plan,
-  duration
-}: {
-  category: string;
-  plan: string;
-  duration: 'monthly' | 'yearly';
-}) {
-  const router = useRouter();
-
-  const handleCheckout = () => {
-    router.push(`/checkout/${category}/${plan}`);
+type Props = {
+  params: {
+    category: string;
+    plan: string;
+    duration: 'monthly' | 'yearly';
   };
+};
+
+export default async function CheckoutPage({ params }: Props) {
+  const { category, plan, duration } = params;
+
+  const selectedPlan = plans.find(
+    (p) => p.category === category && p.plan === plan
+  );
+
+  if (!selectedPlan) return notFound();
+
+  const validDurations = ['monthly', 'yearly'] as const;
+  if (!validDurations.includes(duration)) return notFound();
+
+  const price = selectedPlan.price[duration];
 
   return (
-    <button
-      onClick={handleCheckout}
-      className={`w-full py-2.5 md:py-3 px-4 rounded-full text-sm md:text-base cursor-pointer font-medium transition-all duration-200 bg-white/10 hover:bg-white/20 text-white shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/30 active:scale-95 active:shadow-sm active:shadow-black/10`}
-    >
-    Get Started
-    </button>
+    <div className="p-8 text-white">
+      <h1 className="text-3xl font-bold mb-2">
+        Checkout - {selectedPlan.category.toUpperCase()} / {selectedPlan.name} Plan ({duration})
+      </h1>
+      <p className="text-xl mb-4">💵 {price}</p>
+      <ul className="list-disc list-inside mt-4 space-y-1">
+        {selectedPlan.features.map((feature, idx) => (
+          <li key={idx}>{feature}</li>
+        ))}
+      </ul>
+    </div>
   );
 }

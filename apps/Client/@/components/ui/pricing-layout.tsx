@@ -4,7 +4,6 @@ import { Check } from "lucide-react"
 import { useState } from "react"
 import  SmoothScrollProvider  from "@repo/landing/SmoothScrollProvider"
 import { useRouter } from "next/navigation"
-import { DynamicCheckOutBtn } from "app/checkout/[category]/[plan]/[duration]/page"
 
 
 export type PricingPlan = {
@@ -75,33 +74,57 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
               key={index}
               className={`relative rounded-2xl ${plan.featured ? "bg-gradient-to-b from-white/15 to-black border-white/50" : "bg-white/5 border-white/10"} backdrop-blur-xl border p-6 md:p-8 overflow-hidden group hover:border-white/50 transition-all duration-300 hover:scale-[1.02]`}
             >
-              <div className="relative">
+                <div className="relative">
                 <h3 className="text-sm text-gray-400 mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-2 mb-1">
                   <div className="text-3xl md:text-4xl font-bold mb-6">
-                    {isYearly ? plan.yearlyPrice : plan.price}
+                  {isYearly ? plan.yearlyPrice : plan.price}
                   </div>
-                
                 </div>
                 <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-gray-300">
-                      <Check className={`w-4 h-4 md:w-5 md:h-5 shrink-0 ${plan.featured ? "text-white" : "text-white/65"}`} />
-                      {feature}
-                    </li>
+                  <li key={featureIndex} className="flex items-start gap-2 md:gap-3 text-xs md:text-sm text-gray-300">
+                    <Check className={`w-4 h-4 md:w-5 md:h-5 shrink-0 ${plan.featured ? "text-white" : "text-white/65"}`} />
+                    {feature}
+                  </li>
                   ))}
                 </ul>
 
                 <DynamicCheckOutBtn
-                  category={title}
-                  duration={isYearly ? "yearly" : "monthly"}
-                  plan={plan.name}
+                  category={title.trim().toLowerCase().replace(/\s+/g, '-')}
+                  duration={isYearly ? 'yearly' : 'monthly'}
+                  plan={(plan.name).toLowerCase()}
                 />
-              </div>
+                </div>
             </div>
           ))}
         </div>
       </main>
     </div>
   )
+}
+
+function DynamicCheckOutBtn({
+  category,
+  plan,
+  duration
+}: {
+  category: string;
+  plan: string;
+  duration: 'monthly' | 'yearly';
+}) {
+  const router = useRouter();
+
+  const handleCheckout = () => {
+    router.push(`/checkout/${category}/${plan}/${duration}`);
+  };
+
+  return (
+    <button
+      onClick={handleCheckout}
+      className={`w-full py-2.5 md:py-3 px-4 rounded-full text-sm md:text-base cursor-pointer font-medium transition-all duration-200 bg-white/10 hover:bg-white/20 text-white shadow-md shadow-black/20 hover:shadow-lg hover:shadow-black/30 active:scale-95 active:shadow-sm active:shadow-black/10`}
+    >
+    Get Started
+    </button>
+  );
 }

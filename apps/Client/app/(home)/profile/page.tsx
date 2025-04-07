@@ -1,69 +1,61 @@
-"use client"
-
-import { useEffect, useState } from 'react';
-import { LogOut, User, HandCoins, Headset } from 'lucide-react';
-import { signOut, useSession } from 'next-auth/react';
-import { motion } from 'motion/react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+"use client";
+import { signIn, signOut, useSession } from "next-auth/react"
+import { useEffect, useState } from "react";
+import { LogOut, User, HandCoins, Headset } from "lucide-react";
+import { motion } from "motion/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Profile() {
-  const [activeTab, setActiveTab] = useState("personal")
-  const { data: session } = useSession()
+  const [activeTab, setActiveTab] = useState("personal");
+  const { data: session } = useSession();
   const router = useRouter();
   const [userData, setUserData] = useState({
     fullName: "",
     email: "",
     contactNumber: "",
     password: "",
-  })
+  });
 
   // State for dropdown sections in the plans tab
   const [expandedSections, setExpandedSections] = useState({
     maintenance: false,
     contentUpdate: false,
-  })
+  });
 
   // Simple modal state
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   interface ExpandedSections {
-    maintenance: boolean
-    contentUpdate: boolean
+    maintenance: boolean;
+    contentUpdate: boolean;
   }
 
   const toggleSection = (section: keyof ExpandedSections): void => {
     setExpandedSections((prev: ExpandedSections) => ({
       ...prev,
       [section]: !prev[section],
-    }))
-  }
+    }));
+  };
 
   const [countdown, setCountdown] = useState(3);
-
   useEffect(() => {
-    if (!isModalOpen) return;
+    if (isModalOpen) {
+      const timeout = setTimeout(() => {
+        setIsModalOpen(false);
+        fetch("/api/auth/session");
+        router.push("/");
+      }, 3000);
 
-    let timer = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev === 1) {
-          clearInterval(timer);
-          setIsModalOpen(false);
-          router.push("/");
-        }
-        return prev - 1;
-      });
-    }, 1000);
+      return () => clearTimeout(timeout);
+    }
+  }, [isModalOpen]);
 
-    return () => clearInterval(timer);
-  }, [isModalOpen, router]);
-  
   const handleLogout = async () => {
-    await signOut({ redirect: false })
-    await fetch('/api/auth/session');
-    setIsModalOpen(true)
-    setCountdown(3)
-  }
+    await signOut({ redirect: false });
+    setIsModalOpen(true);
+    setCountdown(3);
+  };
 
   return (
     <div className="bg-[#0c0c0c] overflow-auto w-screen text-white rounded-2xl mr-3 my-3 p-6">
@@ -79,8 +71,16 @@ export default function Profile() {
       <nav className="py-6 px-8 relative">
         <ul className="flex items-center gap-8">
           {[
-            { id: "personal", label: "Personal Details", icon: <User className="w-5 h-5" /> },
-            { id: "plans", label: "Active Plans", icon: <HandCoins size={24} strokeWidth={1.5} /> },
+            {
+              id: "personal",
+              label: "Personal Details",
+              icon: <User className="w-5 h-5" />,
+            },
+            {
+              id: "plans",
+              label: "Active Plans",
+              icon: <HandCoins size={24} strokeWidth={1.5} />,
+            },
           ].map((tab) => (
             <li key={tab.id} className="relative">
               <button
@@ -130,7 +130,11 @@ export default function Profile() {
               <div className="flex items-center space-x-4 mb-2">
                 <div className="w-16 h-16 hover:border-2 hover:border-white rounded-full flex items-center justify-center">
                   {session?.user?.image ? (
-                    <img src={session.user.image || "/placeholder.svg"} className="rounded-full" alt="Profile" />
+                    <img
+                      src={session.user.image || "/placeholder.svg"}
+                      className="rounded-full"
+                      alt="Profile"
+                    />
                   ) : (
                     <img
                       src={`https://robohash.org/${session?.user?.name}.png?size=200x200`}
@@ -141,7 +145,9 @@ export default function Profile() {
                 </div>
                 {session?.user ? (
                   <div>
-                    <h2 className="text-2xl font-semibold">{session.user.name}</h2>
+                    <h2 className="text-2xl font-semibold">
+                      {session.user.name}
+                    </h2>
                     <p className="text-gray-400">{session.user.email}</p>
                   </div>
                 ) : (
@@ -187,7 +193,9 @@ export default function Profile() {
                   type="tel"
                   name="contactNumber"
                   value={userData.contactNumber}
-                  onChange={(e) => setUserData({ ...userData, contactNumber: e.target.value })}
+                  onChange={(e) =>
+                    setUserData({ ...userData, contactNumber: e.target.value })
+                  }
                   className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your contact number"
                 />
@@ -199,7 +207,9 @@ export default function Profile() {
                   type="password"
                   name="password"
                   value={userData.password}
-                  onChange={(e) => setUserData({ ...userData, password: e.target.value })}
+                  onChange={(e) =>
+                    setUserData({ ...userData, password: e.target.value })
+                  }
                   className="w-full p-3 bg-gray-200 text-gray-800 rounded transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your password"
                 />
@@ -241,7 +251,12 @@ export default function Profile() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
                   </svg>
                 </button>
 
@@ -269,7 +284,12 @@ export default function Profile() {
                     viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 9l-7 7-7-7"
+                    ></path>
                   </svg>
                 </button>
 
@@ -291,16 +311,21 @@ export default function Profile() {
 
         {/* Simple Modal for logout confirmation */}
         {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition-opacity duration-300">
-          <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full text-center shadow-lg relative">
-            <h3 className="text-2xl font-bold mb-4">Logged Out</h3>
-            <p className="text-gray-300">You are logged out from Cleven.Studio.</p>
-            <p className="mt-4 text-gray-400">Redirecting out in <span className="font-semibold text-white">{countdown}</span> seconds...</p>
+          <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 transition-opacity duration-300">
+            <div className="bg-gray-800 rounded-lg p-6 max-w-md w-full text-center shadow-lg relative">
+              <h3 className="text-2xl font-bold mb-4">Logged Out</h3>
+              <p className="text-gray-300">
+                You are logged out from Cleven.Studio.
+              </p>
+              <p className="mt-4 text-gray-400">
+                Redirecting out in{" "}
+                <span className="font-semibold text-white">{countdown}</span>{" "}
+                seconds...
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
       </main>
     </div>
-  )
+  );
 }
-

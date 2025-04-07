@@ -1,4 +1,4 @@
-import { plans } from '../../../../../@/lib/planData';
+import { plans } from '@/lib/planData';
 import { notFound } from 'next/navigation';
 
 type Props = {

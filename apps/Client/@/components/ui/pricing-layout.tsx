@@ -32,9 +32,12 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen w-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/20 via-black to-black text-white overflow-x-hidden">
+    <main className="min-h-screen relative text-white bg-no-repeat bg-center bg-[radial-gradient(ellipse_at_top,_rgba(255,255,255,0.15)_0%,_rgba(255,255,255,0.08)_10%,_rgba(0,0,0,0)_60%)] bg-[length:60%_100%]">
+
+  
+
       <SmoothScrollProvider/>
-      <main className="container mx-auto pt-28 md:pt-24 lg:pt-32 pb-16 px-4">
+      <div className="container mx-auto pt-28 md:pt-24 lg:pt-32 pb-16 px-4">
         
         {/* Heading */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
@@ -99,8 +102,8 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
             </div>
           ))}
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   )
 }
 

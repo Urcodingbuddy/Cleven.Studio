@@ -45,8 +45,7 @@ export const AppBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  //Lenis for getting scroll down
-  const lenis = useLenis(); // ✅ Now it returns Lenis | null
+  const lenis = useLenis();
   const handleScroll = () => {
     if (lenis) {
       lenis.scrollTo("#services_sec", {
@@ -58,7 +57,6 @@ export const AppBar = () => {
 
   return (
     <>
-      {/* Main Navbar */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-transform duration-700 ease-in-out backdrop-blur-lg bg-transparent shadow-md ${isHidden ? "-translate-y-full" : "translate-y-0"}`}
       >
@@ -67,12 +65,13 @@ export const AppBar = () => {
           className="flex justify-between items-center px-6  p-4"
         >
           <div id="cleven_logo">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-4">
               <img
                 src="./Cleven removeBg.png"
                 alt="cleven.studio"
                 className="h-10 object-cover cursor-pointer"
               />
+              <h2 className="text-lg">Cleven.Studio</h2>
             </Link>
           </div>
 

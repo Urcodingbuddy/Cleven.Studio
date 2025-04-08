@@ -19,7 +19,6 @@ export function Testimonials() {
                 speed="slow"
             />
         </div>
-        // bg-grid-white
     );
 }
 

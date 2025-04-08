@@ -67,7 +67,7 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {services.map((service, index) => (
             <div
               key={index}
@@ -77,14 +77,14 @@ export const Services = () => {
 
               <div className="relative">
                 <div className="mb-6 inline-block p-4 bg-white/5 rounded-2xl">
-                  <service.icon className="w-8 h-8" />
+                  <service.icon className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-gray-400 mb-6">{service.description}</p>
+                <h4 className="text-xl font-semibold mb-4">{service.title}</h4>
+                <p className="text-sm text-gray-400 mb-6">{service.description}</p>
 
                 <Link href={service.link}>
-                  <button className="flex items-center text-md font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
+                  <button className="flex items-center text-sm font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                     View <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
                 </Link>

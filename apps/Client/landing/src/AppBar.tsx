@@ -62,7 +62,7 @@ export const AppBar = () => {
       >
         <div
           id="navBar"
-          className="flex justify-between items-center px-6  p-4"
+          className="flex justify-between items-center px-4 md:px-6  py-4"
         >
           <div id="cleven_logo">
             <Link href="/" className="flex items-center gap-4">

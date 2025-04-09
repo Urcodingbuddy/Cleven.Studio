@@ -8,11 +8,13 @@ import { Footer } from "@repo/landing/Footer";
 import { Services } from "@repo/landing/Services";
 import { Testimonials } from "@repo/landing/Testimonials";
 import { TextHoverEffect } from "../@/components/ui/text-hover-effect";
+import { InitialLoader } from "@repo/landing/InitialLoader";
 
 export default function Home() {
 
   return (
     <>
+    <InitialLoader />
     <AppBar/>
     <SmoothScrollProvider/>
     <ContainerScroll>

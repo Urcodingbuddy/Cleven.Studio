@@ -24,9 +24,9 @@ export const InitialLoader = () => {
             {/* Logo Animation */}
             <motion.div
               className="absolute bg-black w-60 z-20 flex justify-end"
-              initial={{ x: -60 }}
+              initial={{ x: -80 }}
               animate={{
-                x: "-150px",
+                x: "-160px",
                 transition: {
                   duration: 1.2,
                   ease: "easeInOut",
@@ -43,7 +43,7 @@ export const InitialLoader = () => {
               initial={{ opacity: 0, x: -40 }}
               animate={{
                 opacity: 1,
-                x: 60,
+                x: 55,
                 transition: {
                   opacity: { duration: 0.8, delay: 0.7 },
                   x: { duration: 1.2, ease: "easeInOut", delay: 0.6 },

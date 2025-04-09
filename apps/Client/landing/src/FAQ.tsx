@@ -54,7 +54,7 @@ export function FAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full cursor-pointer flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 text-left"
                 >
-                  <h3 className="text-lg sm:text-xl font-semibold pr-4 sm:pr-8">{faq.question}</h3>
+                  <h3 className="text-sm sm:text-lg md:text-xl font-semibold pr-4 sm:pr-8">{faq.question}</h3>
                   <div className="flex-shrink-0 cursor-pointer p-1.5 sm:p-2 rounded-full transition-colors duration-300 hover:bg-white/10">
                     {isOpen ? (
                       <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-white/70 transition-transform duration-300 transform rotate-0" />

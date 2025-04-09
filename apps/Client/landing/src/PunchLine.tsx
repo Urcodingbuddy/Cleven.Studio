@@ -165,7 +165,7 @@ export const PunchLine = () => {
           <SmoothScrollProvider /> {/* Smooth scrolling enabled */}
           <div
             ref={containerRef}
-            className="relative pt-20 sm:pt-24 md:pt-32 lg:pt-40 flex flex-col items-center justify-center w-[90vw] mx-auto min-h-screen bg-[#0c0c0c]"
+            className="relative  pt-16 sm:pt-24 md:pt-32 lg:pt-40 flex flex-col items-center justify-center w-[90vw] mx-auto md:min-h-screen min-h-[85vh] bg-[#0c0c0c]"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -179,7 +179,7 @@ export const PunchLine = () => {
             >
               <h1
                 ref={headlineRef}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-4 mb-5 sm:mb-10 text-center max-w-6xl"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-16 md:pt-10 pb-2 sm:pb-6 mb-2 md:mb-10 text-left md:text-center max-w-6xl"
               >
                 Unleashing the Power of Performance to Make Your <span className="inline-block bg-gradient-to-r from-[#67e8f9] to-[#3b82f6] bg-clip-text text-transparent animate-pulse">Website Invincible.</span> 
               </h1>
@@ -188,7 +188,7 @@ export const PunchLine = () => {
             <div className="flex flex-col items-center relative z-10">
               <motion.p
                 ref={paragraphRef}
-                className="text-zinc-400 sm:text-lg md:text-xl font-medium mb-5 sm:mb-16 md:mb-20 sm:max-w-2xl md:max-w-3xl leading-8 text-center max-w-3xl"
+                className="text-zinc-400 text-md sm:text-lg md:text-xl font-medium mb-5 sm:mb-16 md:mb-20 sm:max-w-2xl md:max-w-3xl leading-8 text-left md:text-center max-w-3xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -210,7 +210,7 @@ export const PunchLine = () => {
                 transition={{ duration: 0.5, delay: 1.2 }}
               >
                 <motion.p
-                  className="text-md font-semibold text-zinc-400 group-hover:text-zinc-200"
+                  className="text-sm md:text-md font-semibold text-zinc-400 group-hover:text-zinc-200"
                   animate={{ y: [0, -5, 0] }}
                   transition={{
                     duration: 2,
@@ -235,13 +235,13 @@ export const PunchLine = () => {
                     times: [0, 0.5, 1]
                   }}
                 >
-                  <ArrowDown className="text-white mt-2" />
+                  <ArrowDown className="text-white h-5 w-5 mt-1 md:mt-2" />
                 </motion.div>
               </motion.div>
             </div>
 
             {/* Background decorative elements */}
-            <motion.div
+           {/* <motion.div
               className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none"
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.4 }}
@@ -250,7 +250,7 @@ export const PunchLine = () => {
               <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-purple-700/10 blur-[100px]" />
               <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full bg-blue-700/10 blur-[120px]" />
               <div className="absolute top-1/2 left-1/2 w-80 h-80 rounded-full bg-indigo-700/10 blur-[80px] transform -translate-x-1/2 -translate-y-1/2" />
-            </motion.div>
+            </motion.div>*/}
           </div>
         </motion.div>
       )}

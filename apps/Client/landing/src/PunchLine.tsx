@@ -179,7 +179,7 @@ export const PunchLine = () => {
             >
               <h1
                 ref={headlineRef}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-16 md:pt-10 pb-2 sm:pb-6 mb-2 md:mb-10 text-left md:text-center max-w-6xl"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pt-16 md:pt-10 pb-2 sm:pb-6 mb-2 md:mb-10 text-left md:text-center max-w-6xl"
               >
                 Unleashing the Power of Performance to Make Your <span className="inline-block bg-gradient-to-r from-[#67e8f9] to-[#3b82f6] bg-clip-text text-transparent animate-pulse">Website Invincible.</span> 
               </h1>
@@ -188,7 +188,7 @@ export const PunchLine = () => {
             <div className="flex flex-col items-center relative z-10">
               <motion.p
                 ref={paragraphRef}
-                className="text-zinc-400 text-md sm:text-lg md:text-xl font-medium mb-5 sm:mb-16 md:mb-20 sm:max-w-2xl md:max-w-3xl leading-8 text-left md:text-center max-w-3xl"
+                className="text-zinc-400 text-sm sm:text-md md:text-lg lg:text-xl font-medium mb-5 sm:mb-16 md:mb-20 sm:max-w-2xl md:max-w-3xl leading-8 text-left md:text-center max-w-3xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}

@@ -8,11 +8,11 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-4">
             <div>
-              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-16 object-cover cursor-pointer" /></Link>
+              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-14 object-cover cursor-pointer" /></Link>
             </div>
-            <span className="text-xl font-bold">CLEVEN.STUDIO</span>
+            <span className="text-xl font-bold">Cleven.Studio</span>
           </div>
           <p className="text-gray-300 text-sm leading-relaxed font-medium">
             ClevenStudios is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With expert design, seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.

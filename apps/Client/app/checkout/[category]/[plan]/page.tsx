@@ -25,7 +25,12 @@ const addOns: AddOn[] = [
   { name: "Custom code maintenance", price: 14.99 },
   { name: "Social Media Integration", price: 7.98 }
 ];
-type Params = Promise<{ slug: string }>
+
+type Params = {
+  category: string;
+  plan: string;
+};
+
 export default async function CheckoutPage({ params }: { params: Params }) {
   const { category, plan } = params;
   const selectedPlan = plans.find(

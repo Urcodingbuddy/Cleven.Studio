@@ -32,7 +32,7 @@ export default async function CheckoutPage({ params }: {
     plan: string;
   }
 }) {
-  const { category, plan } = await Promise.resolve(params)
+  const { category, plan } = params;
   const selectedPlan = plans.find(
     (p: Plan) => p.category === category && p.plan === plan
   );

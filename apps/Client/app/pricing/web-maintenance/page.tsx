@@ -1,4 +1,4 @@
-"use client";
+
 
 import PricingLayout from "../../../@/components/ui/pricing-layout";
 

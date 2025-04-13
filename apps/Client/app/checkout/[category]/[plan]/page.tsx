@@ -25,15 +25,13 @@ const addOns: AddOn[] = [
   { name: "Social Media Integration", price: 7.98 }
 ];
 
-type Props = {
-  params: {
-    category: string;
-    plan: string;
-  };
+type Params = {
+  category: string;
+  plan: string;
 };
 
-export default function CheckoutPage({ params }: Props) {
-  const { category, plan } = params;
+export default async function CheckoutPage({ params }: { params: Promise<Params> }) {
+  const { category, plan } = await params;
   const selectedPlan = plans.find(
     (p: Plan) => p.category === category && p.plan === plan
   );

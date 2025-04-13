@@ -31,7 +31,11 @@ type Params = {
   plan: string;
 };
 
-export default async function CheckoutPage({ params }: { params: Params }) {
+export default async function CheckoutPage({
+  params,
+}: {
+  params: { category: string; plan: string };
+}) {
   const { category, plan } = params;
   const selectedPlan = plans.find(
     (p: Plan) => p.category === category && p.plan === plan

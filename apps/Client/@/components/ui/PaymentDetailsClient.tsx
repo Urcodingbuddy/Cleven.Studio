@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
@@ -9,19 +9,14 @@ interface PaymentDetailsProps {
   addOns: { name: string; price: number }[]
 }
 
-export default function PaymentDetailsClient({ baseAmount, planName, addOns = [] }: PaymentDetailsProps) {
+export default function PaymentDetailsClient({ baseAmount, planName, addOns }: PaymentDetailsProps) {
   const [selectedAddOns, setSelectedAddOns] = useState<Set<number>>(new Set())
   const [totalPrice, setTotalPrice] = useState(baseAmount)
-  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
+ 
 
   // Calculate total add-ons price
   const totalAddOns = Array.from(selectedAddOns).reduce((sum, index) => sum + (addOns[index]?.price ?? 0), 0)
-
-  // Update total price when selections change
-  useEffect(() => {
-    const baseWithDiscount = billingCycle === "yearly" ? baseAmount * 0.9 : baseAmount
-    setTotalPrice(baseWithDiscount + totalAddOns)
-  }, [baseAmount, totalAddOns, billingCycle])
+  const total = baseAmount + totalAddOns
 
   const toggleAddOn = (index: number) => {
     const newSelected = new Set(selectedAddOns)
@@ -42,32 +37,9 @@ export default function PaymentDetailsClient({ baseAmount, planName, addOns = []
       <h2 className="text-xl font-semibold mb-6 text-white">Payment Details</h2>
 
       {/* Billing toggle */}
-      <div className="flex items-center justify-center mb-8 space-x-4">
-        <span className={`text-sm ${billingCycle === "monthly" ? "text-white" : "text-zinc-500"}`}>Monthly</span>
-        <button
-          onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
-          className="relative inline-flex h-6 w-11 items-center rounded-full bg-zinc-800"
-        >
-          <span className="sr-only">Toggle billing cycle</span>
-          <span
-            className={`${
-              billingCycle === "yearly" ? "translate-x-6" : "translate-x-1"
-            } inline-block h-4 w-4 transform rounded-full bg-white/60 transition-transform`}
-          />
-        </button>
-        <span className={`text-sm ${billingCycle === "yearly" ? "text-white" : "text-zinc-500"}`}>
-          Yearly <span className="text-xs text-white">(Save up to 10%)</span>
-        </span>
-      </div>
+     
 
       <div className="space-y-5">
-        <div className="flex justify-between items-center">
-          <span className="text-zinc-400">Base Plan - {planName}</span>
-          <span className="font-medium">
-            ${billingCycle === "yearly" ? (baseAmount * 0.9).toFixed(2) : baseAmount.toFixed(2)}
-          </span>
-        </div>
-
         {addOns.length > 0 && (
           <div className="space-y-3 pt-2">
             <h3 className="text-sm font-medium text-zinc-300">Add-Ons</h3>
@@ -93,7 +65,7 @@ export default function PaymentDetailsClient({ baseAmount, planName, addOns = []
         <div className="border-t border-zinc-800 my-4 pt-4"></div>
 
         <div className="flex justify-between font-semibold">
-          <span>Total Amount</span>
+          <span>Total Amount - monthly </span>
           <span className="text-white">${totalPrice.toFixed(2)}</span>
         </div>
 

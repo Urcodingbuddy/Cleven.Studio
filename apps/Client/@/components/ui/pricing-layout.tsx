@@ -1,14 +1,12 @@
-"use client"
+// "use client"
 
 import { Check } from "lucide-react"
-import { useState } from "react"
 import  SmoothScrollProvider  from "@repo/landing/SmoothScrollProvider"
 import GettingStarted from '@/components/ui/GettingStarted';
 
 export type PricingPlan = {
   name: string
   price: string
-  yearlyPrice: string
   features: string[]
   featured?: boolean
   buttonVariant?: "default" | "outline",
@@ -23,9 +21,7 @@ interface PricingLayoutProps {
 
 
 export default function PricingLayout({ title, plans }: PricingLayoutProps) {
-  const [isYearly, setIsYearly] = useState(false)
  
-
   function cn(...classes: (string | boolean | undefined)[]): string {
     return classes.filter(Boolean).join(" ")
   }
@@ -48,27 +44,6 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
           </p>
         </div>
 
-        {/* Pricing Toggle */}
-        <div className="flex items-center justify-center gap-3 md:gap-4 mb-12 md:mb-16">
-          <span className={`text-xs md:text-sm font-medium ${!isYearly ? "text-white" : "text-gray-400"}`}>
-            Monthly
-          </span>
-          <button
-            onClick={() => setIsYearly(!isYearly)}
-            className="relative inline-flex h-6 md:h-7 w-11 md:w-12 items-center rounded-full bg-white/30 transition-colors hover:bg-white/50"
-          >
-            <span
-              className={`inline-block h-4 md:h-5 w-4 md:w-5 transform rounded-full bg-white shadow-lg transition-transform duration-200 ease-in-out ${isYearly ? "translate-x-6" : "translate-x-1"}`}
-            />
-          </button>
-          <span className={`text-xs md:text-sm font-medium ${isYearly ? "text-white" : "text-gray-400"}`}>
-            Yearly
-            <span className="ml-1 md:ml-2 text-[10px] md:text-xs text-white">
-              (Save up to 10%)
-            </span>
-          </span>
-        </div>
-
         {/* Pricing Cards */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {plans.map((plan, index) => (
@@ -80,7 +55,7 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
                 <h3 className="text-sm text-gray-400 mb-2">{plan.name}</h3>
                 <div className="flex items-baseline gap-2 mb-1">
                   <div className="text-3xl md:text-4xl font-bold mb-6">
-                  {isYearly ? plan.yearlyPrice : plan.price}
+                  {plan.price}
                   </div>
                 </div>
                 <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
@@ -94,7 +69,6 @@ export default function PricingLayout({ title, plans }: PricingLayoutProps) {
 
                 <GettingStarted
                   category={title.trim().toLowerCase().replace(/\s+/g, '-')}
-                  duration={isYearly ? 'yearly' : 'monthly'}
                   plan={(plan.name).toLowerCase()}
                 />
                 </div>

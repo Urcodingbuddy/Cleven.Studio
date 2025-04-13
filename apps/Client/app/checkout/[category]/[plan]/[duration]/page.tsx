@@ -58,14 +58,23 @@ export default async function CheckoutPage({ params }: {
 
   return (
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-8">
+      <div className="fixed inset-0 bg-[#0c0c0c]">
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-[-10%] left-[-20%] w-[500px] h-[500px] rounded-b-lg bg-white blur-[100px] "></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px]  bg-white blur-[100px]"></div>
+          <div className="absolute top-[40%] right-[20%] w-[400px] h-[400px] rounded-full bg-[#0c0c0c] blur-[100px] animate-pulse delay-700"></div>
+        </div>
+      </div>
       <SmoothScrollProvider />
+
+
       <div className="max-w-6xl mx-auto">
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 md:mb-12">
-        Your Orchestrated Setup
+          Your Orchestrated Setup
         </h1>
 
-        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+        <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 z-10 ">
           <div className="space-y-4 sm:space-y-6 md:space-y-8">
             <div className="bg-[#0c0c0c] border border-zinc-800 rounded-xl sm:rounded-2xl p-4 sm:p-6">
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">

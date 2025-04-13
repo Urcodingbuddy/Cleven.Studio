@@ -34,7 +34,7 @@ export const InitialLoader = () => {
                 },
               }}
             >
-              <img src="./Cleven removeBg.png" alt="Logo" width={65} height={65} />
+              <img src="./Cleven removeBg.png" alt="Logo" width={50} height={50} />
             </motion.div>
 
             {/* Text Animation */}

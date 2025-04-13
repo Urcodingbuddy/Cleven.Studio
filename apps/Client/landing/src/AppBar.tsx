@@ -65,7 +65,7 @@ export const AppBar = () => {
           className="flex justify-between items-center px-4 md:px-6  py-4"
         >
           <div id="cleven_logo">
-            <Link href="/" className="flex items-center gap-4">
+            <Link href="/" className="flex items-center gap-3">
               <img
                 src="./Cleven removeBg.png"
                 alt="cleven.studio"

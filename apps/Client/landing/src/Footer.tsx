@@ -10,12 +10,12 @@ export const Footer = () => {
         <div className="space-y-6 col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center space-x-4">
             <div>
-              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-14 object-cover cursor-pointer" /></Link>
+              <Link href="/"><img src="./Cleven removeBg.png" alt="cleven.studio" className="h-12 object-cover cursor-pointer" /></Link>
             </div>
             <span className="text-xl font-bold">Cleven.Studio</span>
           </div>
           <p className="text-gray-300 text-sm leading-relaxed font-medium">
-            ClevenStudios is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With expert design, seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.
+            Cleven.studio is the go-to platform for startups and businesses looking for affordable, high-quality web solutions. With seamless development, and powerful management tools, we help you build, optimize, and scale your online presence effortlessly.
           </p>
           {/*add Social media handles here*/ }
           <div className="flex items-center space-x-6 pt-2"></div>
@@ -50,7 +50,7 @@ export const Footer = () => {
               { name: 'Help', link: '/help-center' },
               { name: 'Live Chat', link: '/support#live-chat' },
               { name: 'Open a Ticket', link: '/support#ticket' },
-              { name: 'Discord', link: 'https://discord.gg/PsH86NfA' },
+              { name: 'Discord', link: 'https://discord.gg/HTNRQje84w' },
             ].map((item) => (
               <li key={item.name}>
                 <Link href={item.link} className="text-sm text-gray-400 hover:text-white transition-colors">

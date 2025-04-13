@@ -1,12 +1,11 @@
-"use client";
 
 import { plans } from '@/lib/planData';
 import { notFound } from 'next/navigation';
-import { useState } from 'react';
 import AddOnsClient from '@/components/ui/addOnsClient';
 import PaymentDetailsClient from '@/components/ui/PaymentDetailsClient';
+import CouponForm from '@/components/ui/CouponForm';
+import SmoothScrollProvider  from '@repo/landing/SmoothScrollProvider';
 
-// Move interfaces to a separate types file
 interface AddOn {
   name: string;
   price: number;
@@ -23,7 +22,6 @@ interface Plan {
   };
 }
 
-// Move addOns data to a separate config file
 const addOns: AddOn[] = [
   { name: "Monthly traffic & Performance Report", price: 2.03 },
   { name: "Page speed optimization + Bug fixes", price: 5.98 },
@@ -35,37 +33,15 @@ const addOns: AddOn[] = [
 ];
 
 // Separate CouponForm into its own component
-const CouponForm = () => {
-  const [coupon, setCoupon] = useState('');
-
-  return (
-    <div className="flex flex-col sm:flex-row gap-2 mt-4">
-      <input
-        type="text"
-        placeholder="Enter coupon code"
-        value={coupon}
-        onChange={(e) => setCoupon(e.target.value)}
-        className="w-full flex-1 px-4 py-2 rounded-lg bg-zinc-800 text-white text-sm sm:text-base"
-      />
-      <button 
-        onClick={() => console.log('Applying coupon:', coupon)}
-        className="w-full sm:w-auto px-4 py-2 bg-emerald-500 rounded-lg hover:bg-emerald-600 transition-colors text-sm sm:text-base"
-      >
-        Apply Coupon
-      </button>
-    </div>
-  );
-};
-
 // Main component
-export default function CheckoutPage({ params }: { 
+export default async function CheckoutPage({ params }: { 
   params: {
     category: string;
     plan: string;
     duration: 'monthly' | 'yearly';
   }
 }) {
-  const { category, plan, duration } = params;
+  const { category, plan, duration } = await Promise.resolve(params);
 
   // Find the selected plan
   const selectedPlan = plans.find(
@@ -82,6 +58,7 @@ export default function CheckoutPage({ params }: {
 
   return (
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-8">
+      <SmoothScrollProvider />
       <div className="max-w-6xl mx-auto">
         <div className="p-8 text-white">
           <h1 className="text-3xl font-bold mb-2">

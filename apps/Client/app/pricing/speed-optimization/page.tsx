@@ -4,7 +4,6 @@ const plans = [
   {
     name: "Basic",
     price: "$29/month",
-    yearlyPrice: "$313.2/year",
     features: [
       "Image optimization (compression and resizing)",
       "Minification of CSS and JavaScript files",
@@ -18,7 +17,6 @@ const plans = [
   {
     name: "Standard Plan",
     price: "$49/month",
-    yearlyPrice: "$529.2/year",
     features: [
       "All features of the Basic Plan",
       "Advanced speed audit with detailed analysis",
@@ -38,7 +36,6 @@ const plans = [
   {
     name: "Premium",
     price: "$79/month",
-    yearlyPrice: "$853.2/year",
     features: [
       "All features of the Standard + Basic Plan",
       "CDN integration",

@@ -6,7 +6,6 @@ export default function Mvp() {
         {
           name: "Starter",
           price: "$499/month",
-          yearlyPrice: "$4,491/year",
           features: [
             "Custom Landing Page",
             "Basic Branding",
@@ -19,7 +18,6 @@ export default function Mvp() {
         {
           name: "Professional",
           price: "$999/month",
-          yearlyPrice: "$8,991/year",
           features: [
             "5 Page Website",
             "Professional Branding",
@@ -35,7 +33,6 @@ export default function Mvp() {
         {
           name: "Enterprise",
           price: "$1,999/month",
-          yearlyPrice: "$17,991/year",
           features: [
             "10+ Page Website",
             "Premium Branding",

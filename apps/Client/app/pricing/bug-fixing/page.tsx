@@ -11,7 +11,6 @@ export default function WebMaintenance() {
     {
       name: "Basic",
       price: "$59/month",
-      yearlyPrice: "$637/year",
       features: [
         "Site Wellness Check",
         "Secure Backups", 
@@ -26,7 +25,6 @@ export default function WebMaintenance() {
     {
       name: "Standard", 
       price: "$79/month",
-      yearlyPrice: "$853/year",
       features: [
         "Bi-Weekly Website Health Check",
         "Backup Services",
@@ -44,8 +42,7 @@ export default function WebMaintenance() {
     },
     {
       name: "Premium",
-      price: "$99/month",
-      yearlyPrice: "$1069/year",  
+      price: "$99/month",  
       features: [
         "Bi-Weekly Website Health Check",
         "Backup Services",

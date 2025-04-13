@@ -4,7 +4,6 @@ const plans = [
   {
     name: "Basic",
     price: "$19/One-time-payment",
-    yearlyPrice: "$205.2/year",
     features: [
       "Linking 2 social media accounts (e.g., Facebook, Instagram) to the website",
       "Basic social media sharing buttons",
@@ -16,7 +15,6 @@ const plans = [
   {
     name: "Standard Plan",
     price: "$39/one-time-payment",
-    yearlyPrice: "$421.2/year",
     features: [
       "Linking up to 4 social media accounts (e.g., Facebook, Instagram, Twitter, LinkedIn)",
       "Customised social media sharing buttons",
@@ -30,7 +28,6 @@ const plans = [
   {
     name: "Premium",
     price: "$59/one-time-payment",
-    yearlyPrice: "$632.7/year",
     features: [
       "Linking up to 6 social media accounts",
       "Advanced social media sharing buttons (including custom designs)",

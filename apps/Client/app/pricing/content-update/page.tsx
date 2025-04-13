@@ -9,7 +9,6 @@ export default function WebMaintenance() {
     {
       name: "Basic",
       price: "$39/month",
-      yearlyPrice: "$421.2/year",
       features: [
         "Product Management (Add or update up to 20 products monthly)",
         "Backup of website content after updates (once a month)", 
@@ -23,7 +22,6 @@ export default function WebMaintenance() {
     {
       name: "Standard",
       price: "$59/month",
-      yearlyPrice: "$637.2/year",
       features: [
         "Product Management (Add or update up to 100 products monthly)",
         "Monthly performance report with actionable recommendations",
@@ -40,7 +38,6 @@ export default function WebMaintenance() {
     {
       name: "Premium", 
       price: "$79/month",
-      yearlyPrice: "$853.2/year",
       features: [
         "Product Management (Unlimited product updates and inventory management.)",
         "Content Updates (Weekly updates on banners, promotions, and new product lines).",

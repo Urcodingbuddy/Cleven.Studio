@@ -7,7 +7,6 @@ const plans = [
   {
     name: "Basic",
     price: "$59/month",
-    yearlyPrice: "$632.7/year",
     features: [
       "Website Health Check",
       "Backup Services",
@@ -21,7 +20,6 @@ const plans = [
   {
     name: "Standard Plan",
     price: "$79/month",
-    yearlyPrice: "$853.2/year",
     features: [
       "Bi-Weekly Website Health Check",
       "Backup Services: Bi-weekly backups with automated recovery",
@@ -39,7 +37,6 @@ const plans = [
   {
     name: "Premium",
     price: "$99/month",
-    yearlyPrice: "$1069.2/year",
     features: [
       "Weekly Website Health Check",
       "Backup Services: Weekly backups with automatic failover",

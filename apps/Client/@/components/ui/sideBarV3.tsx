@@ -38,7 +38,7 @@ export default function SidebarV3({ children }: { children: React.ReactNode }) {
     <div
       className={cn(
         "rounded-md w-screen flex flex-col md:flex-row bg-[#1A1A1A]  flex-1",
-        "h-screen", // added overflow-hidden to prevent double scrollbars
+        "h-screen",
       )}
     >
       <Sidebar open={open} setOpen={setOpen}>
@@ -67,7 +67,7 @@ export default function SidebarV3({ children }: { children: React.ReactNode }) {
                   />
                 ) : (
                   <Image
-                    src={`https://robohash.org/${session?.user?.name}.png?size=30x30`}
+                    src={`https://robohash.org/${session?.user?.name}.png?`}
                     className="rounded-full border"
                     alt=""
                     width={30}

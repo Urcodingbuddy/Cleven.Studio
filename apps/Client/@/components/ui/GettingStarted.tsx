@@ -4,16 +4,14 @@ import { useRouter } from "next/navigation";
 export default function GettingStarted({
   category,
   plan,
-  duration,
 }: {
   category: string;
   plan: string;
-  duration: "monthly" | "yearly";
 }) {
 const router = useRouter();
 
 const handleCheckout = () => {
-    router.push(`/checkout/${category}/${plan}/${duration}`);
+    router.push(`/checkout/${category}/${plan}`);
 };
 
   return (

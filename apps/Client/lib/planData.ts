@@ -1,16 +1,16 @@
 export type PlanDuration = 'monthly' | 'yearly';
 
-export type Plan = {
+export interface Plan {
   category: string;
   plan: string;
   name: string;
-  price: {
-    monthly: string;
-    yearly: string;
-  };
   features: string[];
-  slug: string;
-};
+  price: {
+    monthly: number;
+    yearly: number;
+  };
+  slug : string
+}
 
 export const plans: Plan[] = [
   {
@@ -18,8 +18,8 @@ export const plans: Plan[] = [
     plan: 'basic',
     name: 'Basic',
     price: {
-      monthly: '$59',
-      yearly: '$632.70',
+      monthly: 59,
+      yearly: 632.7,
     },
     slug: 'bug-fixing-basic',
     features: [
@@ -37,8 +37,8 @@ export const plans: Plan[] = [
     plan: 'standard',
     name: 'Standard',
     price: {
-      monthly: '$79',
-      yearly: '$846.30',
+      monthly: 79,
+      yearly: 846.3,
     },
     slug: 'bug-fixing-standard',
     features: [
@@ -59,8 +59,8 @@ export const plans: Plan[] = [
     plan: 'premium',
     name: 'Premium',
     price: {
-      monthly: '$99',
-      yearly: '$1,059.30',
+      monthly: 99,
+      yearly: 1059.3,
     },
     slug: 'bug-fixing-premium',
     features: [

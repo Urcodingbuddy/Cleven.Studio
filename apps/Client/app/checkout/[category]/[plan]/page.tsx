@@ -25,13 +25,8 @@ const addOns: AddOn[] = [
   { name: "Custom code maintenance", price: 14.99 },
   { name: "Social Media Integration", price: 7.98 }
 ];
-
-export default async function CheckoutPage({ params }: {
-  params: {
-    category: string;
-    plan: string;
-  }
-}) {
+type Params = Promise<{ slug: string }>
+export default async function CheckoutPage({ params }: { params: Params }) {
   const { category, plan } = params;
   const selectedPlan = plans.find(
     (p: Plan) => p.category === category && p.plan === plan

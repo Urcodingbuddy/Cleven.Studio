@@ -15,7 +15,7 @@ export default function CouponForm ()  {
       />
       <button 
         onClick={() => console.log('Applying coupon:', coupon)}
-        className="w-full sm:w-auto px-4 py-2 bg-emerald-500 rounded-lg hover:bg-emerald-600 transition-colors text-sm sm:text-base"
+        className="w-full sm:w-auto px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors text-sm sm:text-base"
       >
         Apply Coupon
       </button>

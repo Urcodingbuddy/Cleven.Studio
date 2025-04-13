@@ -33,10 +33,10 @@ export function FAQ() {
     <main className="min-h-screen bg-[#0c0c0c] text-white">
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 py-12 sm:py-24">
         <div className="text-center mb-8 sm:mb-12">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             Frequently Asked Questions&apos;s
           </h1>
-          <p className="text-gray-400 text-base sm:text-xl max-w-2xl mx-auto px-2 sm:px-0">
+          <p className="text-gray-400 text-sm sm:text-md md:text-lg lg:text-xl font-medium max-w-2xl mx-auto px-2 sm:px-0">
             Find answers to commonly asked questions about our services and processes.
           </p>
         </div>
@@ -52,10 +52,10 @@ export function FAQ() {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 text-left"
+                  className="w-full cursor-pointer flex items-center justify-between py-3 sm:py-4 px-4 sm:px-6 text-left"
                 >
-                  <h3 className="text-lg sm:text-xl font-semibold pr-4 sm:pr-8">{faq.question}</h3>
-                  <div className="flex-shrink-0 p-1.5 sm:p-2 rounded-full transition-colors duration-300 hover:bg-white/10">
+                  <h3 className="text-sm sm:text-lg md:text-xl font-semibold pr-4 sm:pr-8">{faq.question}</h3>
+                  <div className="flex-shrink-0 cursor-pointer p-1.5 sm:p-2 rounded-full transition-colors duration-300 hover:bg-white/10">
                     {isOpen ? (
                       <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-white/70 transition-transform duration-300 transform rotate-0" />
                     ) : (

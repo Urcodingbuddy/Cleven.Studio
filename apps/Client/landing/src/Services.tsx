@@ -58,16 +58,16 @@ export const Services = () => {
     <main className="bg-[#0c0c0c] text-white mt-32" id="services_sec">
       <div className="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto w-full">
         <div className="mb-20 px-4">
-          <h1 className="text-4xl sm:text-5xl  font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             Services
           </h1>
-          <p className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 text-[1.1rem]  mx-auto">
+          <p className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300 text-sm sm:text-md md:text-lg lg:text-xl font-medium  mx-auto">
             We provide comprehensive digital solutions to help your business
             thrive in the modern world.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
           {services.map((service, index) => (
             <div
               key={index}
@@ -77,14 +77,14 @@ export const Services = () => {
 
               <div className="relative">
                 <div className="mb-6 inline-block p-4 bg-white/5 rounded-2xl">
-                  <service.icon className="w-8 h-8" />
+                  <service.icon className="w-6 h-6" />
                 </div>
 
-                <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-gray-400 mb-6">{service.description}</p>
+                <h4 className="text-xl font-semibold mb-4">{service.title}</h4>
+                <p className="text-sm text-gray-400 mb-6">{service.description}</p>
 
                 <Link href={service.link}>
-                  <button className="flex items-center text-md font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
+                  <button className="flex items-center text-sm font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                     View <ArrowRight className="ml-2 w-4 h-4" />
                   </button>
                 </Link>

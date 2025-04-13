@@ -334,3 +334,18 @@ body {
   }
 }
 
+@keyframes slide-text {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 30%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+.animate-slide-text {
+  animation: slide-text 1.6s ease-in-out forwards;
+}

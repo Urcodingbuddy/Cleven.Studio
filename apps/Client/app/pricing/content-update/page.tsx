@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import PricingLayout, { PricingPlan } from "../../../@/components/ui/pricing-layout";
 
 export default function WebMaintenance() {

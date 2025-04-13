@@ -1,4 +1,3 @@
-
 import { plans } from '@/lib/planData';
 import PaymentDetailsClient from '@/components/ui/PaymentDetailsClient';
 import CouponForm from '@/components/ui/CouponForm';
@@ -26,16 +25,14 @@ const addOns: AddOn[] = [
   { name: "Social Media Integration", price: 7.98 }
 ];
 
-type Params = {
-  category: string;
-  plan: string;
+type Props = {
+  params: {
+    category: string;
+    plan: string;
+  };
 };
 
-export default async function CheckoutPage({
-  params,
-}: {
-  params: { category: string; plan: string };
-}) {
+export default function CheckoutPage({ params }: Props) {
   const { category, plan } = params;
   const selectedPlan = plans.find(
     (p: Plan) => p.category === category && p.plan === plan

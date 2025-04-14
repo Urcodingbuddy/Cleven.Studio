@@ -106,7 +106,7 @@ export default function Home() {
   ];
 
   return (
-    <> 
+    <>
       {/* Dont Touch this div */}
       <main className="w-screen overflow-y-scroll bg-[#0c0c0c] text-white rounded-2xl mr-3 my-3 p-6">
         <div id="logo" className="p-6">
@@ -124,9 +124,9 @@ export default function Home() {
 
         {/* New-Deals */}
         <div className="p-6">
-          <h1 className="text-white text-2xl ">New Deal's</h1>
+          <h1 className="text-white text-2xl">New Deal's</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-10 lg:grid-cols-3 gap-10 px-4 ">
             {newDeals.map((service, index) => (
               <div
                 key={index}
@@ -139,12 +139,12 @@ export default function Home() {
                     <service.icon className="w-8 h-8 text-white " />
                   </div>
 
-                    <h3 className="text-2xl font-semibold mb-4 text-white ">
+                  <h3 className="text-2xl font-semibold mb-4 text-white ">
                     {service.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6">{service.description}</p>
+                  </h3>
+                  <p className="text-gray-400 mb-6">{service.description}</p>
 
-                    <Link href={service.link}>
+                  <Link href={service.link}>
                     <button className="flex items-center text-md font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                       View <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
@@ -172,12 +172,12 @@ export default function Home() {
                     <service.icon className="w-8 h-8 text-white " />
                   </div>
 
-                    <h3 className="text-2xl font-semibold mb-4 text-white ">
+                  <h3 className="text-2xl font-semibold mb-4 text-white ">
                     {service.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6">{service.description}</p>
+                  </h3>
+                  <p className="text-gray-400 mb-6">{service.description}</p>
 
-                    <Link href={service.link}>
+                  <Link href={service.link}>
                     <button className="flex items-center text-md font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                       View <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
@@ -193,7 +193,7 @@ export default function Home() {
         <div className="p-6" >
           <h1 className="text-white text-2xl " >Services</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -203,16 +203,14 @@ export default function Home() {
 
                 <div className="relative">
                   <div className="mb-6 inline-block p-4 bg-white/5 rounded-2xl">
-                    <service.icon className="w-8 h-8 text-white " />
+                    <service.icon className="w-6 h-6" />
                   </div>
 
-                    <h3 className="text-2xl font-semibold mb-4 text-white ">
-                    {service.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6">{service.description}</p>
+                  <h4 className="text-xl font-semibold mb-4">{service.title}</h4>
+                  <p className="text-sm text-gray-400 mb-6">{service.description}</p>
 
-                    <Link href={service.link}>
-                    <button className="flex items-center text-md font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
+                  <Link href={service.link}>
+                    <button className="flex items-center text-sm font-medium cursor-pointer text-white/70 hover:text-white transition-colors duration-200">
                       View <ArrowRight className="ml-2 w-4 h-4" />
                     </button>
                   </Link>
@@ -223,7 +221,7 @@ export default function Home() {
         </div>
 
         <div className="mb-10" >
-        <p className="text-gray-500 absolute left-[38%]" >© Copyright 2024-2027 cleven.studio. All Rights Reserved</p>
+          <p className="text-gray-500 absolute left-[38%]" >© Copyright 2025-2027 cleven.studio. All Rights Reserved</p>
         </div>
       </main>
     </>

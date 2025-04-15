@@ -14,19 +14,29 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(cuid())
-  name     String
-  email    String  @unique
-  password String?
-  phone    String?
-  imageURL String?
-  createdAt DateTime? @default(now())
+  id                  String    @id @default(cuid())
+  name                String
+  email               String    @unique
+  password            String?
+  phone               String?
+  imageURL            String?
+  createdAt           DateTime? @default(now())
   lastPasswordUpdated DateTime?
-  auth_type         AuthType
+  auth_type           AuthType
 }
 
 enum AuthType {
   Google
   Github
   credentials
+}
+
+model Plan {
+  id        String    @id @default(cuid())
+  name      String
+  category  String
+  slug      String    @unique
+  price     Float
+  feature   String[]
+  createdAt DateTime? @default(now())
 }

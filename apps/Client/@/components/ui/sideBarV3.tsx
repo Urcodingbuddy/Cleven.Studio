@@ -69,7 +69,7 @@ export default function SidebarV3({ children }: { children: React.ReactNode }) {
                   <Image
                     src={`https://robohash.org/${session?.user?.name}.png?`}
                     className="rounded-full border"
-                    alt=""
+                    alt="User"
                     width={30}
                     height={30}
                   />

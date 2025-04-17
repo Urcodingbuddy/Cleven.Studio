@@ -44,7 +44,7 @@ export default function Marketplace() {
   }
 
   return (
-    <div className="flex min-h-screen bg-black text-white">
+    <div className="flex min-h-screen w-screen bg-black text-white"> 
       {/* Main Content */}
       <div className="flex-1 overflow-auto">
         {/* Replace the header section with this updated version that includes a mobile cart icon */}

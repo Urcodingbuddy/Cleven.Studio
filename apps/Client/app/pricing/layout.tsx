@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { CircleEllipsis } from 'lucide-react';
-import { useState, useEffect, Suspense } from "react";
-import Loading from "./loading";
+import { useState, useEffect } from "react";
+
 
 interface NavigationItem {
   name: string;
@@ -18,7 +18,6 @@ const navigation: NavigationItem[] = [
   { name: "Web Maintenance", href: "/pricing/web-maintenance" },
   { name: "Content Update", href: "/pricing/content-update" },
   { name: "MVP Package", href: "/pricing/mvp" },
-  { name: "Social Media", href: "/pricing/social-media" },
   { name: "Speed Optimization", href: "/pricing/speed-optimization" },
 ];
 
@@ -118,9 +117,7 @@ export default function PricingLayout({ children }: { children: React.ReactNode 
       </nav>
 
       {/* Main Content */}
-      <Suspense fallback={<Loading/>}>
       <main>{children}</main>
-      </Suspense>
     </div>
   );
 }

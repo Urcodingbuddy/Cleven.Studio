@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
 import { NextResponse } from 'next/server';
-
+// import { PrismaClient } from '../../../../../../packages/generated/client';
+// const prisma = new PrismaClient();
+import prisma from "@repo/db"
 export async function GET(
   req: Request,
   { params }: { params: Promise<{ category: string }> }

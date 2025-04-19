@@ -2,12 +2,10 @@ import { AuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
-import { PrismaClient } from "@prisma/client";
 import { JWT } from "next-auth/jwt";
 import { Session } from "next-auth";
 import bcrypt from "bcrypt";
-
-const prisma = new PrismaClient();
+import prisma from "@repo/db";
 
 export const authOptions: AuthOptions = {
   providers: [

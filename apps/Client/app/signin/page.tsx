@@ -5,7 +5,7 @@ import { ArrowRight, Home } from "lucide-react";
 import { GoogleBtn } from "@repo/ui/googleBtn";
 import Link from "next/link";
 import { GithubBtn } from "@repo/ui/githubBtn";
-import { useSignIn } from "../../lib/hooks/handleSignin";
+import { useSignIn } from "../../lib/hooks/useSignin";
 import  SmoothScrollProvider from '@repo/landing/SmoothScrollProvider';
 
 

@@ -12,6 +12,7 @@ export async function GET(
       where: { category },
       orderBy: { price: 'asc' }
     });
+    
     if (!plans || plans.length === 0) {
       return NextResponse.json({ error: 'No plans found for this category' }, { status: 404 });
     }

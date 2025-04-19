@@ -33,6 +33,7 @@ enum AuthType {
 
 model Plan {
   id        String    @id @default(cuid())
+  title     String?
   name      String
   category  String
   slug      String    @unique

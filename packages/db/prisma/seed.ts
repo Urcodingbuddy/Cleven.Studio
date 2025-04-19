@@ -1,6 +1,4 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import prisma from "@repo/db";
 
 async function main() {
   await prisma.plan.createMany({

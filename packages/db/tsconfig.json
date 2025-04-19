@@ -2,7 +2,8 @@
     "compilerOptions": {
       "baseUrl": ".",
       "paths": {
-        "@repo/db": ["packages/db"]
+        "@repo/db": ["packages/db"],
+        "@/generated/client": ["../generated/client"],
       }
     }
   }

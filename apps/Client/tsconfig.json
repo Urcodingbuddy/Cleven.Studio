@@ -6,6 +6,7 @@
     "paths": {
       "@repo/components/*": ["components/*"],
       "@repo/landing/*": ["landing/src/*"],
+      "@repo/db": ["../../packages/db/index.ts"],
       "@/lib/*": ["lib/*"]
     },
     "plugins": [

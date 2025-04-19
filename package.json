@@ -24,8 +24,9 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@repo/components": "file:apps/Client/components",
-    "@repo/landing":"file:apps/Client/landing",
+    "@repo/landing": "file:apps/Client/landing",
     "lucide-react": "^0.474.0",
+    "next": "^15.3.1",
     "rm": "^0.1.8"
   }
 }

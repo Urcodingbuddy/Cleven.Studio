@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Lenis from "lenis";
+import Lenis from "@studio-freight/lenis";
 
 export default function useLenis(): Lenis | null {
   const [lenis, setLenis] = useState<Lenis | null>(null);
